@@ -1,4 +1,1 @@
-﻿export enum Roles {
-    Inversionista,
-    Deudor
-}
+﻿export enum Roles {Inversionista, Deudor}

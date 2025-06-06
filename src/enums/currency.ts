@@ -1,5 +1,1 @@
-﻿export enum Currency {
-    COP,
-    USD,
-    MXN
-}
+﻿export enum Currency {COP, USD, MXN}
