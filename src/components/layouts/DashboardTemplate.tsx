@@ -5,7 +5,7 @@ import {UserProfileCard} from "@/components/organims/UserProfileCard";
 import {Currency, Roles} from "@/enums";
 import {LoanStatusGrid} from "@/components/organims/LoanStatusGrid";
 import {Box, useTheme} from "@mui/material";
-import {ChartsCarousel} from "@/app/dashboard/lender/components/";
+import {ChartsCarousel, InvestmentKPI} from "@/app/dashboard/lender/components/";
 
 export const DashboardTemplate = () => {
     const themeMUI = useTheme();
@@ -21,7 +21,7 @@ export const DashboardTemplate = () => {
                     gridTemplateAreas: `
                   "title       title         title"
                   "userProfile loanStatus    loanStatus"
-                  "charts      charts        charts"
+                  "chartsAndKPI      chartsAndKPI        chartsAndKPI"
                 `,
                     gap: 2,
                 },
@@ -47,7 +47,8 @@ export const DashboardTemplate = () => {
                 <LoanStatusGrid />
             </Box>
 
-            <Box gridArea="charts">
+            <Box gridArea="chartsAndKPI">
+                <InvestmentKPI/>
                 <ChartsCarousel sx={{ mt: 3, mb: 3 }} />
             </Box>
         </Box>
