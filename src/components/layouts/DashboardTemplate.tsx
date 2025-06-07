@@ -5,76 +5,56 @@ import {UserProfileCard} from "@/components/organims/UserProfileCard";
 import {Currency, Roles} from "@/enums";
 import {LoanStatusGrid} from "@/components/organims/LoanStatusGrid";
 import {Box, useTheme} from "@mui/material";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend, ChartOptions,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-
-// Registras módulos necesarios de Chart.js
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-
-
-// Tipa explícitamente el objeto options
-const options: ChartOptions<'line'> = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top'
-        },
-        title: {
-            display: true,
-            text: 'Ganancias mensuales'
-        }
-    }
-};
-
-const data = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
-    datasets: [
-        {
-            label: 'Ganancias',
-            data: [150000, 180000, 210000, 250000],
-            borderColor: '#00C707',
-            backgroundColor: 'rgba(0, 199, 7, 0.3)',
-            tension: 0.4
-        }
-    ]
-};
+import {ChartsCarousel} from "@/app/dashboard/lender/components/";
 
 export const DashboardTemplate = () => {
     const themeMUI = useTheme();
     return (
         <Box
             sx={{
-                textAlign: 'left',
                 mt: 1.3,
+                textAlign: 'center',
+                display: 'grid',
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gridTemplateAreas: `
+                  "title       title         title"
+                  "userProfile loanStatus    loanStatus"
+                  "charts      charts        charts"
+                `,
                 [themeMUI.breakpoints.down('sm')]: {
-                    textAlign: 'center',
+                    gridTemplateAreas: `
+                    "title"
+                    "userProfile"
+                    "loanStatus"
+                    "charts"
+                  `, 
+                  gridTemplateColumns: '1fr',
                 },
             }}
         >
             {/* Title */}
-            <SectionTitle>Mis préstamos</SectionTitle>
+            <Box gridArea="title">
+                <SectionTitle>Mis préstamos</SectionTitle>
+            </Box>
 
             {/* User profile */}
-            <UserProfileCard
-                avatarURL={"URL.com"}
-                userRole={Roles.Inversionista}
-                userName={"Pepito"}
-                currency={Currency.COP}
-            />
+            <Box gridArea="userProfile">
+                <UserProfileCard
+                    avatarURL={"URL.com"}
+                    userRole={Roles.Inversionista}
+                    userName={"Pepito"}
+                    currency={Currency.COP}
+                />
+            </Box>
             
             {/* Loan status grid */}
-            <LoanStatusGrid/>
+            <Box gridArea="loanStatus">
+                <LoanStatusGrid />
+            </Box>
 
-            <Line data={data} options={options} />
+            <Box gridArea="charts">
+                <ChartsCarousel sx={{ mt: 3, mb: 3 }} />
+            </Box>
         </Box>
     );
 }

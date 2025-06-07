@@ -18,47 +18,53 @@ export const UserProfileCard = (
 ) => {
     const themeMUI = useTheme();
     return (
-        <Paper
-            elevation={2}
+        <Box
             sx={{
-                width: '100%',
-                height: 'auto',
-                p: 2.5,
-                mt: 2,
-                borderRadius: 5
+                width: "100%",
+                display: "flex",
+                justifyContent: "right"
             }}
         >
-            <ProfileHeader
-                user={{
-                    name: userName,
-                    role: userRole,
-                    avatarUrl: avatarURL
-                }}
-            />
-            <Box
+            <Paper
+                elevation={2}
                 sx={{
-                    display: 'flex',
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    gap: 2,
+                    width: '100%',
+                    height: 'auto',
+                    p: 2.5,
                     mt: 2,
-                    mb: 2.5
+                    borderRadius: 5,
                 }}
             >
-                <CardTitle>Mis ganancias:</CardTitle>
+                <ProfileHeader
+                    user={{
+                        name: userName,
+                        role: userRole,
+                        avatarUrl: avatarURL
+                    }}
+                />
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        gap: 2,
+                        mt: 2,
+                        mb: 2.5
+                    }}
+                >
+                    <CardTitle>Mis ganancias:</CardTitle>
 
-                <PriceLabel number={"34.444"} currency={currency}/>
-            </Box>
+                    <PriceLabel number={"34.444"} currency={currency}/>
+                </Box>
 
-            <PillButton
-                sx={{
-                    [themeMUI.breakpoints.down("md")] : {
-                        width: '100%',
-                    }
-                }}
-            >
-                Expandir
-            </PillButton>
-        </Paper>
+                <PillButton
+                    sx={{
+                        width: '100%'
+                    }}
+                >
+                    Expandir
+                </PillButton>
+            </Paper>
+        </Box>
     )
 }
