@@ -15,8 +15,8 @@ export const InvestmentDistributionChart = (
     
     return (
         <Box sx={{
-            width: 250, 
-            height: 250, 
+            width: 350, 
+            height: 350, 
             margin: '0 auto',
             ...sx
         }}>

@@ -14,21 +14,16 @@ export const DashboardTemplate = () => {
             sx={{
                 mt: 1.3,
                 textAlign: 'center',
-                display: 'grid',
-                gridTemplateColumns: "1fr 1fr 1fr",
-                gridTemplateAreas: `
+                
+                [themeMUI.breakpoints.up('sm')]: {
+                    display: 'grid',
+                    gridTemplateColumns: "1fr 1fr 1fr",
+                    gridTemplateAreas: `
                   "title       title         title"
                   "userProfile loanStatus    loanStatus"
                   "charts      charts        charts"
                 `,
-                [themeMUI.breakpoints.down('sm')]: {
-                    gridTemplateAreas: `
-                    "title"
-                    "userProfile"
-                    "loanStatus"
-                    "charts"
-                  `, 
-                  gridTemplateColumns: '1fr',
+                    gap: 2,
                 },
             }}
         >

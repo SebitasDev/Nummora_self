@@ -1,6 +1,6 @@
 ﻿'use client'
 
-import {Box} from "@mui/material";
+import {Box, useTheme} from "@mui/material";
 import {LoanStatusCard} from "@/components/molecules/LoanStatusCard";
 import {LoanIssuedIcon} from "@/components/atoms/LoanIssuedIcon";
 import {Currency} from "@/enums";
@@ -9,13 +9,17 @@ import {LoanReceivedIcon} from "@/components/atoms/LoanReceivedIcon";
 import {SeeMoreCard} from "@/components/molecules/SeeMoreCard";
 
 export const LoanStatusGrid = () => {
+    const themeMUI = useTheme();
     return (
         <Box
             sx={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: 1.8,
-                mt: 2.5
+
+                [themeMUI.breakpoints.down('sm')]: {
+                    mt: 2.5
+                },
             }}
         >
             <LoanStatusCard

@@ -22,17 +22,24 @@ export const UserProfileCard = (
             sx={{
                 width: "100%",
                 display: "flex",
-                justifyContent: "right"
+                justifyContent: "right",
+
+                [themeMUI.breakpoints.down('sm')]: {
+                    width: "auto",
+                },
             }}
         >
             <Paper
                 elevation={2}
                 sx={{
                     width: '100%',
-                    height: 'auto',
+                    height: '255px',
                     p: 2.5,
-                    mt: 2,
                     borderRadius: 5,
+
+                    [themeMUI.breakpoints.down('sm')]: {
+                        mt: 2,
+                    },
                 }}
             >
                 <ProfileHeader
