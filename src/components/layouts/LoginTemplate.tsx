@@ -1,7 +1,7 @@
 'use client'
 
 import {Box, Typography} from "@mui/material";
-import {LoginForm} from "@/app/auth/login/components/LoginForm";
+import {LoginForm} from "@/app/auth/login/components";
 import PillButton from "@/components/atoms/PillButton";
 
 export const LoginTemplate = () => {

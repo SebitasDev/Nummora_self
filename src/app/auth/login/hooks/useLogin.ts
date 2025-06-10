@@ -2,12 +2,11 @@ import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from "zod";
 import {LoginSchema} from "@/lib/zod/authShema";
-
-type LoginFormData = z.infer<typeof LoginSchema>;
+import {LoginFormData} from "@/types";
 
 export const useLogin = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>({
+    const { register, handleSubmit, formState: { errors }, control } = useForm<LoginFormData>({
         resolver: zodResolver(LoginSchema)
     })
 
@@ -19,6 +18,7 @@ export const useLogin = () => {
         register,
         handleSubmit,
         errors,
-        onSubmit
+        onSubmit,
+        control
     }
 }
