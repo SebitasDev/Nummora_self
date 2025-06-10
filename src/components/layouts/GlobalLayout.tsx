@@ -7,12 +7,14 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PersonIcon from '@mui/icons-material/Person';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import WalletInitializer from "@/lib/viem/WalletInitializer";
 
 export default function GlobalLayout({ children }: { children: React.ReactNode }) {
     const [value, setValue] = useState(0);
     
     return (
         <Box sx={{ pb: 7 }}>
+            <WalletInitializer/>
             <Box sx={{ p: 1 }}>
                 {children}
             </Box>

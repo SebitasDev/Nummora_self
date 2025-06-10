@@ -1,10 +1,9 @@
-﻿'use client'
+'use client';
 
-import {DashboardTemplate} from "@/components/layouts/DashboardTemplate";
-import {useEffect} from "react";
-import {walletConnection} from "@/lib/viem/walletConnection";
+import { useEffect } from 'react';
+import { walletConnection } from '@/lib/viem/walletConnection';
 
-export default function LenderPage() {
+const WalletInitializer = (): null => {
     useEffect(() => {
         walletConnection()
             .then((res) => {
@@ -14,5 +13,8 @@ export default function LenderPage() {
                 console.warn('No se pudo conectar la wallet:', err);
             });
     }, []);
-    return <DashboardTemplate/>; 
-}
+
+    return null;
+};
+
+export default WalletInitializer;
