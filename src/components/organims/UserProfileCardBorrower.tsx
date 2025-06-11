@@ -59,7 +59,7 @@ export const UserProfileCardBorrower = (
                         mb: 2.5
                     }}
                 >
-                    <CardTitle>Mis credtios:</CardTitle>
+                    <CardTitle>Mis creditos:</CardTitle>
 
                     <PriceLabel number={"5.600"} currency={currency}/>
                 </Box>

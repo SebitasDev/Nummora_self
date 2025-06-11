@@ -46,6 +46,9 @@ export const DashboardBorrower = () => {
             <Box gridArea="loanStatus">
                 <LoanStatusGridBorrower />
             </Box>
+            <Box gridArea="chartsAndKPI">
+                <ChartsCarousel sx={{ mt: 3, mb: 3 }} />
+            </Box>
         </Box>
     );
 }
