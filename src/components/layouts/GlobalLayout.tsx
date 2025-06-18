@@ -7,7 +7,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PersonIcon from '@mui/icons-material/Person';
 import React from 'react';
 import Link from 'next/link';
-import WalletInitializer from "@/lib/viem/WalletInitializer";
+import WalletInitializer from "@/components/atoms/WalletInitializer";
 import {useGlobalLayout} from "@/hooks";
 
 export default function GlobalLayout({ children }: { children: React.ReactNode }) {
