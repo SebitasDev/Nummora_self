@@ -1,4 +1,5 @@
 import { Box, useTheme } from "@mui/material";
+import {SetWithdrawCard} from "@/components/molecules/SetWithdrawCard";
 
 export default function WithdrawLayout() {
     const theme = useTheme();
@@ -13,9 +14,10 @@ export default function WithdrawLayout() {
                     display: "grid",
                     gridTemplateColumns: "2fr 1fr", // main content + sidebar
                     gridTemplateAreas: `
-        "title          saldoResumen"
-        "formulario     estadisticas"
-        "historial      infoImportante"
+         "title           title"
+        "formulario      saldoResumen"
+        "historial       estadisticas"
+        ".               infoImportante"
       `,
                     gap: 3,
                 },
@@ -24,11 +26,15 @@ export default function WithdrawLayout() {
         >
             <Box gridArea="title">
                 <h2>Retirar Dinero</h2>
-                <p>Retira tus ganancias de forma segura kjgjhgkjfl hcvuhgclyfvlyclucyix7texlyc7tdxi7tdktdtexiytezi6c;gfkh gluhfvlufviyfvluy</p>
+                <p>Retira tus ganancias de forma segura </p>
             </Box>
 
-            <Box gridArea="formulario">
-                <h2>Retirar Dinero</h2>
+
+            <Box gridArea="formulario"
+            sx={{
+
+            }}>
+                <SetWithdrawCard />
             </Box>
 
             {/* Historial de retiros */}
