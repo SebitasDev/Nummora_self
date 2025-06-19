@@ -3,6 +3,7 @@ import {AmountInput} from "@/components/atoms/AmountInput";
 import { CardContent, CardHeader, FormControl, Input, InputAdornment, InputLabel, Typography} from "@mui/material";
 import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWalletOutlined";
 import CustomCard from "@mui/material/Card";
+import {WithdrawMethod} from "@/components/molecules/WithdrawMethod";
 
 export const  SetWithdrawCard = () => {
     const theme = useTheme();
@@ -26,6 +27,7 @@ export const  SetWithdrawCard = () => {
             />
             <CardContent>
                 <AmountInput/>
+                <WithdrawMethod></WithdrawMethod>
             </CardContent>
         </CustomCard>
     )
