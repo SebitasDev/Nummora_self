@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {Box, InputAdornment, Stack, Button, FormControl, OutlinedInput, Typography} from '@mui/material';
+import {BoxProps} from "@mui/system";
 
-export const AmountInput = () => {
+export const AmountInput = ({sx, ...rest}: BoxProps) => {
     const [amount, setAmount] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +18,12 @@ export const AmountInput = () => {
     };
 
     return (
-        <Box>
+        <Box
+        sx={{
+            ...sx
+        }}
+        {...rest}
+        >
             <Typography variant="subtitle1" fontWeight={'bold'} mb={1}>
                 Monto a Retirar
             </Typography>

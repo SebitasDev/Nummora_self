@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import {SetWithdrawCard} from "@/components/molecules/SetWithdrawCard";
+import {SetWithdrawCard} from "@/components/organims/SetWithdrawCard";
 
 export default function WithdrawLayout() {
     const theme = useTheme();
