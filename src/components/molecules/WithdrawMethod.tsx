@@ -5,7 +5,6 @@ import {
     Stack,
     Typography,
     SelectChangeEvent,
-    Button,
     CardActionArea,
     Divider
 } from "@mui/material";
@@ -37,7 +36,15 @@ export const WithdrawMethod = () => {
                 Método de Retiro
             </Typography>
 
-            <CustomCard variant="outlined" sx={{ borderRadius: 2, overflow: "hidden" }}>
+            <CustomCard variant="outlined" sx={{
+                borderRadius: 2,
+                overflow: "hidden",
+                borderColor: expanded ? "success.light" : "divider",
+                borderWidth: 2,
+                borderStyle: "solid",
+                backgroundColor: expanded ? "#edfdf4" : "background.paper",
+
+            }}>
                 <CardActionArea onClick={handleToggle}>
                     <Box
                         sx={{
@@ -84,25 +91,23 @@ export const WithdrawMethod = () => {
                         </Stack>
                     </Box>
                 </CardActionArea>
-
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <Divider sx={{ mx: 2, my: 1 }} />
-                    <Box px={2} pb={2}>
-                        <DropdownAddressSelect
-                            options={addressOptions}
-                            value={selectedAddress}
-                            onChange={(e: SelectChangeEvent) =>
-                                setSelectedAddress(e.target.value)
-                            }
-                        />
-                        <ResumenDelRetiro
-                            montoSolicitado="$100.000"
-                            comision="$1.500"
-                            totalRecibir="$98.500"
-                        />
-                    </Box>
-                </Collapse>
             </CustomCard>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <Box px={2} pb={2} sx={{marginTop: 4}}>
+                    <DropdownAddressSelect
+                        options={addressOptions}
+                        value={selectedAddress}
+                        onChange={(e: SelectChangeEvent) =>
+                            setSelectedAddress(e.target.value)
+                        }
+                    />
+                    <ResumenDelRetiro
+                        montoSolicitado="$100.000"
+                        comision="$1.500"
+                        totalRecibir="$98.500"
+                    />
+                </Box>
+            </Collapse>
         </Box>
     );
 };

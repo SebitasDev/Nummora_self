@@ -37,7 +37,7 @@ export const  SetWithdrawCard = () => {
             <CardHeader
                 title={
                     <Stack direction="row" alignItems="center" spacing={1}>
-                        <AccountBalanceWalletOutlined sx={{ color: "lightgreen" }} />
+                        <AccountBalanceWalletOutlined sx={{ color: "success.light" }} />
                         <Typography variant="h5" fontWeight={700}>
                             Configurar Retiro
                         </Typography>
@@ -54,7 +54,7 @@ export const  SetWithdrawCard = () => {
                 <WithdrawMethod></WithdrawMethod>
                 <Button
                     sx={{
-                        bgcolor: "palegreen",
+                        bgcolor: "success.light",
                         width: "100%",
                         marginTop: 4
                     }}
