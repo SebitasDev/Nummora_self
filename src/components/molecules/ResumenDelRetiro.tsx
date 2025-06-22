@@ -27,7 +27,12 @@ export const ResumenDelRetiro: React.FC<ResumenDelRetiroProps> = ({
 
             <AmountRow label="Monto solicitado" value={montoSolicitado} />
             <AmountRow label="Comisión" value={comision} />
-            <AmountRow label="Total a recibir" value={totalRecibir} bold />
+            <AmountRow
+                label="Total a recibir"
+                value={totalRecibir}
+                bold
+                chipStyle
+            />
         </Box>
     );
 };

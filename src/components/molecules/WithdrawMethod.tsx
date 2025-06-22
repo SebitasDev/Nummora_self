@@ -84,7 +84,7 @@ export const WithdrawMethod = () => {
                             <Batch
                                 label={"Seleccionar"}
                                 sx={{
-                                    bgcolor: "#E8F9F0",
+                                    backgroundColor: expanded ? "background.paper" : "#E8F9F0",
                                     color: "green",
                                 }}
                             />
