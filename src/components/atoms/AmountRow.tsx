@@ -5,14 +5,12 @@ type AmountRowProps = {
     label: string;
     value: string;
     bold?: boolean;
-    chipStyle?: boolean;
 } & BoxProps;
 
 export const AmountRow: React.FC<AmountRowProps> = ({
                                                         label,
                                                         value,
                                                         bold = false,
-    chipStyle = false,
                                                         sx,
                                                         ...rest
                                                     }) => {
@@ -31,18 +29,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
             <Typography
                 variant="body2"
                 fontWeight={bold ? "bold" : "normal"}
-                color={chipStyle ? "success.main" : bold ? "text.primary" : "text.secondary"}
-                sx={
-                    chipStyle
-                        ? {
-                            backgroundColor: "success.light",
-                            color: "black",
-                        padding: "2px",
-                            borderRadius: 6,
-                            fontWeight: "medium",
-                        }
-                        : undefined
-                }
+                color={bold ? "text.primary" : "text.secondary"}
             >
                 {value}
             </Typography>
