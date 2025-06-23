@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { AmountRow } from "@/components/atoms/AmountRow";
 
-type ResumenDelRetiroProps = {
+type WithdrawResumeProps = {
     montoSolicitado: string;
     comision: string;
     totalRecibir: string;
 };
 
-export const ResumenDelRetiro: React.FC<ResumenDelRetiroProps> = ({
+export const WithdrawResume: React.FC<WithdrawResumeProps> = ({
                                                                       montoSolicitado,
                                                                       comision,
                                                                       totalRecibir,

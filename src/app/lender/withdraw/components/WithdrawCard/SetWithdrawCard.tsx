@@ -1,5 +1,5 @@
 import {Stack, useTheme} from "@mui/system"
-import {AmountInput} from "@/components/atoms/AmountInput";
+import {AmountInput} from "@/app/lender/withdraw/components/WithdrawCard/AmountInput";
 import {
     Box,
     Button,
@@ -9,10 +9,10 @@ import {
 } from "@mui/material";
 import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWalletOutlined";
 import CustomCard from "@mui/material/Card";
-import {WithdrawMethod} from "@/components/molecules/WithdrawMethod";
+import {WithdrawMethod} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawMethod";
 import React, {useState} from "react";
-import {DropdownAddressSelect} from "@/components/atoms/DropdownAddressSelect";
-import {ResumenDelRetiro} from "@/components/molecules/ResumenDelRetiro";
+import {DropdownAddressSelect} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
+import {WithdrawResume} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawResume";
 import { SelectChangeEvent } from '@mui/material/Select';
 
 export const  SetWithdrawCard = () => {
@@ -71,7 +71,7 @@ export const  SetWithdrawCard = () => {
                         />
 
 
-                        <ResumenDelRetiro
+                        <WithdrawResume
                             montoSolicitado="$100.000"
                             comision="$1.500"
                             totalRecibir="$98.500"

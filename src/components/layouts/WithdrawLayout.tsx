@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import {SetWithdrawCard} from "@/components/organims/SetWithdrawCard";
+import {SetWithdrawCard} from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import {WithdrawHistoryCard} from "@/components/organims/WithdrawHistoryCard";
 
 export default function WithdrawLayout() {
@@ -22,7 +22,7 @@ export default function WithdrawLayout() {
       `,
                     gap: 3,
                 },
-                p: 3,
+
             }}
         >
             <Box gridArea="title">

@@ -1,7 +1,7 @@
 import {CustomCard} from "@/components/atoms/CustomCard";
 import {Avatar, Box, CardContent, Stack, Typography} from "@mui/material";
 import React from "react";
-import {shortenAddress} from "@/components/atoms/DropdownAddressSelect";
+import {shortenAddress} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
 import {Batch} from "@/components/atoms/Batch";
 
 type HistoryFileCardProps = {

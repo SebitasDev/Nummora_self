@@ -1,21 +1,9 @@
-import React, { useState } from 'react';
 import {Box, InputAdornment, Stack, Button, FormControl, OutlinedInput, Typography} from '@mui/material';
 import {BoxProps} from "@mui/system";
+import {useAmountInput} from "@/app/lender/withdraw/hooks/useAmountInput";
 
 export const AmountInput = ({sx, ...rest}: BoxProps) => {
-    const [amount, setAmount] = useState("");
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAmount(e.target.value);
-    };
-
-    const handleSelectAmount = (value: number | "all") => {
-        if (value === "all") {
-            setAmount("123456");
-        } else {
-            setAmount(value.toString());
-        }
-    };
+    const { amount, handleChange, handleSelectAmount } = useAmountInput();
 
     return (
         <Box

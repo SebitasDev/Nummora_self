@@ -8,13 +8,14 @@ import {
     CardActionArea,
 } from "@mui/material";
 import { useState } from "react";
-import CustomCard from "@mui/material/Card";
+import {CustomCard} from "@/components/atoms/CustomCard";
 import Link from "@mui/material/Link";
 import React from "react";
 import { Batch } from "@/components/atoms/Batch";
 import { TimeText } from "@/components/atoms/TimeText";
-import { DropdownAddressSelect } from "@/components/atoms/DropdownAddressSelect";
-import { ResumenDelRetiro } from "@/components/molecules/ResumenDelRetiro";
+import { DropdownAddressSelect } from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
+import { WithdrawResume } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawResume";
+import {useTheme} from "@mui/material/styles";
 
 type WithdrawMethodProps = {
     selectedAddress: string;
@@ -24,7 +25,7 @@ type WithdrawMethodProps = {
 export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress, setSelectedAddress }) => {
 
     const [expanded, setExpanded] = useState(false);
-
+    const themeMUI = useTheme()
 
     const addressOptions = [
         "0x89a2F4c3DcaE7d8e97aBC4c5C121AE344321B67D",
@@ -36,7 +37,13 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
     };
 
     return (
-        <Box>
+        <Box
+        sx={{
+            [themeMUI.breakpoints.down('md')]: {
+                height: "auto",
+            },
+
+        }}>
             <Typography variant="subtitle1" fontWeight="bold" mb={1}>
                 Método de Retiro
             </Typography>
@@ -48,7 +55,6 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 borderWidth: 2,
                 borderStyle: "solid",
                 backgroundColor: expanded ? "#edfdf4" : "background.paper",
-
             }}>
                 <CardActionArea onClick={handleToggle}>
                     <Box
@@ -70,21 +76,41 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                             >
                                 <img src="/lemon-icon.svg" alt="Lemon" width={24} height={24} />
                             </Avatar>
-                            <Stack spacing={1}>
-                                <Typography fontWeight="bold">Lemon (Crypto)</Typography>
-                                <Typography variant="body2" color="text.secondary">
+                            <Stack spacing={1} >
+                                <Typography fontWeight="bold" sx={{
+                                    fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.875rem",
+                                        md: "1rem",
+                                    },
+                                }}>Lemon (Crypto)</Typography>
+                                <Typography variant="body2" sx={{
+                                    fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.875rem",
+                                        md: "1rem",
+                                    },
+                                }}
+                                            color="text.secondary">
                                     Comisión:{" "}
                                     <Box component="span" color="success.main" fontWeight="bold">
                                         1.5%
                                     </Box>
-                                </Typography>
-                                <Link href="#" underline="hover" fontSize={14}>
+                                </Typography >
+                                <Link sx={{
+                                    fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.875rem",
+                                        md: "1rem",
+                                    },
+                                }}
+                                      href="#" underline="hover" fontSize={14}>
                                     📖 Aprende a retirar con Lemon
                                 </Link>
                             </Stack>
                         </Box>
 
-                        <Stack alignItems="center" spacing={1}>
+                        <Stack alignItems="center" spacing={1} display={'flex'}>
                             <TimeText timeFrame={"5 - 15 minutos"} />
                             <Batch
                                 label={"Seleccionar"}
@@ -98,7 +124,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 </CardActionArea>
             </CustomCard>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <Box px={2} pb={2} sx={{marginTop: 4}}>
+                <Box px={2} pb={2} sx={{marginTop: 4}} display="flex" >
                     <DropdownAddressSelect
                         options={addressOptions}
                         value={selectedAddress}
@@ -106,7 +132,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                             setSelectedAddress(e.target.value)
                         }
                     />
-                    <ResumenDelRetiro
+                    <WithdrawResume
                         montoSolicitado="$100.000"
                         comision="$1.500"
                         totalRecibir="$98.500"
