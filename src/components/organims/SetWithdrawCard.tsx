@@ -76,6 +76,16 @@ export const  SetWithdrawCard = () => {
                             comision="$1.500"
                             totalRecibir="$98.500"
                         />
+
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+
+                            sx={{ mt: 2, borderRadius: 2, textTransform: "none" }}
+                        >
+                            Confirmar Retiro
+                        </Button>
                     </Box>
                 )}
             </CardContent>

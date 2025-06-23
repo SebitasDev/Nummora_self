@@ -61,5 +61,5 @@ export const DropdownAddressSelect: React.FC<DropdownAddressSelectProps> = ({
     );
 };
 
-const shortenAddress = (addr: string): string =>
+export const shortenAddress = (addr: string): string =>
     addr.length > 10 ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : addr;

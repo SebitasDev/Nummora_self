@@ -21,7 +21,7 @@ type WithdrawMethodProps = {
     setSelectedAddress: (addr: string) => void;
 };
 
-export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress = '', setSelectedAddress }) => {
+export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress, setSelectedAddress }) => {
 
     const [expanded, setExpanded] = useState(false);
 

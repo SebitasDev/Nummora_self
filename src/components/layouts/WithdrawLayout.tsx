@@ -1,5 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 import {SetWithdrawCard} from "@/components/organims/SetWithdrawCard";
+import {WithdrawHistoryCard} from "@/components/organims/WithdrawHistoryCard";
 
 export default function WithdrawLayout() {
     const theme = useTheme();
@@ -31,15 +32,13 @@ export default function WithdrawLayout() {
 
 
             <Box gridArea="formulario"
-            sx={{
-
-            }}>
+            >
                 <SetWithdrawCard />
             </Box>
 
             {/* Historial de retiros */}
             <Box gridArea="historial">
-                <h2>Retiros</h2>
+                <WithdrawHistoryCard />
             </Box>
 
             {/* Resumen de saldo */}
