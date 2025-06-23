@@ -1,7 +1,7 @@
 import {CustomCard} from "@/components/atoms/CustomCard";
 import {CardContent, CardHeader, Typography} from "@mui/material";
 import React from "react";
-import {HistoryFileCard} from "@/components/molecules/HistoryFileCard";
+import {HistoryFileCard} from "@/app/lender/withdraw/components/HistoryCard/HistoryFileCard";
 
 export const WithdrawHistoryCard = () => {
     return (

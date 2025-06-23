@@ -7,21 +7,13 @@ import {
     Typography
 } from "@mui/material";
 
-type DropdownAddressSelectProps = {
+interface DropdownAddressSelectProps {
     options: string[];
     value: string;
     onChange: (event: SelectChangeEvent<string>) => void;
 };
 
-export const DropdownAddressSelect: React.FC<DropdownAddressSelectProps> = ({
-                                                                                options = [],
-                                                                                value, onChange
-                                                                            }
-                                                                            ) => {
-    const [address, setAddress] = React.useState<{ address: string }>({
-        address: '',
-    });
-
+export const DropdownAddressSelect: React.FC<DropdownAddressSelectProps> = ({ options = [], value, onChange}) => {
     return (
         <Box>
             <Typography variant="subtitle2" fontWeight="bold" mb={1}>

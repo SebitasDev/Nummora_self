@@ -2,17 +2,13 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { AmountRow } from "@/components/atoms/AmountRow";
 
-type WithdrawResumeProps = {
+interface WithdrawSummaryProps {
     montoSolicitado: string;
     comision: string;
     totalRecibir: string;
 };
 
-export const WithdrawResume: React.FC<WithdrawResumeProps> = ({
-                                                                      montoSolicitado,
-                                                                      comision,
-                                                                      totalRecibir,
-                                                                  }) => {
+export const WithdrawSummary: React.FC<WithdrawSummaryProps> = ({ montoSolicitado, comision, totalRecibir }) => {
     return (
         <Box
             mt={2}

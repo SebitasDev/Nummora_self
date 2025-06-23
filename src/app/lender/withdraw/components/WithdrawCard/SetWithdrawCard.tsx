@@ -12,11 +12,10 @@ import CustomCard from "@mui/material/Card";
 import {WithdrawMethod} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawMethod";
 import React, {useState} from "react";
 import {DropdownAddressSelect} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
-import {WithdrawResume} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawResume";
+import {WithdrawSummary} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawSummary";
 import { SelectChangeEvent } from '@mui/material/Select';
 
 export const  SetWithdrawCard = () => {
-    const theme = useTheme();
     const [expanded, setExpanded] = useState(false);
     const [selectedAddress, setSelectedAddress] = useState("");
     const addressOptions = [
@@ -43,7 +42,9 @@ export const  SetWithdrawCard = () => {
                         </Typography>
                     </Stack>
                 }
-                subheader={<p>Selecciona el metodo y monto que deseas retirar</p>}
+                subheader={
+                <p>Selecciona el metodo y monto que deseas retirar</p>
+            }
             />
             <CardContent>
                 <AmountInput
@@ -58,7 +59,7 @@ export const  SetWithdrawCard = () => {
                         bgcolor: "success.light",
                         width: "100%",
                         marginTop: 4
-                    }}
+                }}
                     variant="contained">
                     Confirmar Retiro
                 </Button>
@@ -71,7 +72,7 @@ export const  SetWithdrawCard = () => {
                         />
 
 
-                        <WithdrawResume
+                        <WithdrawSummary
                             montoSolicitado="$100.000"
                             comision="$1.500"
                             totalRecibir="$98.500"

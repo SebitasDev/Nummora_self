@@ -1,6 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 import {SetWithdrawCard} from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
-import {WithdrawHistoryCard} from "@/components/organims/WithdrawHistoryCard";
+import {WithdrawHistoryCard} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawHistoryCard";
 
 export default function WithdrawLayout() {
     const theme = useTheme();
@@ -13,13 +13,13 @@ export default function WithdrawLayout() {
                 gap: 3,
                 [theme.breakpoints.up("md")]: {
                     display: "grid",
-                    gridTemplateColumns: "2fr 1fr", // main content + sidebar
+                    gridTemplateColumns: "2fr 1fr",
                     gridTemplateAreas: `
-         "title           title"
-        "formulario      saldoResumen"
-        "historial       estadisticas"
-        ".               infoImportante"
-      `,
+                     "title           title"
+                     "formulario      saldoResumen"
+                     "historial       estadisticas"
+                     ".               infoImportante"
+                     `,
                     gap: 3,
                 },
 
@@ -31,8 +31,7 @@ export default function WithdrawLayout() {
             </Box>
 
 
-            <Box gridArea="formulario"
-            >
+            <Box gridArea="formulario">
                 <SetWithdrawCard />
             </Box>
 

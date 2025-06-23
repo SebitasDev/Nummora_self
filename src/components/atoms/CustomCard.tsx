@@ -13,10 +13,10 @@ export const CustomCard = ({ children, sx, ...rest }: CardProps) => {
                 border: "1px solid #e0e0e0",
                 borderRadius: 2,
                 boxShadow: "0px 2px 4px rgba(0,0,0,0.04)",
-                ...sx,
                 [themeMUI.breakpoints.down('md')]: {
                     height: "auto",
                 },
+                ...sx,
             }}
             {...rest}
         >

@@ -10,7 +10,6 @@ export const useAmountInput = (defaultAmount = "") => {
 
     const handleSelectAmount = (value: number | "all") => {
         if (value === "all") {
-            // In real use case, fetch actual total available
             setAmount("123456");
         } else {
             setAmount(value.toString());

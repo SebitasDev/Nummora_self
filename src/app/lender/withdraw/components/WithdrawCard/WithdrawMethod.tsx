@@ -14,10 +14,10 @@ import React from "react";
 import { Batch } from "@/components/atoms/Batch";
 import { TimeText } from "@/components/atoms/TimeText";
 import { DropdownAddressSelect } from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
-import { WithdrawResume } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawResume";
+import { WithdrawSummary } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawSummary";
 import {useTheme} from "@mui/material/styles";
 
-type WithdrawMethodProps = {
+interface WithdrawMethodProps {
     selectedAddress: string;
     setSelectedAddress: (addr: string) => void;
 };
@@ -38,12 +38,13 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
 
     return (
         <Box
-        sx={{
-            [themeMUI.breakpoints.down('md')]: {
-                height: "auto",
-            },
+            sx={{
+                [themeMUI.breakpoints.down('md')]: {
+                    height: "auto",
+                },
 
-        }}>
+            }}
+        >
             <Typography variant="subtitle1" fontWeight="bold" mb={1}>
                 Método de Retiro
             </Typography>
@@ -132,7 +133,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                             setSelectedAddress(e.target.value)
                         }
                     />
-                    <WithdrawResume
+                    <WithdrawSummary
                         montoSolicitado="$100.000"
                         comision="$1.500"
                         totalRecibir="$98.500"

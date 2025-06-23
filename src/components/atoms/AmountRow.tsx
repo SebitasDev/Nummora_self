@@ -1,21 +1,14 @@
 import React from "react";
 import { Box, BoxProps, Typography } from "@mui/material";
 
-type AmountRowProps = {
+interface AmountRowProps extends BoxProps {
     label: string;
     value: string;
     bold?: boolean;
     green?: boolean;
-} & BoxProps;
+}
 
-export const AmountRow: React.FC<AmountRowProps> = ({
-                                                        label,
-                                                        value,
-                                                        bold = false,
-                                                        sx,
-                                                        green = false,
-                                                        ...rest
-                                                    }) => {
+export const AmountRow: React.FC<AmountRowProps> = ({ label, value, bold = false, sx, green = false, ...rest }) => {
     return (
         <Box
             display="flex"
