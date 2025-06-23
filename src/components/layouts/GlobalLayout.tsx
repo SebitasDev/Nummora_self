@@ -14,9 +14,9 @@ export default function GlobalLayout({ children }: { children: React.ReactNode }
     
     const { value, setValue, shouldHideNav } = useGlobalLayout();
     
-    return (
+    return ( 
         <Box sx={{ pb: 7 }}>
-            <Box sx={{ p: 1 }}>
+            <Box sx={{ p: 1, backgroundColor: "#F9FAFB" }}>
                 {children}
             </Box>
             {!shouldHideNav && (
