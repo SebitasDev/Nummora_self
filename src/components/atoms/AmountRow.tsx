@@ -5,6 +5,7 @@ type AmountRowProps = {
     label: string;
     value: string;
     bold?: boolean;
+    green?: boolean;
 } & BoxProps;
 
 export const AmountRow: React.FC<AmountRowProps> = ({
@@ -12,6 +13,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
                                                         value,
                                                         bold = false,
                                                         sx,
+                                                        green = false,
                                                         ...rest
                                                     }) => {
     return (
@@ -29,7 +31,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
             <Typography
                 variant="body2"
                 fontWeight={bold ? "bold" : "normal"}
-                color={bold ? "text.primary" : "text.secondary"}
+                color={green ? 'success.light': bold ? "text.primary" : "text.secondary"}
             >
                 {value}
             </Typography>

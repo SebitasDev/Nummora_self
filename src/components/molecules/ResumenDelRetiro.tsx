@@ -31,6 +31,7 @@ export const ResumenDelRetiro: React.FC<ResumenDelRetiroProps> = ({
                 label="Total a recibir"
                 value={totalRecibir}
                 bold
+                green
             />
         </Box>
     );

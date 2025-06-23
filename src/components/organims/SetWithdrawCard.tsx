@@ -18,7 +18,7 @@ import { SelectChangeEvent } from '@mui/material/Select';
 export const  SetWithdrawCard = () => {
     const theme = useTheme();
     const [expanded, setExpanded] = useState(false);
-    const [selectedAddress, setSelectedAddress] = useState("0x89a2F4c3DcaE7d8e97aBC4c5C121AE344321B67D");
+    const [selectedAddress, setSelectedAddress] = useState("");
     const addressOptions = [
         "0x89a2F4c3DcaE7d8e97aBC4c5C121AE344321B67D",
         "0xbc1qxv2k8dbhfX7fhxOwlh28A3EFc289a762D9A1",
@@ -51,8 +51,9 @@ export const  SetWithdrawCard = () => {
                     marginBottom: 5
                 }}
                 />
-                <WithdrawMethod></WithdrawMethod>
+                <WithdrawMethod selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress}></WithdrawMethod>
                 <Button
+                    disabled={selectedAddress === ''}
                     sx={{
                         bgcolor: "success.light",
                         width: "100%",
@@ -75,15 +76,6 @@ export const  SetWithdrawCard = () => {
                             comision="$1.500"
                             totalRecibir="$98.500"
                         />
-
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            fullWidth
-                            sx={{ mt: 2, borderRadius: 2, textTransform: "none" }}
-                        >
-                            Confirmar Retiro
-                        </Button>
                     </Box>
                 )}
             </CardContent>

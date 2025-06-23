@@ -6,7 +6,6 @@ import {
     Typography,
     SelectChangeEvent,
     CardActionArea,
-    Divider
 } from "@mui/material";
 import { useState } from "react";
 import CustomCard from "@mui/material/Card";
@@ -17,9 +16,15 @@ import { TimeText } from "@/components/atoms/TimeText";
 import { DropdownAddressSelect } from "@/components/atoms/DropdownAddressSelect";
 import { ResumenDelRetiro } from "@/components/molecules/ResumenDelRetiro";
 
-export const WithdrawMethod = () => {
+type WithdrawMethodProps = {
+    selectedAddress: string;
+    setSelectedAddress: (addr: string) => void;
+};
+
+export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress = '', setSelectedAddress }) => {
+
     const [expanded, setExpanded] = useState(false);
-    const [selectedAddress, setSelectedAddress] = useState("");
+
 
     const addressOptions = [
         "0x89a2F4c3DcaE7d8e97aBC4c5C121AE344321B67D",
@@ -84,8 +89,8 @@ export const WithdrawMethod = () => {
                             <Batch
                                 label={"Seleccionar"}
                                 sx={{
-                                    backgroundColor: expanded ? "background.paper" : "#E8F9F0",
-                                    color: "green",
+                                    backgroundColor: expanded ? "success.light" : "#E8F9F0",
+                                    color: expanded ? "white" :"green"
                                 }}
                             />
                         </Stack>
