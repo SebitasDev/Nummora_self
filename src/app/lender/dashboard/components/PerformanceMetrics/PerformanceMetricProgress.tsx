@@ -13,16 +13,8 @@ export const PerformanceMetricProgress = (
 ) => {
     
     return(
-        <Box
-            sx={{
-                display: "flex",
-                justifyContent: "space-between",
-            }}
-        >
-            <Typography
-                color={"gray"}
-                fontWeight={"bold"}
-            >
+        <Box sx={{display: "flex", justifyContent: "space-between"}}>
+            <Typography color={"gray"} fontWeight={"bold"}>
                 {name}
             </Typography>
             <CustomProgress value={value} color={color} />

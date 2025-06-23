@@ -16,25 +16,27 @@ export const MyEarnings = () => {
     const { period } = useEarningStore();
     const theme = Theme;
     return (
-        <Box sx={{
-            gridColumn: {
-                xs: "1 / -1",
-                md: "span 8"
-            },
-            order: {
-                xs: 2,
-                md: 'initial'
-            },
-            width : '100%',
-            height: "470px",
-            padding: 2.9,
-            backgroundColor: "#fff",
-            borderRadius: "12px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-            [themeMUI.breakpoints.down('md')]: {
-                height: "auto",
-            }
-        }}>
+        <Box 
+            sx={{
+                gridColumn: {
+                    xs: "1 / -1",
+                    md: "span 8"
+                },
+                order: {
+                    xs: 2,
+                    md: 'initial'
+                },
+                width : '100%',
+                height: "470px",
+                padding: 2.9,
+                backgroundColor: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+                [themeMUI.breakpoints.down('md')]: {
+                    height: "auto",
+                }
+            }}
+        >
             <Box 
                 sx={{ 
                     display: "flex",
@@ -62,7 +64,8 @@ export const MyEarnings = () => {
                 sx={{
                     color: theme.palette.loandColors.active,
                     fontSize: "24px",
-                    mt: 2
+                    mt: 2,
+                    width: 'fit-content'
                 }}
             />
 

@@ -15,12 +15,14 @@ export const EarningChart: React.FC = () => {
     const { data, themeMUI, theme } = useEarningChart();
     
     return (
-        <Box sx={{ 
-            width: "100%", 
-            height: "300px", 
-            mt: 1.5,
-            [themeMUI.breakpoints.down("md")]: { height: "200px" }
-        }}>
+        <Box 
+            sx={{ 
+                width: "100%", 
+                height: "300px", 
+                mt: 1.5,
+                [themeMUI.breakpoints.down("md")]: { height: "200px" }
+            }}
+        >
             <ResponsiveContainer>
                 <LineChart data={data}>
                     <CartesianGrid stroke="#d1d5db" strokeDasharray="4 4" />

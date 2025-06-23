@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Button, Typography, useTheme} from "@mui/material";
+import {Box, Divider, Typography, useTheme} from "@mui/material";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import {MyEarnings} from "@/app/lender/dashboard/components/Earnings/MyEarnings";
 import {PortfolioDistribution} from "@/app/lender/dashboard/components/PortafolioDistribution";
@@ -8,9 +8,8 @@ import {FinancialSummary} from "@/app/lender/dashboard/components/FinancialSumma
 import React from "react";
 import {EarningPrediction} from "@/app/lender/dashboard/components/EarningPredictions";
 import {PerformanceMetrics} from "@/app/lender/dashboard/components/PerformanceMetrics";
-import {useMediaQuery} from "@mui/system";
-import Theme from "@/theme/theme";
 import {RecentActivities} from "@/app/lender/dashboard/components/RecentActivity";
+import {MonthSummary} from "@/app/lender/dashboard/components/MonthSummary";
 
 export const LenderDashboardTemplate = () => {
     const themeMUI = useTheme();
@@ -76,21 +75,7 @@ export const LenderDashboardTemplate = () => {
             <RecentActivities/>
 
             { /* Resumen del mes */ }
-            <Box sx={{
-                gridColumn: {
-                    xs: "1 / -1",
-                    md: "span 3"
-                },
-                order: {
-                    xs: 8,
-                    md: 'initial'
-                },
-                backgroundColor: "firebrick",
-                width : '100%',
-                height: "150px"
-            }}>
-                Resumen del mes
-            </Box>
+            <MonthSummary/>
         </Box>
     );
 }

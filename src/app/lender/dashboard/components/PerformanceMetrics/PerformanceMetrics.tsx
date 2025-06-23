@@ -15,28 +15,30 @@ export const PerformanceMetrics = () => {
     const theme = Theme;
     
     return (
-        <Box sx={{
-            gridColumn: {
-                xs: "1 / -1",
-                md: "span 6"
-            },
-            order: {
-                xs: 6,
-                md: 'initial'
-            },
-            width : '100%',
-            height: "450px",
-            padding: 2.9,
-            backgroundColor: "#fff",
-            borderRadius: "12px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-            display: "flex",
-            flexDirection: "column",
-            gap: 2.5,
-            [themeMUI.breakpoints.down('md')]: {
-                height: "auto",
-            }
-        }}>
+        <Box 
+            sx={{
+                gridColumn: {
+                    xs: "1 / -1",
+                    md: "span 6"
+                },
+                order: {
+                    xs: 6,
+                    md: 'initial'
+                },
+                width : '100%',
+                height: "450px",
+                padding: 2.9,
+                backgroundColor: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+                display: "flex",
+                flexDirection: "column",
+                gap: 2.5,
+                [themeMUI.breakpoints.down('md')]: {
+                    height: "auto",
+                }
+            }}
+        >
             <SectionHeader
                 title={"Métricas de rendimiento"}
                 subtitle={

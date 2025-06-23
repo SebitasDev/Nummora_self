@@ -14,25 +14,27 @@ export const PortfolioDistribution = () => {
     const { themeMUI, theme } = usePortfolioDistribution();
     
     return (
-        <Box sx={{
-            gridColumn: {
-                xs: "1 / -1",
-                md: "span 4"
-            },
-            order: {
-                xs: 4,
-                md: 'initial'
-            },
-            width : '100%',
-            height: "470px",
-            padding: 2.9,
-            backgroundColor: "#fff",
-            borderRadius: "12px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-            [themeMUI.breakpoints.down('md')]: {
-                height: "auto",
-            }
-        }}>
+        <Box 
+            sx={{
+                gridColumn: {
+                    xs: "1 / -1",
+                    md: "span 4"
+                },
+                order: {
+                    xs: 4,
+                    md: 'initial'
+                },
+                width : '100%',
+                height: "470px",
+                padding: 2.9,
+                backgroundColor: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+                [themeMUI.breakpoints.down('md')]: {
+                    height: "auto",
+                }
+            }}
+        >
             <SectionHeader
                 title={"Distribucion del portafolio"}
                 subtitle={`Estado actual de tus prestamos`}
