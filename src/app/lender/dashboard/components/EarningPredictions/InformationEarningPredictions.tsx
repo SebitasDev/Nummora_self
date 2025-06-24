@@ -32,16 +32,16 @@ export const InformationEarningPredictions = () => {
             />
 
             <InfoCardEarningPrediction
-                backgroundColor={"#EFF6FF"}
-                color={theme.palette.secondary.main}
+                backgroundColor={theme.palette.secondary.background}
+                color={theme.palette.secondary.dark}
                 title={"Predicción"}
                 number={"125K"}
                 currency={Currency.COP}
             />
 
             <InfoCardEarningPrediction
-                backgroundColor={"#F0FDF4"}
-                color={theme.palette.primary.main}
+                backgroundColor={theme.palette.primary.background}
+                color={theme.palette.primary.dark}
                 title={"Optimista"}
                 number={"150K"}
                 currency={Currency.COP}

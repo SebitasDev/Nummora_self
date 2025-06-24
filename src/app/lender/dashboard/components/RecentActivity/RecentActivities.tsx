@@ -60,7 +60,7 @@ export const RecentActivities = () => {
                     icon={
                         <WalletIcon
                             sx={{
-                                color: theme.palette.loan.active.main,
+                                color: theme.palette.loan.completed.main,
                                 [themeMUI.breakpoints.down("md")]: {
                                     fontSize: "24px"
                                 }
@@ -68,8 +68,8 @@ export const RecentActivities = () => {
                         />
                     }
                     amount={"15.000"}
-                    color={theme.palette.loan.active.main}
-                    backgroundColor={theme.palette.loan.active.background}
+                    color={theme.palette.loan.completed.main}
+                    backgroundColor={theme.palette.loan.completed.background}
                     status={"Completado"}
                 />
 
@@ -98,7 +98,7 @@ export const RecentActivities = () => {
                     icon={
                         <SavingsIcon
                             sx={{
-                                color: theme.palette.loan.completed.main,
+                                color: theme.palette.loan.active.main,
                                 [themeMUI.breakpoints.down("md")]: {
                                     fontSize: "24px"
                                 }
@@ -106,8 +106,8 @@ export const RecentActivities = () => {
                         />
                     }
                     amount={"25.000"}
-                    color={theme.palette.loan.completed.main}
-                    backgroundColor={theme.palette.loan.completed.background}
+                    color={theme.palette.loan.active.main}
+                    backgroundColor={theme.palette.loan.active.background}
                     status={"Activo"}
                 />
             </Box>

@@ -58,14 +58,14 @@ export const MyEarnings = () => {
                 number={"150.000"}
                 currency={Currency.COP}
                 sx={{
-                    color: theme.palette.primary.main,
+                    color: theme.palette.primary.dark,
                     fontSize: "24px",
                     mt: 2,
                     width: 'fit-content'
                 }}
             />
 
-            <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
+            <Box sx={{ display: "flex", gap: 1, mt: isMdUp ? 1 : 0 }}>
                 <Box
                     sx={{
                         display: "flex",
@@ -77,8 +77,8 @@ export const MyEarnings = () => {
                     <Typography
                         color={theme.palette.primary.main}
                         variant={"body1"}
-                        fontSize={13}
-                        fontWeight={"bold"}
+                        fontSize={14}
+                        fontWeight={"600"}
                     >
                         +12% este mes
                     </Typography>

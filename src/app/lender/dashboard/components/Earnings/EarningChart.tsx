@@ -1,12 +1,4 @@
-import {
-    CartesianGrid,
-    Line,
-    LineChart,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-} from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Box } from "@mui/material";
 import React from "react";
 import {useEarningChart} from "@/app/lender/dashboard/hooks";
@@ -24,7 +16,7 @@ export const EarningChart: React.FC = () => {
             }}
         >
             <ResponsiveContainer>
-                <LineChart data={data}>
+                <AreaChart data={data}>
                     <CartesianGrid stroke="#d1d5db" strokeDasharray="4 4" />
                     <XAxis dataKey="mes" />
                     <YAxis
@@ -34,14 +26,16 @@ export const EarningChart: React.FC = () => {
                     <Tooltip
                         formatter={(value: number) => `$${value.toLocaleString("es-CO")}`}
                     />
-                    <Line
+                    <Area
                         type="monotone"
                         dataKey="valor"
-                        stroke={theme.palette.primary.main}
+                        stroke={theme.palette.primary.dark}
                         strokeWidth={2}
+                        fill={theme.palette.primary.light}
+                        fillOpacity={0.15}
                         dot={false}
                     />
-                </LineChart>
+                </AreaChart>
             </ResponsiveContainer>
         </Box>
     );

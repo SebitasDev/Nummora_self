@@ -61,7 +61,7 @@ export const MonthSummary = () => {
                         number={"45.000"}
                         currency={Currency.COP}
                         sx={{
-                            color: theme.palette.primary.main,
+                            color: theme.palette.primary.dark,
                             fontSize: "17px"
                         }}
                     />
@@ -110,7 +110,7 @@ export const MonthSummary = () => {
                         variant={"body1"}
                         fontSize={"16px"}
                         fontWeight={"800"}
-                        color={theme.palette.secondary.main}
+                        color={theme.palette.secondary.dark}
                     >
                         15,2%
                     </Typography>

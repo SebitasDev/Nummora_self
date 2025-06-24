@@ -53,7 +53,7 @@ export const PerformanceMetrics = () => {
                 <Box
                     sx={{
                         flex: 1,
-                        backgroundColor: theme.palette.loan.active.background,
+                        backgroundColor: theme.palette.secondary.background,
                         padding: 1,
                         borderRadius: "8px",
                         height: "80px",
@@ -63,7 +63,7 @@ export const PerformanceMetrics = () => {
                     }}
                 >
                     <Typography
-                        color={theme.palette.loan.active.main}
+                        color={theme.palette.secondary.dark}
                         fontWeight={"bold"}
                         fontSize={"25px"}
                     >
@@ -80,7 +80,7 @@ export const PerformanceMetrics = () => {
                 <Box
                     sx={{
                         flex: 1,
-                        backgroundColor: theme.palette.loan.completed.background,
+                        backgroundColor: theme.palette.primary.background,
                         padding: 1,
                         borderRadius: "8px",
                         height: "80px",
@@ -90,7 +90,7 @@ export const PerformanceMetrics = () => {
                     }}
                 >
                     <Typography
-                        color={theme.palette.loan.completed.main}
+                        color={theme.palette.primary.dark}
                         fontWeight={"bold"}
                         fontSize={"25px"}
                     >

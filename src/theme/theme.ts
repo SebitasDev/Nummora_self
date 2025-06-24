@@ -6,12 +6,13 @@ export const theme = {
             light: "#86efac",
             dark: "#22c55e",
             contrastText: "#ffffff",
+            background: "#f0fdf4",
         },
         secondary: {
-            main: "#6366f1",
-            light: "#818cf8",
-            dark: "#4f46e5",
-            contrastText: "#ffffff",
+            main: "#1e40af",
+            light: "#3b82f6",
+            dark: "#1e3a8a",
+            background: "#eff6ff",
         },
 
         // Colores de fondo
@@ -29,9 +30,9 @@ export const theme = {
         // Estados de préstamos - Colores principales
         loan: {
             active: {
-                main: "#22A753",
-                light: "#4ade80",
-                background: "#F0FDF4",
+                main: "#5787F0",
+                light: "#60a5fa",
+                background: "#EFF6FF",
                 contrastText: "#ffffff",
             },
             pending: {
@@ -41,9 +42,9 @@ export const theme = {
                 contrastText: "#ffffff",
             },
             completed: {
-                main: "#5787F0",
-                light: "#60a5fa",
-                background: "#EFF6FF",
+                main: "#22A753",
+                light: "#4ade80",
+                background: "#F0FDF4",
                 contrastText: "#ffffff",
             },
         },
