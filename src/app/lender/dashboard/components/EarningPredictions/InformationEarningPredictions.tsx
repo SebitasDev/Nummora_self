@@ -33,7 +33,7 @@ export const InformationEarningPredictions = () => {
 
             <InfoCardEarningPrediction
                 backgroundColor={"#EFF6FF"}
-                color={theme.palette.loandColors.completed}
+                color={theme.palette.secondary.main}
                 title={"Predicción"}
                 number={"125K"}
                 currency={Currency.COP}
@@ -41,7 +41,7 @@ export const InformationEarningPredictions = () => {
 
             <InfoCardEarningPrediction
                 backgroundColor={"#F0FDF4"}
-                color={theme.palette.loandColors.active}
+                color={theme.palette.primary.main}
                 title={"Optimista"}
                 number={"150K"}
                 currency={Currency.COP}

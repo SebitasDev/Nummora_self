@@ -4,6 +4,7 @@ import Theme from "@/theme/theme";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums";
+import {CustomCard} from "@/components/atoms/CustomCard";
 
 export const MonthSummary = () => {
     const themeMUI = useTheme();
@@ -11,7 +12,7 @@ export const MonthSummary = () => {
     const theme = Theme;
     
     return (
-        <Box 
+        <CustomCard 
             sx={{
                 gridColumn: {
                     xs: "1 / -1",
@@ -24,15 +25,9 @@ export const MonthSummary = () => {
                 width : '100%',
                 height: "300px",
                 padding: 2.9,
-                backgroundColor: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 2.5,
-                [themeMUI.breakpoints.down('md')]: {
-                    height: "auto"
-                }
+                gap: 2.5
             }}
         >
             <SectionHeader
@@ -66,7 +61,7 @@ export const MonthSummary = () => {
                         number={"45.000"}
                         currency={Currency.COP}
                         sx={{
-                            color: theme.palette.loandColors.active,
+                            color: theme.palette.primary.main,
                             fontSize: "17px"
                         }}
                     />
@@ -115,7 +110,7 @@ export const MonthSummary = () => {
                         variant={"body1"}
                         fontSize={"16px"}
                         fontWeight={"800"}
-                        color={theme.palette.loandColors.completed}
+                        color={theme.palette.secondary.main}
                     >
                         15,2%
                     </Typography>
@@ -146,6 +141,6 @@ export const MonthSummary = () => {
                     Excelente
                 </Typography>
             </Box>
-        </Box>
+        </CustomCard>
     )
 }

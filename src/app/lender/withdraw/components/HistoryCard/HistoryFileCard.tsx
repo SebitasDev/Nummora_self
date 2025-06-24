@@ -2,7 +2,7 @@ import {CustomCard} from "@/components/atoms/CustomCard";
 import {Avatar, Box, CardContent, Stack, Typography} from "@mui/material";
 import React from "react";
 import {shortenAddress} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
-import {Batch} from "@/components/atoms/Batch";
+import {CustomChip} from "@/components/atoms/CustomChip";
 
 type HistoryFileCardProps = {
     value: string;
@@ -42,13 +42,17 @@ export const HistoryFileCard = ({value, accountAddress}: HistoryFileCardProps) =
                     </Box>
                     <Box   >
                         <Stack alignItems={'center'} spacing={1}>
-                            <Batch
-                                label={"Completado"}
+                            <CustomChip
                                 sx={{
                                     backgroundColor: "#E8F9F0",
-                                    color: "green"
+                                    color: "green",
+                                    px: 2
                                 }}
-                            />
+                            >
+                                <Typography fontSize={"14px"}>
+                                    Completado
+                                </Typography>
+                            </CustomChip>
                             <Typography variant="body2" color="text.secondary">
                                 2025-06-23
                             </Typography>

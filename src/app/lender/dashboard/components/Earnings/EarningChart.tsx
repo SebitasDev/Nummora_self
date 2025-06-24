@@ -37,7 +37,7 @@ export const EarningChart: React.FC = () => {
                     <Line
                         type="monotone"
                         dataKey="valor"
-                        stroke={theme.palette.loandColors.active}
+                        stroke={theme.palette.primary.main}
                         strokeWidth={2}
                         dot={false}
                     />

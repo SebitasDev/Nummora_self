@@ -1,20 +1,20 @@
 import {Box, Typography} from "@mui/material";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import React from "react";
-import PriceLabel from "@/components/atoms/PriceLabel";
 import {Currency} from "@/enums";
 import {usePortfolioDistribution} from "@/app/lender/dashboard/hooks";
 import {DonutChart} from "@/app/lender/dashboard/components/PortafolioDistribution/DonutChart";
 import {
     ItemPortfolioDistribution
 } from "@/app/lender/dashboard/components/PortafolioDistribution/ItemPortfolioDistribution";
+import {CustomCard} from "@/components/atoms/CustomCard";
 
 
 export const PortfolioDistribution = () => {
-    const { themeMUI, theme } = usePortfolioDistribution();
+    const { theme } = usePortfolioDistribution();
     
     return (
-        <Box 
+        <CustomCard 
             sx={{
                 gridColumn: {
                     xs: "1 / -1",
@@ -26,13 +26,7 @@ export const PortfolioDistribution = () => {
                 },
                 width : '100%',
                 height: "470px",
-                padding: 2.9,
-                backgroundColor: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-                [themeMUI.breakpoints.down('md')]: {
-                    height: "auto",
-                }
+                padding: 2.9
             }}
         >
             <SectionHeader
@@ -56,7 +50,7 @@ export const PortfolioDistribution = () => {
             >
                 <ItemPortfolioDistribution 
                     itemName={"Activos"} 
-                    itemColor={theme.palette.loandColors.active} 
+                    itemColor={theme.palette.loan.active.main} 
                     itemValue={"89.000"} 
                     itemCurrency={Currency.COP} 
                     itemLoanCount={5}
@@ -64,7 +58,7 @@ export const PortfolioDistribution = () => {
 
                 <ItemPortfolioDistribution
                     itemName={"Pendientes"}
-                    itemColor={theme.palette.loandColors.pending}
+                    itemColor={theme.palette.loan.pending.main}
                     itemValue={"43.500"}
                     itemCurrency={Currency.COP}
                     itemLoanCount={2}
@@ -72,12 +66,12 @@ export const PortfolioDistribution = () => {
 
                 <ItemPortfolioDistribution
                     itemName={"Terminados"}
-                    itemColor={theme.palette.loandColors.completed}
+                    itemColor={theme.palette.loan.completed.main}
                     itemValue={"1.009.000"}
                     itemCurrency={Currency.COP}
                     itemLoanCount={5}
                 />
             </Box>
-        </Box>
+        </CustomCard>
     )
 }

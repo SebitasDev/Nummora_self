@@ -11,7 +11,7 @@ import { useState } from "react";
 import {CustomCard} from "@/components/atoms/CustomCard";
 import Link from "@mui/material/Link";
 import React from "react";
-import { Batch } from "@/components/atoms/Batch";
+import { CustomChip } from "@/components/atoms/CustomChip";
 import { TimeText } from "@/components/atoms/TimeText";
 import { DropdownAddressSelect } from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
 import { WithdrawSummary } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawSummary";
@@ -20,7 +20,7 @@ import {useTheme} from "@mui/material/styles";
 interface WithdrawMethodProps {
     selectedAddress: string;
     setSelectedAddress: (addr: string) => void;
-};
+}
 
 export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress, setSelectedAddress }) => {
 
@@ -49,7 +49,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 Método de Retiro
             </Typography>
 
-            <CustomCard variant="outlined" sx={{
+            <CustomCard  sx={{
                 borderRadius: 2,
                 overflow: "hidden",
                 borderColor: expanded ? "success.light" : "divider",
@@ -113,13 +113,17 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
 
                         <Stack alignItems="center" spacing={1} display={'flex'}>
                             <TimeText timeFrame={"5 - 15 minutos"} />
-                            <Batch
-                                label={"Seleccionar"}
+                            <CustomChip
                                 sx={{
                                     backgroundColor: expanded ? "success.light" : "#E8F9F0",
-                                    color: expanded ? "white" :"green"
+                                    color: expanded ? "white" :"green",
+                                    px: 2
                                 }}
-                            />
+                            >
+                                <Typography fontSize={"14px"}>
+                                    Seleccionar
+                                </Typography>
+                            </CustomChip>
                         </Stack>
                     </Box>
                 </CardActionArea>

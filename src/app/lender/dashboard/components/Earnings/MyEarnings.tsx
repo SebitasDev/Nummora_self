@@ -1,4 +1,4 @@
-import {Box, Button, Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import React from "react";
 import {MonthToggle} from "@/app/lender/dashboard/components/Earnings/MonthToggle";
@@ -9,6 +9,8 @@ import {EarningChart} from "@/app/lender/dashboard/components/Earnings/EarningCh
 import {useMediaQuery, useTheme} from "@mui/system";
 import {useEarningStore} from "@/app/lender/dashboard/store";
 import Theme from "@/theme/theme";
+import {CustomCard} from "@/components/atoms/CustomCard";
+import {CustomButton} from "@/components/atoms/CustomButton";
 
 export const MyEarnings = () => {
     const themeMUI = useTheme();
@@ -16,7 +18,7 @@ export const MyEarnings = () => {
     const { period } = useEarningStore();
     const theme = Theme;
     return (
-        <Box 
+        <CustomCard 
             sx={{
                 gridColumn: {
                     xs: "1 / -1",
@@ -28,13 +30,7 @@ export const MyEarnings = () => {
                 },
                 width : '100%',
                 height: "470px",
-                padding: 2.9,
-                backgroundColor: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-                [themeMUI.breakpoints.down('md')]: {
-                    height: "auto",
-                }
+                padding: 2.9
             }}
         >
             <Box 
@@ -62,7 +58,7 @@ export const MyEarnings = () => {
                 number={"150.000"}
                 currency={Currency.COP}
                 sx={{
-                    color: theme.palette.loandColors.active,
+                    color: theme.palette.primary.main,
                     fontSize: "24px",
                     mt: 2,
                     width: 'fit-content'
@@ -88,29 +84,12 @@ export const MyEarnings = () => {
                     </Typography>
                 </Box>
 
-                <Button
-                    variant="outlined"
-                    sx={{
-                        color: "text.primary",
-                        borderColor: "#E4E4E7",
-                        fontSize: 15,
-                        fontWeight: "600",
-                        textTransform: "none",
-                        borderRadius: 1.8,
-                        "&:hover": {
-                            backgroundColor: "rgba(0, 0, 0, 0.04)"
-                        },
-                        [themeMUI.breakpoints.down("md")]: {
-                            marginLeft: "auto"
-                        }
-                    }}
-                >
+                <CustomButton>
                     Expandir
-                </Button>
-
+                </CustomButton>
             </Box>
 
             <EarningChart/>
-        </Box>
+        </CustomCard>
     )
 }

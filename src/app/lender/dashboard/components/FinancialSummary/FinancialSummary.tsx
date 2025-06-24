@@ -40,9 +40,9 @@ export const FinancialSummary = () => {
                 number="89.000"
                 currency={Currency.COP}
                 totalLoans={5}
-                color={theme.palette.loandColors.active}
-                backgroundColor={theme.palette.loandBackgrounds.active}
-                icon={<WalletIcon sx={{color: theme.palette.loandColors.active}}/>}
+                color={theme.palette.loan.active.main}
+                backgroundColor={theme.palette.loan.active.background}
+                icon={<WalletIcon sx={{color: theme.palette.loan.active.main}}/>}
             />
 
             <FinancialSummaryCard
@@ -50,9 +50,9 @@ export const FinancialSummary = () => {
                 number="43.500"
                 currency={Currency.COP}
                 totalLoans={2}
-                color={theme.palette.loandColors.pending}
-                backgroundColor={theme.palette.loandBackgrounds.pending}
-                icon={<AccessTimeIcon sx={{color: theme.palette.loandColors.pending}}/>}
+                color={theme.palette.loan.pending.main}
+                backgroundColor={theme.palette.loan.pending.background}
+                icon={<AccessTimeIcon sx={{color: theme.palette.loan.pending.main}}/>}
             />
 
             <FinancialSummaryCard
@@ -60,9 +60,9 @@ export const FinancialSummary = () => {
                 number="1.009.000"
                 currency={Currency.COP}
                 totalLoans={3}
-                color={theme.palette.loandColors.completed}
-                backgroundColor={theme.palette.loandBackgrounds.completed}
-                icon={<TaskAltIcon sx={{color: theme.palette.loandColors.completed}}/>}
+                color={theme.palette.loan.completed.main}
+                backgroundColor={theme.palette.loan.completed.background}
+                icon={<TaskAltIcon sx={{color: theme.palette.loan.completed.main}}/>}
             />
         </Box>
     );

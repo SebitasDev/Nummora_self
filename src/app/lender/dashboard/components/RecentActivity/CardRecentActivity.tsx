@@ -4,6 +4,7 @@ import PriceLabel from "@/components/atoms/PriceLabel";
 import {Currency} from "@/enums";
 import {useRecentActivities} from "@/app/lender/dashboard/hooks";
 import React from "react";
+import {CustomChip} from "@/components/atoms/CustomChip";
 
 interface CardRecentActivityProps {
     title: string;
@@ -18,7 +19,7 @@ interface CardRecentActivityProps {
 export const CardRecentActivity = (
     { title, subtitle, amount, icon, color, backgroundColor, status } : CardRecentActivityProps
 ) => {
-    const { themeMUI, isMdUp, theme } = useRecentActivities();
+    const { themeMUI, isMdUp } = useRecentActivities();
     
     return (
         <Box
@@ -90,17 +91,17 @@ export const CardRecentActivity = (
                         }
                     }}
                 />
-                <Box
+                <CustomChip
                     sx={{
                         width: "140px",
                         height: "20px",
                         backgroundColor: backgroundColor,
-                        border: `1px solid ${color}`,
+                        border: `0,5px solid ${color}`,
                         borderRadius: "20px",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        p: 1.2,
+                        p: 1.3,
                         [themeMUI.breakpoints.down("md")]: {
                             width: "100px",
                             p: 0.5
@@ -118,7 +119,7 @@ export const CardRecentActivity = (
                     >
                         {status}
                     </Typography>
-                </Box>
+                </CustomChip>
             </Box>
         </Box>
     )

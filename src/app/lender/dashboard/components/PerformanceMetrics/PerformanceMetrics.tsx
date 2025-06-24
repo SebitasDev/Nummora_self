@@ -4,10 +4,10 @@ import {useMediaQuery} from "@mui/system";
 import Theme from "@/theme/theme";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import {CustomProgress} from "@/components/atoms/CustomProgress";
 import {
     PerformanceMetricProgress
 } from "@/app/lender/dashboard/components/PerformanceMetrics/PerformanceMetricProgress";
+import {CustomCard} from "@/components/atoms/CustomCard";
 
 export const PerformanceMetrics = () => {
     const themeMUI = useTheme();
@@ -15,7 +15,7 @@ export const PerformanceMetrics = () => {
     const theme = Theme;
     
     return (
-        <Box 
+        <CustomCard 
             sx={{
                 gridColumn: {
                     xs: "1 / -1",
@@ -28,15 +28,9 @@ export const PerformanceMetrics = () => {
                 width : '100%',
                 height: "450px",
                 padding: 2.9,
-                backgroundColor: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 2.5,
-                [themeMUI.breakpoints.down('md')]: {
-                    height: "auto",
-                }
+                gap: 2.5
             }}
         >
             <SectionHeader
@@ -59,7 +53,7 @@ export const PerformanceMetrics = () => {
                 <Box
                     sx={{
                         flex: 1,
-                        backgroundColor: theme.palette.loandBackgrounds.active,
+                        backgroundColor: theme.palette.loan.active.background,
                         padding: 1,
                         borderRadius: "8px",
                         height: "80px",
@@ -69,7 +63,7 @@ export const PerformanceMetrics = () => {
                     }}
                 >
                     <Typography
-                        color={theme.palette.loandColors.active}
+                        color={theme.palette.loan.active.main}
                         fontWeight={"bold"}
                         fontSize={"25px"}
                     >
@@ -86,7 +80,7 @@ export const PerformanceMetrics = () => {
                 <Box
                     sx={{
                         flex: 1,
-                        backgroundColor: theme.palette.loandBackgrounds.completed,
+                        backgroundColor: theme.palette.loan.completed.background,
                         padding: 1,
                         borderRadius: "8px",
                         height: "80px",
@@ -96,7 +90,7 @@ export const PerformanceMetrics = () => {
                     }}
                 >
                     <Typography
-                        color={theme.palette.loandColors.completed}
+                        color={theme.palette.loan.completed.main}
                         fontWeight={"bold"}
                         fontSize={"25px"}
                     >
@@ -121,21 +115,21 @@ export const PerformanceMetrics = () => {
                 <PerformanceMetricProgress 
                     value={85}
                     name={"Diversificación"}
-                    color={theme.palette.loandColors.active}
+                    color={theme.palette.loan.active.main}
                 />
 
                 <PerformanceMetricProgress
                     value={72}
                     name={"Liquidez"}
-                    color={theme.palette.loandColors.pending}
+                    color={theme.palette.loan.pending.main}
                 />
 
                 <PerformanceMetricProgress
                     value={91}
                     name={"Estabilidad"}
-                    color={theme.palette.loandColors.completed}
+                    color={theme.palette.loan.completed.main}
                 />
             </Box>
-        </Box>
+        </CustomCard>
     )
 }
