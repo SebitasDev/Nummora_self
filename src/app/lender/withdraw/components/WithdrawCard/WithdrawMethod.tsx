@@ -60,7 +60,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 <CardActionArea onClick={handleToggle}>
                     <Box
                         sx={{
-                            p: 2,
+                            p: 0,
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "space-between",
@@ -71,38 +71,68 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                                 sx={{
                                     bgcolor: "#E8F9F0",
                                     color: "green",
-                                    width: 40,
-                                    height: 40,
+                                    width: {
+                                        xs :30,
+                                        md:35,
+                                    },
+                                    height: {
+                                        xs :30,
+                                        md:35,
+                                    }
                                 }}
                             >
-                                <img src="/lemon-icon.svg" alt="Lemon" width={24} height={24} />
+                                <img
+                                     src="/lemon-icon.svg"
+                                     alt="Lemon"
+                                     style={{
+                                        width: "40%",
+                                        height: "40%",
+                                        objectFit: "contain",
+                                    }}
+                                />
                             </Avatar>
-                            <Stack spacing={1} >
+                            <Stack
+                                spacing={1}
+
+                            >
                                 <Typography fontWeight="bold" sx={{
                                     fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.875rem",
-                                        md: "1rem",
+                                        xs: '0.6rem',
+                                        sm: '0.7rem',
+                                        md: '0.8rem',
+                                        lg: '0.8rem',
                                     },
-                                }}>Lemon (Crypto)</Typography>
+                                }}
+                                >
+                                    Lemon (Crypto)
+                                </Typography>
                                 <Typography variant="body2" sx={{
                                     fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.875rem",
-                                        md: "1rem",
+                                        xs: '0.6rem',
+                                        sm: '0.7rem',
+                                        md: '0.8rem',
+                                        lg: '0.8rem',
                                     },
                                 }}
                                             color="text.secondary">
-                                    Comisión:{" "}
-                                    <Box component="span" color="success.main" fontWeight="bold">
+                                    Comisión:{""}
+                                    <Box
+                                        component="span"
+                                        color="success.main"
+                                        fontWeight="bold"
+                                        sx={{
+                                            ml: 0.5,
+                                        }}
+                                    >
                                         1.5%
                                     </Box>
                                 </Typography >
                                 <Link sx={{
                                     fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.875rem",
-                                        md: "1rem",
+                                        xs: '0.5rem',
+                                        sm: '0.5rem',
+                                        md: '0.8rem',
+                                        lg: '0.8rem',
                                     },
                                 }}
                                       href="#" underline="hover" fontSize={14}>
@@ -125,7 +155,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 </CardActionArea>
             </CustomCard>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <Box px={2} pb={2} sx={{marginTop: 4}} display="flex" >
+                <Box px={2} pb={2} sx={{mt: 4}} display="flex" flexDirection="column">
                     <DropdownAddressSelect
                         options={addressOptions}
                         value={selectedAddress}

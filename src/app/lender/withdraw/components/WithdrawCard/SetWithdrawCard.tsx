@@ -8,7 +8,7 @@ import {
     Typography
 } from "@mui/material";
 import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWalletOutlined";
-import CustomCard from "@mui/material/Card";
+import {CustomCard} from "@/components/atoms/CustomCard"
 import {WithdrawMethod} from "@/app/lender/withdraw/components/WithdrawCard/WithdrawMethod";
 import React, {useState} from "react";
 import {DropdownAddressSelect} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
@@ -49,7 +49,7 @@ export const  SetWithdrawCard = () => {
             <CardContent>
                 <AmountInput
                 sx={{
-                    marginBottom: 5
+                    marginBottom: 4
                 }}
                 />
                 <WithdrawMethod selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress}></WithdrawMethod>
@@ -64,7 +64,7 @@ export const  SetWithdrawCard = () => {
                     Confirmar Retiro
                 </Button>
                 {expanded && (
-                    <Box px={2} pb={2} pt={1}>
+                    <Box px={2} pb={2} pt={1} display={'flex'} flexDirection={'column'}>
                         <DropdownAddressSelect
                             options={addressOptions}
                             value={selectedAddress}

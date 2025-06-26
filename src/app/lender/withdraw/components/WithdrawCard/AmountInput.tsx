@@ -17,23 +17,51 @@ export const AmountInput = ({sx, ...rest}: BoxProps) => {
             </Typography>
             <FormControl fullWidth >
                 <OutlinedInput
+                    sx={{
+                        fontSize: {
+                            xs: '0.9rem',
+                            sm: '1rem',
+                            md: '1rem',
+                            lg: '1rem',
+                        },
+                    }}
                     id="standard-adornment-amount"
                     value={amount}
                     onChange={handleChange}
                     placeholder="0"
-                    startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                    startAdornment={
+                    <InputAdornment
+
+                        position="start"
+                    >
+                        $
+                    </InputAdornment>}
                 />
             </FormControl>
 
-            <Stack direction="row" spacing={1} mt={2}>
+            <Stack
+                direction="row"
+                display="flex"
+                flexWrap="wrap"
+            >
                 {[25000, 50000, 100000].map(value => (
                     <Button
                         key={value}
                         sx={{
                             borderColor: 'rgba(0, 0, 0, 0.3)',
                             fontWeight: 'bold',
+                            width: "20%",
+                            height: '10%',
                             color: 'black',
+                            marginRight: '0.5rem',
+                            mt: '0.6rem',
                             textTransform: 'none',
+                            fontSize: {
+                                xs: '0.6rem',
+                                sm: '0.7rem',
+                                md: '0.8rem',
+                                lg: '0.8rem',
+                            },
                         }}
                         variant="outlined"
                         onClick={() => handleSelectAmount(value)}
@@ -49,10 +77,20 @@ export const AmountInput = ({sx, ...rest}: BoxProps) => {
                         fontWeight: 'bold',
                         textTransform: 'none',
                         color: 'black',
+                        width: '20%',
+                        height: '10%',
+                        mt: "0.6rem",
+                        fontSize: {
+                            xs: '0.6rem',
+                            sm: '0.7rem',
+                            md: '0.8rem',
+                            lg: '0.8rem',
+                        },
                     }}>
                     Total
                 </Button>
             </Stack>
+
         </Box>
     );
 };

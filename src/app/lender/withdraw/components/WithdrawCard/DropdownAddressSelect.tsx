@@ -15,13 +15,25 @@ interface DropdownAddressSelectProps {
 
 export const DropdownAddressSelect: React.FC<DropdownAddressSelectProps> = ({ options = [], value, onChange}) => {
     return (
-        <Box>
+        <Box display="flex" flexDirection="column" gap={1}>
             <Typography variant="subtitle2" fontWeight="bold" mb={1}>
                 Cuenta de destino
             </Typography>
 
-            <FormControl fullWidth size="small">
-                <InputLabel htmlFor="Select-account">Selecciona una Direccion</InputLabel>
+            <FormControl fullWidth size="small" >
+                <InputLabel
+                    htmlFor="Select-account"
+                    sx={{
+                            fontSize: {
+                                xs: '0.7rem',
+                                sm: '0.7rem',
+                                md: '0.8rem',
+                                lg: '0.8rem',
+                            }
+                        }}
+                            >
+                            Selecciona una Direccion
+                </InputLabel>
                 <Select
                     labelId="address-select-label"
                     id="address-select"

@@ -9,9 +9,15 @@ export const Batch: React.FC<ChipProps> = ({ sx, ...rest }: ChipProps) => {
             size={'small'}
             sx={{
                 fontWeight: "bold",
-                fontSize: 14,
+                fontSize: {
+                    xs: '0.5rem',
+                    sm: '0.7rem',
+                    md: '0.8rem',
+                    lg: '0.8rem',
+                },
                 borderRadius: "18px",
-                px: 2,
+                px: { xs: 1.5, sm: 2 },
+                textTransform: "capitalize",
                 ...sx,
             }}
             {...rest}

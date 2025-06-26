@@ -2,11 +2,37 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import {Box, Typography} from "@mui/material";
 import React from "react";
 
-export const TimeText = ({timeFrame}) => {
+interface TimeTextProps {
+    timeFrame: string;
+}
+
+export const TimeText = ({timeFrame}:TimeTextProps) => {
     return (
-        <Box display="flex" spacing={1}>
-            <AccessTimeIcon sx={{ fontSize: 18, color: "text.secondary" }} />
-            <Typography variant="body2" color="text.secondary">
+        <Box display="inline-flexflex" gap={0.4} >
+            <AccessTimeIcon
+                sx=
+                    {{
+                        fontSize: {
+                            xs: '0.6rem',
+                            sm: '0.7rem',
+                            md: '0.8rem',
+                            lg: '0.8rem',
+                        },
+                        color: "text.secondary"
+                }}
+            />
+            <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{
+                    fontSize: {
+                        xs: '0.6rem',
+                        sm: '0.7rem',
+                        md: '0.8rem',
+                        lg: '0.8rem',
+                    },
+                }}
+            >
                 {timeFrame}
             </Typography>
         </Box>

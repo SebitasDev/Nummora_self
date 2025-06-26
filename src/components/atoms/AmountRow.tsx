@@ -15,16 +15,37 @@ export const AmountRow: React.FC<AmountRowProps> = ({ label, value, bold = false
             justifyContent="space-between"
             alignItems="center"
             mb={1}
-            sx={sx}
+            sx={{
+                ...sx
+            }}
             {...rest}
         >
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{
+                    fontSize: {
+                        xs: '0.6rem',
+                        sm: '0.7rem',
+                        md: '0.8rem',
+                        lg: '0.8rem',
+                    }
+                }}
+            >
                 {label}
             </Typography>
             <Typography
                 variant="body2"
                 fontWeight={bold ? "bold" : "normal"}
                 color={green ? 'success.light': bold ? "text.primary" : "text.secondary"}
+                sx={{
+                    fontSize: {
+                        xs: '0.6rem',
+                        sm: '0.7rem',
+                        md: '0.8rem',
+                        lg: '0.8rem',
+                    }
+                }}
             >
                 {value}
             </Typography>
