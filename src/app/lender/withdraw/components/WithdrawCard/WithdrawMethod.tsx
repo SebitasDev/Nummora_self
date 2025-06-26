@@ -49,14 +49,17 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 Método de Retiro
             </Typography>
 
-            <CustomCard variant="outlined" sx={{
-                borderRadius: 2,
-                overflow: "hidden",
-                borderColor: expanded ? "success.light" : "divider",
-                borderWidth: 2,
-                borderStyle: "solid",
-                backgroundColor: expanded ? "#edfdf4" : "background.paper",
-            }}>
+            <CustomCard
+                variant="outlined"
+                sx={{
+                    borderRadius: 2,
+                    overflow: "hidden",
+                    borderColor: expanded ? "success.light" : "divider",
+                    borderWidth: 2,
+                    borderStyle: "solid",
+                    backgroundColor: expanded ? "#edfdf4" : "background.paper",
+                }}
+            >
                 <CardActionArea onClick={handleToggle}>
                     <Box
                         sx={{

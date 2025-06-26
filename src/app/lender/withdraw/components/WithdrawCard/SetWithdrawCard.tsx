@@ -30,7 +30,8 @@ export const  SetWithdrawCard = () => {
         <CustomCard
         elevation={1}
         variant="outlined"
-        sx={{p: 1.7
+        sx={{
+            p: 1.7,
         }}
         >
             <CardHeader
