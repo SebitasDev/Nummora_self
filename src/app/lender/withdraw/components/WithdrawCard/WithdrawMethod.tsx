@@ -5,7 +5,6 @@ import {
     Stack,
     Typography,
     SelectChangeEvent,
-    CardActionArea,
     useMediaQuery,
     useTheme,
 } from "@mui/material";
@@ -39,14 +38,7 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
     };
 
     return (
-        <Box
-            sx={{
-                [themeMUI.breakpoints.down('md')]: {
-                    height: "auto",
-                },
-
-            }}
-        >
+        <>
             <Typography variant="subtitle1" fontWeight="bold" mb={1}>
                 Método de Retiro
             </Typography>
@@ -64,32 +56,41 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                 <Box
                     onClick={handleToggle}
                     sx={{
-                        p: 0,
-                        display: "flex",
-                        alignItems: isMdUp ? "center" : "start",
-                        justifyContent: "space-between",
+                        display: 'grid',
+                        gridTemplateColumns: '0.5fr 1.5fr 1fr 1fr',
+                        gridTemplateAreas: {
+                            xs: `"image lemon lemon lemon"
+                                  "image learn learn learn"
+                                  "select select select select"`,
+                            sm: `"image lemon lemon select"
+                            "image lemon lemon select"
+                            "image learn learn select"`,
+                        },
                     }}
 
                 >
-                    <Box display="flex" alignItems="center" gap={2}>
-                        <Box
-                            sx={{
-                                backgroundColor: 'red',
-                                p: 1,
-                                heigth: '100%'
-                            }}
-                        >
+                    <Box
+                        sx={{
+                            gridArea: 'image',
+                            display: "flex",
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            maxWidth: '100%',
+                            // backgroundColor: 'red',
+                            mr: 1
+                        }}
+                    >
                             <Avatar
                                 sx={{
                                     bgcolor: "#E8F9F0",
                                     color: "green",
                                     width: {
-                                        xs :30,
-                                        md:35,
+                                        xs :35,
+                                        md: 50,
                                     },
                                     height: {
-                                        xs :30,
-                                        md:35,
+                                        xs :35,
+                                        md: 50,
                                     }
                                 }}
                             >
@@ -103,7 +104,13 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                                     }}
                                 />
                             </Avatar>
-                        </Box>
+                    </Box>
+                    <Box
+                        sx={{
+                            gridArea: 'lemon',
+                            // backgroundColor: 'yellow',
+                        }}
+                    >
                         <Stack
                             spacing={0.3}
                         >
@@ -141,38 +148,73 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                             </Typography >
                         </Stack>
                     </Box>
-
-                    <Stack alignItems="center" spacing={0.3} display={'flex'}>
-                        <TimeText timeFrame={"5 - 15 minutos"} />
-                        <CustomChip
+                    <Box
+                        sx={{
+                            gridArea: 'learn',
+                            mt: -0.5
+                        }}
+                    >
+                        <Link
                             sx={{
-                                backgroundColor: expanded ? "success.light" : "#E8F9F0",
-                                color: expanded ? "white" :"green",
-                                px: isMdUp ? 2 : 1.5
+                                fontSize: {
+                                    xs: '0.5rem',
+                                    sm: '0.5rem',
+                                    md: '0.8rem',
+                                    lg: '0.8rem',
+                                },
+                            }}
+                            href="#" underline="hover" fontSize={14}>
+                            📖 Aprende a retirar con Lemon
+                        </Link>
+                    </Box>
+                    <Box
+                        sx={{
+                            gridArea: 'select',
+                            alignItems: "center",
+                            // backgroundColor: "blue",
+                            display: "flex",
+                            mt: {
+                                xs: 1,
+                                sm: 0
+                            }
+
+                        }}
+                    >
+                        <Stack
+                            direction={
+                                {
+                                    xs: 'row',
+                                    sm: 'column'
+                                }
+                            }
+                            alignItems="center"
+                            spacing={0.3}
+                            justifyContent={{
+                                xs: 'space-between',
+                                sm: 'center',
+                            }}
+                            sx={{
+                                width: '100%',
                             }}
                         >
-                            <Typography
-                                fontSize={isMdUp ? "0.8rem" : "0.6rem" }
+                            <TimeText timeFrame={"5 - 15 minutos"} />
+                            <CustomChip
+                                sx={{
+                                    backgroundColor: expanded ? "success.light" : "#E8F9F0",
+                                    color: expanded ? "white" :"green",
+                                    px: isMdUp ? 2 : 1.5
+                                }}
                             >
-                                Seleccionar
-                            </Typography>
-                        </CustomChip>
-                    </Stack>
+                                <Typography
+                                    fontSize={isMdUp ? "0.8rem" : "0.6rem" }
+                                >
+                                    Seleccionar
+                                </Typography>
+                            </CustomChip>
+                        </Stack>
+                    </Box>
                 </Box>
-                <Link
-                    sx={{
-                        mt: 0.2,
-                        ml: 6,
-                        fontSize: {
-                            xs: '0.5rem',
-                            sm: '0.5rem',
-                            md: '0.8rem',
-                            lg: '0.8rem',
-                        },
-                    }}
-                    href="#" underline="hover" fontSize={14}>
-                    📖 Aprende a retirar con Lemon
-                </Link>
+
             </CustomCard>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <Box px={2} pb={2} sx={{mt: 4}} display="flex" flexDirection="column">
@@ -190,6 +232,6 @@ export const WithdrawMethod: React.FC<WithdrawMethodProps> = ({ selectedAddress,
                     />
                 </Box>
             </Collapse>
-        </Box>
+        </>
     );
 };
