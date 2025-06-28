@@ -24,9 +24,7 @@ export const ItemPortfolioDistribution = (
                 gap: 0.5,
             }}
         >
-            <Box
-                sx={{ display: "flex", alignItems: "center" }}
-            >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
                 <StatusCircle statusColor={itemColor}/>
                 <strong>{itemName}</strong>
             </Box>

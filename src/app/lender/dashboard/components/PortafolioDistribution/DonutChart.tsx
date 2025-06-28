@@ -4,7 +4,6 @@ import React from "react";
 import {usePortfolioDistribution} from "@/app/lender/dashboard/hooks";
 
 export const DonutChart = () => {
-    
     const { themeMUI, portfolioData } = usePortfolioDistribution();
     
     return (

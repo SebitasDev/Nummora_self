@@ -3,6 +3,8 @@ import React from "react";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import {Currency} from "@/enums";
 import CodeIcon from '@mui/icons-material/Code';
+import {CustomCard} from "@/components/atoms/CustomCard";
+import {CustomChip} from "@/components/atoms/CustomChip";
 
 interface FinancialSummaryCardProps {
     name: string;
@@ -20,7 +22,7 @@ export const FinancialSummaryCard = (
     const themeMUI = useTheme();
     
     return (
-        <Box
+        <CustomCard
             sx={{
                 flex: 1,
                 minWidth: {
@@ -29,9 +31,6 @@ export const FinancialSummaryCard = (
                 },
                 height: "160px",
                 padding: 2.9,
-                backgroundColor: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 display: "flex",
                 flexDirection: "column",
                 gap: 2,
@@ -108,13 +107,12 @@ export const FinancialSummaryCard = (
                     {totalLoans} préstamos
                 </Typography>
 
-                <Box
+                <CustomChip
                     sx={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         color: `${color || "#8f938f"}`,
-                        fontSize: "12px",
                         width: "50px",
                         height: "25px",
                         backgroundColor: `${backgroundColor || "#8f938f"}`,
@@ -130,8 +128,8 @@ export const FinancialSummaryCard = (
                     >
                         {Currency[currency]}
                     </Typography>
-                </Box>
+                </CustomChip>
             </Box>
-        </Box>
+        </CustomCard>
     )
 }

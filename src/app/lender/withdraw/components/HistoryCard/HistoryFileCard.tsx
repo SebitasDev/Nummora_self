@@ -2,7 +2,9 @@ import {CustomCard} from "@/components/atoms/CustomCard";
 import {Avatar, Box, Stack, Typography, ChipProps} from "@mui/material";
 import React from "react";
 import {shortenAddress} from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
-import {Batch} from "@/components/atoms/Batch";
+import {CustomChip} from "@/components/atoms/CustomChip";
+import {useTheme, useMediaQuery} from "@mui/material";
+
 
 interface HistoryFileCardProps extends ChipProps {
     value: string;
@@ -12,6 +14,8 @@ interface HistoryFileCardProps extends ChipProps {
 }
 
 export const HistoryFileCard = ({value, accountAddress, label, date, sx}: HistoryFileCardProps) => {
+    const themeMUI = useTheme();
+    const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
     return (
         <CustomCard
             sx={{
@@ -94,23 +98,24 @@ export const HistoryFileCard = ({value, accountAddress, label, date, sx}: Histor
                     </Box>
                     <Box   >
                         <Stack alignItems={'center'} spacing={1}>
-                            <Batch
-                                label={label}
+                            <CustomChip
                                 sx={{
+                                    backgroundColor: "#E8F9F0",
+                                    color: "green",
+                                    px: isMdUp ? 2 : 1.5,
                                     ...sx
                                 }}
-                            />
+                            >
+                                <Typography
+                                    fontSize={isMdUp ? "0.8rem" : "0.6rem" }
+                                >
+                                    {label}
+                                </Typography>
+                            </CustomChip>
                             <Typography
                                 variant="body2"
                                 color="text.secondary"
-                                sx={{
-                                    fontSize: {
-                                        xs: '0.6rem',
-                                        sm: '0.7rem',
-                                        md: '0.8rem',
-                                        lg: '0.8rem',
-                                    },
-                                }}
+                                fontSize={isMdUp ? "0.8rem" : "0.6rem" }
                             >
                                 {date}
                             </Typography>

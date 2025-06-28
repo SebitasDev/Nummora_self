@@ -1,4 +1,3 @@
-import {Box} from "@mui/material";
 import React from "react";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SectionHeader from "@/components/atoms/SectionHeader";
@@ -7,30 +6,27 @@ import {useEarningPredictions} from "@/app/lender/dashboard/hooks";
 import {
     InformationEarningPredictions
 } from "@/app/lender/dashboard/components/EarningPredictions/InformationEarningPredictions";
+import {CustomCard} from "@/components/atoms/CustomCard";
 
 export const EarningPrediction = () => {
-    const { themeMUI, isMdUp } = useEarningPredictions();
+    const { isMdUp } = useEarningPredictions();
     
     return (
-        <Box sx={{
-            gridColumn: {
-                xs: "1 / -1",
-                md: "span 6"
-            },
-            order: {
-                xs: 5,
-                md: 'initial'
-            },
-            width : '100%',
-            height: "450px",
-            padding: 2.9,
-            backgroundColor: "#fff",
-            borderRadius: "12px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-            [themeMUI.breakpoints.down('md')]: {
-                height: "auto",
-            }
-        }}>
+        <CustomCard 
+            sx={{
+                gridColumn: {
+                    xs: "1 / -1",
+                    md: "span 6"
+                },
+                order: {
+                    xs: 5,
+                    md: 'initial'
+                },
+                width : '100%',
+                height: "450px",
+                padding: 2.9
+            }}
+        >
             <SectionHeader
                 title={"Predicción de ganancias a futuro"}
                 subtitle={
@@ -44,6 +40,6 @@ export const EarningPrediction = () => {
             <EarningPredictionChart/>
 
             <InformationEarningPredictions/>
-        </Box>
+        </CustomCard>
     )
 }

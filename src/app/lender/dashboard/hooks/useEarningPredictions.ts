@@ -16,7 +16,6 @@ export const useEarningPredictions = () => {
         { month: "Jun 2025", conservador: 125000, predicción: 135000, optimista: 150000 },
     ];
     
-    
     return {
         themeMUI,
         isMdUp,

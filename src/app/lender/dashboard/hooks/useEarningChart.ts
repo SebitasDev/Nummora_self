@@ -26,9 +26,9 @@ export const useEarningChart = () => {
     const filteredData = (() => {
         switch (period) {
             case "6":
-                return data.slice(-6);
+                return data.slice(0,6);
             case "3":
-                return data.slice(-3);
+                return data.slice(0,3);
             case "12":
             default:
                 return data;

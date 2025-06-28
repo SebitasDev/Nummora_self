@@ -1,15 +1,17 @@
 import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums";
-import {Box, Button, Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import React from "react";
 import {useTheme} from "@mui/system";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import {CustomCard} from "@/components/atoms/CustomCard";
+import {CustomButton} from "@/components/atoms/CustomButton";
 
 export const MyEarningsCard = () => {
     const themeMUI = useTheme();
     
     return (
-        <Box
+        <CustomCard
             sx={{
                 flex: 1,
                 minWidth: {
@@ -19,8 +21,6 @@ export const MyEarningsCard = () => {
                 height: "160px",
                 padding: 2.9,
                 background: "linear-gradient(135deg, #4ade80, #22c55e)",
-                borderRadius: "12px",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 color: "white",
                 display: "flex",
                 flexDirection: "column",
@@ -95,16 +95,12 @@ export const MyEarningsCard = () => {
                 >
                     +12% este mes
                 </Typography>
-
-                <Button
-                    variant="contained"
+                
+                <CustomButton
+                    variant={"contained"}
                     sx={{
                         backgroundColor: "rgba(255,255,255,0.19)",
                         color: "#fff",
-                        fontSize: 15,
-                        fontWeight: 600,
-                        textTransform: "none",
-                        borderRadius: 1.8,
                         boxShadow: "none",
                         backdropFilter: "blur(2px)",
                         "&:hover": {
@@ -114,12 +110,13 @@ export const MyEarningsCard = () => {
                         [themeMUI.breakpoints.down("md")]: {
                             margin: "auto",
                             width: "85%",
-                        },
+                        }
                     }}
                 >
                     Expandir
-                </Button>
+                </CustomButton>
+
             </Box>
-        </Box>
+        </CustomCard>
     );
 }
