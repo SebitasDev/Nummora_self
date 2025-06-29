@@ -5,7 +5,7 @@ interface SectionHeaderProps {
     title: string;
     subtitle?: string;
     titleSize?: number;
-    subtitleSize?: number;
+    subtitleSize?: number | string;
     icon?: React.ReactNode;
 }
 
@@ -34,9 +34,10 @@ export default function SectionHeader(
             {subtitle && (
                 <Typography
                     variant="body2"
-                    color="text.secondary"
                     mt={0.5}
                     sx={{
+                        fontWeight: "600",
+                        color: "gray",
                         fontSize: subtitleSize
                     }}
                 >

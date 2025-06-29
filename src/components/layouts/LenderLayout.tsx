@@ -41,8 +41,8 @@ export default function LenderLayout({
     { label: "Dashboard", href: "/lender/dashboard", icon: <DashboardIcon /> },
     { label: "Invertir", href: "/lender/invest", icon: <AccountBalanceIcon /> },
     {
-      label: "Inversiones",
-      href: "/wallet",
+      label: "Retirar",
+      href: "/lender/withdraw",
       icon: <AccountBalanceWalletIcon />,
     },
     { label: "Reportes", href: "/profile", icon: <PersonIcon /> },

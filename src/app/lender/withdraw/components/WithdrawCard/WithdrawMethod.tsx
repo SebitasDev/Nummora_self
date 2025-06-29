@@ -66,10 +66,14 @@ export const WithdrawMethod = ({
               mr: 1,
             }}
           >
-            <Avatar
+            <Box
               sx={{
-                bgcolor: "#E8F9F0",
+                backgroundColor: "#E8F9F0",
                 color: "green",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 width: {
                   xs: 35,
                   md: 50,
@@ -80,16 +84,11 @@ export const WithdrawMethod = ({
                 },
               }}
             >
-              <img
-                src="/lemon-icon.svg"
+              <Avatar
+                src="https://i.postimg.cc/QNQJd1PN/download.jpg"
                 alt="Lemon"
-                style={{
-                  width: "40%",
-                  height: "40%",
-                  objectFit: "contain",
-                }}
               />
-            </Avatar>
+            </Box>
           </Box>
           <Box
             sx={{
