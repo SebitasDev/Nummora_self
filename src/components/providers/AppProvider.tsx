@@ -1,28 +1,18 @@
 ﻿'use client';
 
-import {CssBaseline, Container, Box, useTheme} from '@mui/material';
+import {CssBaseline, Container, Box} from '@mui/material';
 import ReactQueryProvider from '@/lib/react-query/provaider';
-import GlobalLayout from '@/components/layouts/GlobalLayout';
+import LenderLayout from '@/components/layouts/LenderLayout';
 
 export default function AppProvider({ children }: { children: React.ReactNode }) {
-    const theme = useTheme();
     return (
         <Box>
             <CssBaseline/>
-            <GlobalLayout>
+            <LenderLayout>
                 <Container maxWidth="xl">
-                    <Box
-                        sx={{
-                            paddingX: '7rem',
-                            [theme.breakpoints.down('md')]: {
-                                paddingX: '0rem',
-                            }
-                        }}
-                    >
-                        <ReactQueryProvider>{children}</ReactQueryProvider>
-                    </Box>
+                    <ReactQueryProvider>{children}</ReactQueryProvider>
                 </Container>
-            </GlobalLayout>
+            </LenderLayout>
         </Box>
     );
 }
