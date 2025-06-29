@@ -1,5 +1,5 @@
 'use client'
 
-import WithdrawLayout from "@/components/layouts/WithdrawLayout";
+import WithdrawTemplate from "@/components/layouts/pageLayouts/WithdrawTemplate";
 
-export default function BorrowerPage() { return <WithdrawLayout/>; }
+export default function BorrowerPage() { return <WithdrawTemplate/>; }
