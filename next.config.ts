@@ -8,6 +8,15 @@ const baseConfig: NextConfig = {
     compiler: {
         emotion: true,
     },
+
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**',
+            },
+        ],
+    },
 }
 
 const nextConfig = withPWA({
