@@ -2,7 +2,7 @@ import { Box, useTheme } from "@mui/material";
 import {SetWithdrawCard} from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import {WithdrawHistoryCard} from "@/app/lender/withdraw/components/HistoryCard/WithdrawHistoryCard";
 
-export default function WithdrawLayout() {
+export default function WithdrawTemplate() {
     const theme = useTheme();
 
     return (
