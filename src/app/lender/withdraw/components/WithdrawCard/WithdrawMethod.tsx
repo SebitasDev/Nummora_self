@@ -194,7 +194,7 @@ export const WithdrawMethod = ({
         </Box>
       </CustomCard>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <Box px={2} pb={2} sx={{ mt: 4 }} display="flex" flexDirection="column">
+        <Box sx={{ mt: 4 }} display="flex" flexDirection="column">
           <DropdownAddressSelect
             options={addressOptions}
             value={selectedAddress}

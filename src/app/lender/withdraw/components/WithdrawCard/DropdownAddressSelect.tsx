@@ -23,7 +23,7 @@ export const DropdownAddressSelect: React.FC<DropdownAddressSelectProps> = ({
 }) => {
   const shortenAddress = useShortenedAddress;
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box display="flex" flexDirection="column" gap={1} width="100%">
       <Typography variant="subtitle2" fontWeight="bold" mb={1}>
         Cuenta de destino
       </Typography>
