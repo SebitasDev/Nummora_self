@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
 import {
   Box,
-  Typography,
   TextField,
   Button,
   InputAdornment,
 } from "@mui/material";
 import { AttachMoney } from "@mui/icons-material";
+import { useInvest } from "@/app/lender/invest/hooks";
 
 export const InvestAmount = () => {
-  const [amount, setAmount] = useState(0);
+  const { amount, setAmount } = useInvest();
 
   const presetAmounts = [100000, 500000, 1000000, 2000000];
   const popularAmounts = [100000, 2000000];

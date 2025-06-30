@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Box,
     Typography,
@@ -23,10 +23,11 @@ import {
 import CalculateIcon from '@mui/icons-material/Calculate';
 import {CustomCard} from "@/components/atoms/CustomCard";
 import {InvestConfiguration} from "@/app/lender/invest/components";
+import {useInvest} from "@/app/lender/invest/hooks";
 export const InvestTemplate = () => {
     const themeMUI = useTheme();
-    const isMobile = useMediaQuery(themeMUI.breakpoints.down("lg"));
-    const [amount, _] = useState(0);
+    const isMobile = useMediaQuery(themeMUI.breakpoints.down("md"));
+    const { amount } = useInvest();
 
     const loans = [
         {
