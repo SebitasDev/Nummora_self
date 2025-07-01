@@ -29,6 +29,11 @@ export const HistoryFileCard = ({
   const themeMUI = useTheme();
   const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
   const shortenAddress = useShortenedAddress;
+  const fontSize = {
+    xs: "0.7rem",
+    sm: "0.9rem",
+    md: "1rem",
+  };
   return (
     <CustomCard
       sx={{
@@ -75,28 +80,13 @@ export const HistoryFileCard = ({
             />
           </Avatar>
           <Stack spacing={1}>
-            <Typography
-              fontWeight="bold"
-              sx={{
-                fontSize: {
-                  xs: "0.6rem",
-                  sm: "0.7rem",
-                  md: "0.8rem",
-                },
-              }}
-            >
+            <Typography fontWeight="bold" sx={{ fontSize }}>
               $ {value}
             </Typography>
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{
-                fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.6rem",
-                  md: "0.8rem",
-                },
-              }}
+              sx={{ fontSize }}
             >
               Lemon (Crypto) {shortenAddress(accountAddress)}
             </Typography>

@@ -5,52 +5,41 @@ interface AmountRowProps extends BoxProps {
   label: string;
   value: string;
   bold?: boolean;
-  green?: boolean;
+  amountColor?: string;
 }
 
-export const AmountRow = ({
+export const AmountRow: React.FC<AmountRowProps> = ({
   label,
   value,
   bold = false,
+  amountColor,
   sx,
-  green = false,
   ...rest
-}: AmountRowProps) => {
+}) => {
+  const fontSize = {
+    xs: "0.7rem",
+    sm: "0.9rem",
+    md: "1rem",
+  };
+
   return (
     <Box
       display="flex"
       justifyContent="space-between"
       alignItems="center"
       mb={1}
-      sx={{ ...sx }}
+      sx={sx}
       {...rest}
     >
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{
-          fontSize: {
-            xs: "0.6rem",
-            sm: "0.7rem",
-            md: "0.8rem",
-          },
-        }}
-      >
+      <Typography variant="body2" color="text.secondary" sx={{ fontSize }}>
         {label}
       </Typography>
+
       <Typography
         variant="body2"
         fontWeight={bold ? "bold" : "normal"}
-        color={
-          green ? "success.light" : bold ? "text.primary" : "text.secondary"
-        }
-        sx={{
-          fontSize: {
-            xs: "0.6rem",
-            sm: "0.7rem",
-            md: "0.8rem",
-          },
-        }}
+        color={amountColor || (bold ? "text.primary" : "text.secondary")}
+        sx={{ fontSize }}
       >
         {value}
       </Typography>

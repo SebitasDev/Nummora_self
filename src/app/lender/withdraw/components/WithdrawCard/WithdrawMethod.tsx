@@ -63,19 +63,19 @@ export const WithdrawMethod = ({
               justifyContent: "center",
               alignItems: "center",
               maxWidth: "100%",
-              mr: 1,
+              mr: 1.5,
+              ml: -0.5,
+              cursor: "pointer",
             }}
           >
             <Box
               sx={{
-                backgroundColor: "#E8F9F0",
-                color: "green",
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: {
-                  xs: 35,
+                  xs: 30,
                   md: 50,
                 },
                 height: {
@@ -87,6 +87,16 @@ export const WithdrawMethod = ({
               <Avatar
                 src="https://i.postimg.cc/QNQJd1PN/download.jpg"
                 alt="Lemon"
+                sx={{
+                  width: {
+                    xs: 33,
+                    md: 50,
+                  },
+                  height: {
+                    xs: 33,
+                    md: 50,
+                  },
+                }}
               />
             </Box>
           </Box>
@@ -99,25 +109,14 @@ export const WithdrawMethod = ({
               <Typography
                 fontWeight="bold"
                 sx={{
-                  fontSize: {
-                    xs: "0.6rem",
-                    sm: "0.7rem",
-                    md: "0.8rem",
-                    lg: "0.8rem",
-                  },
+                  fontSize: { xs: "0.8rem", sm: "0.9rem", md: "0.8rem" },
                 }}
               >
                 Lemon (Crypto)
               </Typography>
               <Typography
                 variant="body2"
-                sx={{
-                  fontSize: {
-                    xs: "0.6rem",
-                    sm: "0.7rem",
-                    md: "0.8rem",
-                  },
-                }}
+                sx={{ fontSize: { xs: "0.7rem", sm: "0.9rem", md: "1rem" } }}
                 color="text.secondary"
               >
                 Comisión:{""}
@@ -135,20 +134,24 @@ export const WithdrawMethod = ({
           <Box
             sx={{
               gridArea: "learn",
-              mt: -0.5,
+              mt: 0.3,
             }}
           >
             <Link
               sx={{
                 fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.5rem",
-                  md: "0.8rem",
+                  xs: "0.54rem",
+                  sm: "0.6rem",
+                  md: "0.7rem",
                 },
+                color: "primary.main",
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                "&:hover": { textDecoration: "underline" },
               }}
               href="#"
               underline="hover"
-              fontSize={14}
             >
               📖 Aprende a retirar con Lemon
             </Link>
@@ -177,15 +180,16 @@ export const WithdrawMethod = ({
               }}
               sx={{ width: "100%" }}
             >
-              <TimeText timeFrame={"5 - 15 minutos"} />
+              <TimeText timeFrame={"5-15 minutos"} />
               <CustomChip
                 sx={{
                   backgroundColor: expanded ? "success.light" : "#E8F9F0",
                   color: expanded ? "white" : "green",
                   px: isMdUp ? 2 : 1.5,
+                  py: isMdUp ? 0.5 : 0.3,
                 }}
               >
-                <Typography fontSize={isMdUp ? "0.8rem" : "0.6rem"}>
+                <Typography fontSize={isMdUp ? "1rem" : "0.55rem"}>
                   Seleccionar
                 </Typography>
               </CustomChip>

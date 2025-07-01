@@ -7,29 +7,20 @@ interface TimeTextProps {
 }
 
 export const TimeText = ({ timeFrame }: TimeTextProps) => {
+  const fontSize = {
+    xs: "0.63rem",
+    sm: "0.8rem",
+    md: "0.9rem",
+  };
   return (
     <Box display="inline-flex" gap={0.4} alignItems={"center"}>
       <AccessTimeIcon
         sx={{
-          fontSize: {
-            xs: "0.6rem",
-            sm: "0.7rem",
-            md: "0.8rem",
-          },
+          fontSize,
           color: "text.secondary",
         }}
       />
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{
-          fontSize: {
-            xs: "0.6rem",
-            sm: "0.7rem",
-            md: "0.8rem",
-          },
-        }}
-      >
+      <Typography variant="body2" color="text.secondary" sx={{ fontSize }}>
         {timeFrame}
       </Typography>
     </Box>
