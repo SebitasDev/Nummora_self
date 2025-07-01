@@ -99,6 +99,7 @@ export const HistoryFileCard = ({
                 backgroundColor: "#E8F9F0",
                 color: "green",
                 px: isMdUp ? 2 : 1.5,
+                py: 0.3,
                 ...sx,
               }}
             >

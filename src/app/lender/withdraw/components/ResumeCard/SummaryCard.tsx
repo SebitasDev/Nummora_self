@@ -74,9 +74,9 @@ export const SummaryCard = () => {
               mt: 1,
               textAlign: "center",
               fontSize: {
-                xs: "0.5rem",
-                sm: "0.6rem",
-                md: "0.7rem",
+                xs: "0.7rem",
+                sm: "0.9rem",
+                md: "1rem",
               },
             }}
           >

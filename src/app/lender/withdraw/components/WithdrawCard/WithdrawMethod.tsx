@@ -178,7 +178,7 @@ export const WithdrawMethod = ({
                 xs: "space-between",
                 sm: "center",
               }}
-              sx={{ width: "100%" }}
+              sx={{ width: "100%", mx: -0.5, my: -0.5 }}
             >
               <TimeText timeFrame={"5-15 minutos"} />
               <CustomChip
@@ -186,7 +186,7 @@ export const WithdrawMethod = ({
                   backgroundColor: expanded ? "success.light" : "#E8F9F0",
                   color: expanded ? "white" : "green",
                   px: isMdUp ? 2 : 1.5,
-                  py: isMdUp ? 0.5 : 0.3,
+                  py: 0.3,
                 }}
               >
                 <Typography fontSize={isMdUp ? "1rem" : "0.55rem"}>

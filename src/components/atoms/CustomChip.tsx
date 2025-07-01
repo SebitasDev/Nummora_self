@@ -8,7 +8,7 @@ export const CustomChip = ({ children, sx, ...rest }: CustomChipProps) => {
     <Box
       sx={{
         fontWeight: "bold",
-        borderRadius: "12px",
+        borderRadius: "20px",
         color: "#fff",
         backgroundColor: "#8f938f",
         ...sx,
