@@ -65,18 +65,18 @@ export const SummaryCard = () => {
               "& .MuiLinearProgress-bar": {
                 backgroundColor: "black",
               },
+              my: 0.5,
             }}
           />
           <Typography
             variant="caption"
             color="text.secondary"
             sx={{
-              mt: 1,
               textAlign: "center",
               fontSize: {
                 xs: "0.7rem",
-                sm: "0.9rem",
-                md: "1rem",
+                sm: "0.7rem",
+                md: "0.8rem",
               },
             }}
           >
