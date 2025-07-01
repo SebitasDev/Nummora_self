@@ -7,10 +7,20 @@ interface SectionHeaderProps {
     titleSize?: number;
     subtitleSize?: number | string;
     icon?: React.ReactNode;
+    titleColor?: string;
+    subtitleColor?: string;
 }
 
 export default function SectionHeader(
-    { title, subtitle, titleSize, subtitleSize, icon } : SectionHeaderProps
+    { 
+        title, 
+        subtitle, 
+        titleSize, 
+        subtitleSize, 
+        icon,
+        titleColor,
+        subtitleColor
+    } : SectionHeaderProps
 ) {
     return (
         <Box>
@@ -23,8 +33,9 @@ export default function SectionHeader(
                 <Typography
                     variant="h5" 
                     fontWeight="bold" 
-                    color="text.primary"
+                    color={titleColor || "text.primary"}
                     sx={{
+                        lineHeight: 1.2,
                         fontSize: titleSize
                     }}
                 >
@@ -37,7 +48,7 @@ export default function SectionHeader(
                     mt={0.5}
                     sx={{
                         fontWeight: "600",
-                        color: "gray",
+                        color: subtitleColor || "gray",
                         fontSize: subtitleSize
                     }}
                 >

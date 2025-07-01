@@ -5,6 +5,7 @@ import {
   TextField,
   Button,
   InputAdornment,
+  Typography,
 } from "@mui/material";
 import { AttachMoney } from "@mui/icons-material";
 import { useInvest } from "@/app/lender/invest/hooks";
