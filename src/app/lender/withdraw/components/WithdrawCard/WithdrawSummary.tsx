@@ -8,11 +8,11 @@ interface WithdrawSummaryProps {
   totalRecibir: string;
 }
 
-export const WithdrawSummary: React.FC<WithdrawSummaryProps> = ({
+export const WithdrawSummary = ({
   montoSolicitado,
   comision,
   totalRecibir,
-}) => {
+}: WithdrawSummaryProps) => {
   return (
     <Box
       mt={2}

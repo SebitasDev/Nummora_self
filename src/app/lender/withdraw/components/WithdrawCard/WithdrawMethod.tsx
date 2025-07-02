@@ -187,6 +187,7 @@ export const WithdrawMethod = ({
                   color: expanded ? "white" : "green",
                   px: isMdUp ? 2 : 1.5,
                   py: 0.3,
+                  borderRadius: "20px",
                 }}
               >
                 <Typography fontSize={isMdUp ? "1rem" : "0.55rem"}>

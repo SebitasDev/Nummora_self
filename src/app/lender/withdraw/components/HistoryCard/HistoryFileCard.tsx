@@ -100,6 +100,7 @@ export const HistoryFileCard = ({
                 color: "green",
                 px: isMdUp ? 2 : 1.5,
                 py: 0.3,
+                borderRadius: "20px",
                 ...sx,
               }}
             >
