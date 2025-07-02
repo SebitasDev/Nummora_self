@@ -34,6 +34,7 @@ export default function PriceLabel({
         sx={{
           fontFamily: "Inter",
           fontWeight: 800,
+          fontSize: "20px",
           lineHeight: 1,
           letterSpacing: "0.02em",
           textAlign: "inherit",
@@ -41,6 +42,9 @@ export default function PriceLabel({
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
           cursor: "default",
+          [theme.breakpoints.down("md")]: {
+            fontSize: "16px",
+          },
           ...sx,
         }}
         {...rest}
