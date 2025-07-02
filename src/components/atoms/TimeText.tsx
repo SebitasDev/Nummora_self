@@ -8,7 +8,7 @@ interface TimeTextProps {
 
 export const TimeText = ({ timeFrame }: TimeTextProps) => {
   return (
-    <Box display="inline-flex" gap={0.4}>
+    <Box display="inline-flex" gap={0.4} alignItems={"center"}>
       <AccessTimeIcon
         sx={{
           fontSize: {
