@@ -1,19 +1,18 @@
 import React from "react";
 import { Box, BoxProps, Typography } from "@mui/material";
-import PriceLabel from "./PriceLabel";
+import PriceLabel from "../atoms/PriceLabel";
 import { Currency } from "@/enums/currency";
+import { useTheme } from "@mui/material/styles";
 
 interface AmountRowProps extends BoxProps {
   label: string;
   value: string;
-  bold?: boolean;
   amountColor?: string;
 }
 
 export const AmountRow: React.FC<AmountRowProps> = ({
   label,
   value,
-  bold = false,
   amountColor,
   sx,
   ...rest
@@ -23,6 +22,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
     sm: "0.9rem",
     md: "1rem",
   };
+  const theme = useTheme();
 
   return (
     <Box
@@ -40,7 +40,13 @@ export const AmountRow: React.FC<AmountRowProps> = ({
       <PriceLabel
         number={value}
         currency={Currency.COP}
-        color={amountColor || (bold ? "#000" : "#6b6b6b")}
+        color={amountColor}
+        sx={{
+          fontSize: "1rem",
+          [theme.breakpoints.down("md")]: {
+            fontSize: "0.7rem",
+          },
+        }}
       />
     </Box>
   );

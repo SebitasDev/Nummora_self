@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { AmountRow } from "@/components/atoms/AmountRow";
+import { AmountRow } from "@/components/molecules/AmountRow";
 
 interface WithdrawSummaryProps {
   montoSolicitado: string;
@@ -30,7 +30,6 @@ export const WithdrawSummary = ({
       <AmountRow
         label="Total a recibir"
         value={totalRecibir}
-        bold
         amountColor="success.light"
       />
     </Box>

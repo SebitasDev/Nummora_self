@@ -1,4 +1,4 @@
-import { AmountRow } from "@/components/atoms/AmountRow";
+import { AmountRow } from "@/components/molecules/AmountRow";
 import { CustomCard } from "@/components/atoms/CustomCard";
 import { DonutLarge } from "@mui/icons-material";
 import {
@@ -53,7 +53,6 @@ export const SummaryCard = () => {
             label={"Liquidez Total"}
             value="260.000"
             amountColor="text.primary"
-            bold
           />
           <LinearProgress
             variant="determinate"

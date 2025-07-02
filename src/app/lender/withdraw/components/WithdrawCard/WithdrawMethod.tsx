@@ -208,9 +208,9 @@ export const WithdrawMethod = ({
             }
           />
           <WithdrawSummary
-            montoSolicitado="$100.000"
-            comision="$1.500"
-            totalRecibir="$98.500"
+            montoSolicitado="100.000"
+            comision="1.500"
+            totalRecibir="98.500"
           />
         </Box>
       </Collapse>
