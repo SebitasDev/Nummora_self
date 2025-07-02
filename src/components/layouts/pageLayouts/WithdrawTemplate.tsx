@@ -1,6 +1,7 @@
 import { Box, useTheme } from "@mui/material";
 import { SetWithdrawCard } from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import { WithdrawHistoryCard } from "@/app/lender/withdraw/components/HistoryCard/WithdrawHistoryCard";
+import { SummaryCard } from "@/app/lender/withdraw/components/ResumeCard/SummaryCard";
 
 export default function WithdrawTemplate() {
   const theme = useTheme();
@@ -33,15 +34,12 @@ export default function WithdrawTemplate() {
         <SetWithdrawCard />
       </Box>
 
-      {/* Historial de retiros */}
       <Box gridArea="historial">
         <WithdrawHistoryCard />
       </Box>
 
-      {/* Resumen de saldo */}
       <Box gridArea="saldoResumen">
-        {/* SummaryCard */}
-        <h2>Resumen</h2>
+        <SummaryCard />
       </Box>
 
       {/* Estadísticas del mes */}

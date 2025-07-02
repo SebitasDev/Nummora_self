@@ -5,12 +5,14 @@ import {
   Stack,
   Typography,
   ChipProps,
-  useTheme,
   useMediaQuery,
 } from "@mui/material";
 import React from "react";
 import { useShortenedAddress } from "@/app/lender/dashboard/hooks/useShortenedAddress";
 import { CustomChip } from "@/components/atoms/CustomChip";
+import PriceLabel from "@/components/atoms/PriceLabel";
+import { Currency } from "@/enums/currency";
+import { useTheme } from "@mui/material/styles";
 
 interface HistoryFileCardProps extends ChipProps {
   value: string;
@@ -29,6 +31,13 @@ export const HistoryFileCard = ({
   const themeMUI = useTheme();
   const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
   const shortenAddress = useShortenedAddress;
+  const fontSize = {
+    xs: "0.7rem",
+    sm: "0.9rem",
+    md: "1rem",
+  };
+
+  const theme = useTheme();
   return (
     <CustomCard
       sx={{
@@ -75,28 +84,20 @@ export const HistoryFileCard = ({
             />
           </Avatar>
           <Stack spacing={1}>
-            <Typography
-              fontWeight="bold"
+            <PriceLabel
+              number={value}
+              currency={Currency.COP}
               sx={{
-                fontSize: {
-                  xs: "0.6rem",
-                  sm: "0.7rem",
-                  md: "0.8rem",
+                fontSize: "1rem",
+                [theme.breakpoints.down("md")]: {
+                  fontSize: "0.7rem",
                 },
               }}
-            >
-              $ {value}
-            </Typography>
+            />
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{
-                fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.6rem",
-                  md: "0.8rem",
-                },
-              }}
+              sx={{ fontSize }}
             >
               Lemon (Crypto) {shortenAddress(accountAddress)}
             </Typography>
@@ -109,6 +110,8 @@ export const HistoryFileCard = ({
                 backgroundColor: "#E8F9F0",
                 color: "green",
                 px: isMdUp ? 2 : 1.5,
+                py: 0.3,
+                borderRadius: "20px",
                 ...sx,
               }}
             >

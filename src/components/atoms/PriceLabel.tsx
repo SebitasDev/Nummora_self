@@ -8,12 +8,14 @@ import Theme from "@/theme/theme";
 interface PriceLabelProps extends TypographyProps {
   number: string;
   currency: Currency;
+  color?: string;
 }
 
 export default function PriceLabel({
   number,
   currency,
   sx,
+  color = "text.primary",
   ...rest
 }: PriceLabelProps) {
   const themeMUI = useTheme();
@@ -30,13 +32,13 @@ export default function PriceLabel({
       <Typography
         variant="body2"
         noWrap
+        color={color}
         sx={{
           fontFamily: "Inter",
           fontWeight: 800,
           fontSize: theme.fontSize.amountLabel.md,
           lineHeight: 1,
           letterSpacing: "0.02em",
-          color: "text.primary",
           textAlign: "inherit",
           overflow: "hidden",
           textOverflow: "ellipsis",
