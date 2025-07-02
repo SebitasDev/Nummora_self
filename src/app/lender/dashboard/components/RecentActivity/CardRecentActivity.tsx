@@ -19,7 +19,7 @@ interface CardRecentActivityProps {
 export const CardRecentActivity = (
     { title, subtitle, amount, icon, color, backgroundColor, status } : CardRecentActivityProps
 ) => {
-    const { themeMUI, isMdUp } = useRecentActivities();
+    const { themeMUI, isMdUp, theme } = useRecentActivities();
     
     return (
         <Box
@@ -84,10 +84,10 @@ export const CardRecentActivity = (
                     number={amount}
                     currency={Currency.COP}
                     sx={{
-                        fontSize: "18px",
+                        fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
                         letterSpacing: "-0.5px",
                         [themeMUI.breakpoints.down("md")]: {
-                            fontSize: "14px"
+                            fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`
                         }
                     }}
                 />
@@ -96,11 +96,7 @@ export const CardRecentActivity = (
                         width: "140px",
                         height: "20px",
                         backgroundColor: backgroundColor,
-                        border: `0,5px solid ${color}`,
-                        borderRadius: "20px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
+                        border: `0.5px solid ${color}`,
                         p: 1.3,
                         [themeMUI.breakpoints.down("md")]: {
                             width: "100px",
@@ -111,11 +107,6 @@ export const CardRecentActivity = (
                     <Typography
                         variant={"body1"}
                         color={color}
-                        sx={{
-                            fontSize: isMdUp ? "14px" : "13px",
-                            fontWeight: 600,
-                            textAlign: "center"
-                        }}
                     >
                         {status}
                     </Typography>

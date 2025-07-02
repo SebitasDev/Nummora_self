@@ -10,20 +10,13 @@ import {
   AppBar,
   Button,
   Divider,
-  useMediaQuery,
-  useTheme,
   Avatar,
 } from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import PersonIcon from "@mui/icons-material/Person";
 import React from "react";
 import Link from "next/link";
 import WalletInitializer from "@/components/atoms/WalletInitializer";
-import { useGlobalLayout } from "@/hooks";
+import { useLenderLayout } from "@/hooks";
 import { CustomChip } from "@/components/atoms/CustomChip";
-import Theme from "@/theme/theme";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
@@ -32,22 +25,8 @@ export default function LenderLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { value, setValue, shouldHideNav } = useGlobalLayout();
-  const themeMUI = useTheme();
-  const theme = Theme;
-  const isMobile = useMediaQuery(themeMUI.breakpoints.down("md"));
-
-  const navigationItems = [
-    { label: "Dashboard", href: "/lender/dashboard", icon: <DashboardIcon /> },
-    { label: "Invertir", href: "/lender/invest", icon: <AccountBalanceIcon /> },
-    {
-      label: "Retirar",
-      href: "/lender/withdraw",
-      icon: <AccountBalanceWalletIcon />,
-    },
-    { label: "Reportes", href: "/profile", icon: <PersonIcon /> },
-  ];
-
+  const { value, setValue, shouldHideNav, navigationItems, isMobile, theme, themeMUI } = useLenderLayout();
+  
   return (
     <Box sx={{ pb: isMobile ? 7 : 0, pt: !isMobile ? 8 : 0 }}>
       {!isMobile && !shouldHideNav && (
@@ -146,7 +125,6 @@ export default function LenderLayout({
                       backgroundColor: "#DCFCE7",
                       color: theme.palette.primary.dark,
                       px: 1,
-                      fontWeight: "bold",
                     }}
                   >
                     ✓ Inversionista

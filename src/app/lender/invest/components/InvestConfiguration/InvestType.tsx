@@ -2,9 +2,9 @@ import { CustomCard } from "@/components/atoms/CustomCard";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import { Box, Typography } from "@mui/material";
 import { Wallet } from "@mui/icons-material";
-import Theme from "@/theme/theme";
+import { useInvest } from "@/app/lender/invest/hooks";
 export const InvestType = () => {
-  const theme = Theme;
+  const { theme } = useInvest();
   return (
     <Box>
       <Typography

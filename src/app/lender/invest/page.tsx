@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import {InvestTemplate} from "@/components/layouts/pageLayouts/InvestTemplate";
+import { InvestTemplate } from "@/components/layouts/pageLayouts/InvestTemplate";
 
-export default function InvestPage(){
-    return <InvestTemplate/>;
+export default function InvestPage() {
+  return <InvestTemplate />;
 }

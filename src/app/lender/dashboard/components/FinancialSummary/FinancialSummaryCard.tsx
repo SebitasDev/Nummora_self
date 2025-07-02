@@ -83,7 +83,6 @@ export const FinancialSummaryCard = (
                     currency={currency}
                     sx={{
                         letterSpacing: "-0.2px",
-                        fontSize: "22px",
                     }}
                 />
             </Box>
@@ -109,23 +108,14 @@ export const FinancialSummaryCard = (
 
                 <CustomChip
                     sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
                         color: `${color || "#8f938f"}`,
                         width: "50px",
                         height: "25px",
                         backgroundColor: `${backgroundColor || "#8f938f"}`,
                         border: `1px solid ${color || "#8f938f"}`,
-                        borderRadius: "12px",
                     }}
                 >
-                    <Typography
-                        sx={{
-                            fontSize: "13px",
-                            fontWeight: "bold",
-                        }}
-                    >
+                    <Typography>
                         {Currency[currency]}
                     </Typography>
                 </CustomChip>

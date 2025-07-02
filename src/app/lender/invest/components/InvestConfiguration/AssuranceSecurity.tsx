@@ -1,14 +1,13 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import { CustomCard } from "@/components/atoms/CustomCard";
-import Theme from "@/theme/theme";
+import { useInvest } from "@/app/lender/invest/hooks";
 
 export const AssuranceSecurity = () => {
-  const theme = Theme;
-  const themeMUI = useTheme();
-  const isMobile = useMediaQuery(themeMUI.breakpoints.down("md"));
+  const { theme, themeMUI, isMobile } = useInvest();
+
   return (
     <Box>
       <Typography

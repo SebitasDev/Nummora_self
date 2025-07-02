@@ -1,5 +1,5 @@
-import {useGlobalLayout} from "@/hooks/useGlobalLayout";
+import {useLenderLayout} from "@/hooks/useLenderLayout";
 
 export {
-    useGlobalLayout
+    useLenderLayout
 }
