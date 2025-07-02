@@ -62,7 +62,6 @@ export const MyEarningsCard = () => {
                 sx={{
                     color: "white",
                     letterSpacing: "-0.2px",
-                    fontSize: "22px",
                 }}
             />
 

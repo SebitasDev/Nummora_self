@@ -5,7 +5,7 @@ import { CustomCard } from "@/components/atoms/CustomCard";
 import { useInvest } from "@/app/lender/invest/hooks";
 
 export const TotalProfit = () => {
-  const { amount, themeMUI } = useInvest();
+  const { amount, themeMUI, theme } = useInvest();
 
   return (
     <CustomCard
@@ -20,11 +20,7 @@ export const TotalProfit = () => {
           number={Math.floor(amount * 1.44 - amount).toLocaleString()}
           currency={Currency.COP}
           sx={{
-            color: "white",
-            fontSize: "25px",
-            [themeMUI.breakpoints.down("md")]: {
-              fontSize: "1.4rem",
-            },
+            color: "white"
           }}
         />
         <Typography variant="body2" sx={{ opacity: 0.9 }}>
@@ -50,11 +46,7 @@ export const TotalProfit = () => {
             currency={Currency.COP}
             sx={{
               color: "white",
-              fontSize: "1.25rem",
               lineHeight: "body2.lineHeight",
-              [themeMUI.breakpoints.down("md")]: {
-                fontSize: "1.25rem",
-              },
             }}
           />
           <Typography variant="body2" sx={{ opacity: 0.9 }}>

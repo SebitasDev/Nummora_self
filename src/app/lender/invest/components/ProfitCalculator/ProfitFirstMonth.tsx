@@ -5,7 +5,7 @@ import { CustomCard } from "@/components/atoms/CustomCard";
 import { useInvest } from "@/app/lender/invest/hooks";
 
 export const ProfitFirstMonth = () => {
-  const { theme, amount } = useInvest();
+  const { theme, amount, themeMUI } = useInvest();
 
   return (
     <CustomCard
@@ -38,7 +38,13 @@ export const ProfitFirstMonth = () => {
           <PriceLabel
             number={amount.toLocaleString()}
             currency={Currency.COP}
-            sx={{ fontSize: "14px", maxWidth: "50%" }}
+            sx={{
+              fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
+              maxWidth: "50%",
+              [themeMUI.breakpoints.down("md")]: {
+                fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.20rem)`,
+              },
+            }}
           />
         </Box>
         <Box
@@ -68,7 +74,13 @@ export const ProfitFirstMonth = () => {
           <PriceLabel
             number={Math.floor(amount * 0.09).toLocaleString()}
             currency={Currency.COP}
-            sx={{ fontSize: "14px", maxWidth: "50%" }}
+            sx={{
+              fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
+              maxWidth: "50%",
+              [themeMUI.breakpoints.down("md")]: {
+                fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.20rem)`,
+              },
+            }}
           />
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -79,8 +91,11 @@ export const ProfitFirstMonth = () => {
             number={Math.floor(amount * 1.09).toLocaleString()}
             currency={Currency.COP}
             sx={{
-              fontSize: "14px",
+              fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
               maxWidth: "50%",
+              [themeMUI.breakpoints.down("md")]: {
+                fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.20rem)`,
+              },
               color: theme.palette.primary.dark,
             }}
           />

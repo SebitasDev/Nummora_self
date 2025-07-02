@@ -40,7 +40,7 @@ export const ItemPortfolioDistribution = (
                     number={itemValue}
                     currency={itemCurrency}
                     sx={{
-                        fontSize: "16px",
+                        fontSize: 'initial',
                         letterSpacing: '-0.5px',
                         fontWeight: "bold",
                     }}

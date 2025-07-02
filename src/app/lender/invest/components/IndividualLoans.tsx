@@ -62,7 +62,6 @@ export const IndividualLoans = () => {
                 <CustomChip
                   sx={{
                     p: 0.3,
-                    fontSize: "0.75rem",
                     color: theme.palette.primary.dark,
                     backgroundColor: theme.palette.primary.background,
                     border: `1px solid ${theme.palette.primary.light}`,

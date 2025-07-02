@@ -60,9 +60,6 @@ export const UserProfileDashboard = () => {
                   backgroundColor: "#DCFCE7",
                   color: theme.palette.primary.dark,
                   px: 1,
-                  fontWeight: "bold",
-                  display: "flex",
-                  alignItems: "center",
                   width: "6rem",
                 }}
               >

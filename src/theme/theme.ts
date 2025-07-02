@@ -95,6 +95,18 @@ export const theme = {
   shape: {
     borderRadius: 12,
   },
+
+  fontSize: {
+    input: "1.1rem",
+    chip: {
+      xs: "0.85rem",
+      md: "0.95rem",
+    },
+    amountLabel: {
+        xs: "1.1rem",
+        md: "1.3rem",
+    }
+  },
 };
 
 export default theme;

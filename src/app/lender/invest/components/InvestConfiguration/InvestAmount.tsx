@@ -11,7 +11,7 @@ import { AttachMoney } from "@mui/icons-material";
 import { useInvest } from "@/app/lender/invest/hooks";
 
 export const InvestAmount = () => {
-  const { amount, setAmount } = useInvest();
+  const { amount, setAmount, theme } = useInvest();
 
   const presetAmounts = [100000, 500000, 1000000, 2000000];
   const popularAmounts = [100000, 2000000];
@@ -31,7 +31,7 @@ export const InvestAmount = () => {
         fullWidth
         type="number"
         placeholder="0"
-        value={amount || "500000"}
+        value={amount}
         onChange={(e) => setAmount(Number(e.target.value))}
         slotProps={{
           input: {
@@ -47,7 +47,7 @@ export const InvestAmount = () => {
             borderRadius: 1.7,
             borderColor: "rgb(143,147,143, 0.3)",
             height: 48,
-            fontSize: "1.1rem",
+            fontSize: theme.fontSize.input,
           },
         }}
       />

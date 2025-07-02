@@ -33,7 +33,6 @@ export const InvestConfiguration = () => {
         subtitle={
           "Define el monto y términos de tu inversión para calcular las ganancias potenciales"
         }
-        subtitleSize={isMobile ? "12px" : "initial"}
       />
       <Box
         sx={{

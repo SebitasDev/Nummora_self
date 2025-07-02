@@ -125,7 +125,6 @@ export default function LenderLayout({
                       backgroundColor: "#DCFCE7",
                       color: theme.palette.primary.dark,
                       px: 1,
-                      fontWeight: "bold",
                     }}
                   >
                     ✓ Inversionista
