@@ -5,12 +5,14 @@ import {
   Stack,
   Typography,
   ChipProps,
-  useTheme,
   useMediaQuery,
 } from "@mui/material";
 import React from "react";
 import { useShortenedAddress } from "@/app/lender/dashboard/hooks/useShortenedAddress";
 import { CustomChip } from "@/components/atoms/CustomChip";
+import PriceLabel from "@/components/atoms/PriceLabel";
+import { Currency } from "@/enums/currency";
+import { useTheme } from "@mui/material/styles";
 
 interface HistoryFileCardProps extends ChipProps {
   value: string;
@@ -34,6 +36,8 @@ export const HistoryFileCard = ({
     sm: "0.9rem",
     md: "1rem",
   };
+
+  const theme = useTheme();
   return (
     <CustomCard
       sx={{
@@ -80,9 +84,16 @@ export const HistoryFileCard = ({
             />
           </Avatar>
           <Stack spacing={1}>
-            <Typography fontWeight="bold" sx={{ fontSize }}>
-              $ {value}
-            </Typography>
+            <PriceLabel
+              number={value}
+              currency={Currency.COP}
+              sx={{
+                fontSize: "1rem",
+                [theme.breakpoints.down("md")]: {
+                  fontSize: "0.7rem",
+                },
+              }}
+            />
             <Typography
               variant="body2"
               color="text.secondary"
