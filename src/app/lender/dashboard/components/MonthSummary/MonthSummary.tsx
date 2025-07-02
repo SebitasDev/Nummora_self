@@ -62,7 +62,6 @@ export const MonthSummary = () => {
                         currency={Currency.COP}
                         sx={{
                             color: theme.palette.primary.dark,
-                            fontSize: "17px"
                         }}
                     />
                 </Box>

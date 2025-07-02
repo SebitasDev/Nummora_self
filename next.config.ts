@@ -1,4 +1,3 @@
-// next.config.ts
 import withPWA from 'next-pwa'
 import type { NextConfig } from 'next'
 
@@ -16,6 +15,16 @@ const baseConfig: NextConfig = {
                 hostname: '**',
             },
         ],
+    },
+
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/lender/dashboard',
+                permanent: false,
+            },
+        ]
     },
 }
 

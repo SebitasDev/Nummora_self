@@ -7,7 +7,7 @@ export const CustomCard = ({ children, sx, ...rest }: BoxProps) => {
     return (
         <Box
             sx={{
-                p: 2,
+                p: 2.9,
                 borderRadius: "12px",
                 boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
                 border: "1px solid #E0E0E0",

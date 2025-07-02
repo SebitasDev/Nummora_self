@@ -40,7 +40,6 @@ export const InfoCardEarningPrediction = (
                 number={number}
                 currency={currency}
                 sx={{
-                    fontSize: "18px",
                     color: color
                 }}
             />

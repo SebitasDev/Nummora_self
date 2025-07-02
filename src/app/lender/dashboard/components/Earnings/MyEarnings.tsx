@@ -59,7 +59,6 @@ export const MyEarnings = () => {
                 currency={Currency.COP}
                 sx={{
                     color: theme.palette.primary.dark,
-                    fontSize: "24px",
                     mt: 2,
                     width: 'fit-content'
                 }}
