@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, BoxProps, Typography } from "@mui/material";
+import PriceLabel from "./PriceLabel";
+import { Currency } from "@/enums/currency";
 
 interface AmountRowProps extends BoxProps {
   label: string;
@@ -35,14 +37,11 @@ export const AmountRow: React.FC<AmountRowProps> = ({
         {label}
       </Typography>
 
-      <Typography
-        variant="body2"
-        fontWeight={bold ? "bold" : "normal"}
-        color={amountColor || (bold ? "text.primary" : "text.secondary")}
-        sx={{ fontSize }}
-      >
-        {value}
-      </Typography>
+      <PriceLabel
+        number={value}
+        currency={Currency.COP}
+        color={amountColor || (bold ? "#000" : "#6b6b6b")}
+      />
     </Box>
   );
 };
