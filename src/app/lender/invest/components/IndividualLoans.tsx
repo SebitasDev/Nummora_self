@@ -80,19 +80,24 @@ export const IndividualLoans = () => {
                     variant="caption"
                     color="text.secondary"
                   >
-                    Monto:
+                    Monto
                   </Typography>
                   <Typography variant="body2" fontWeight="bold">
                     ${loan.amount.toLocaleString()}
                   </Typography>
                 </Box>
-                <Box sx={{ width: "50%" }}>
+                <Box
+                  sx={{
+                    width: "50%",
+                    textAlign: isMobile ? "right" : "initial",
+                  }}
+                >
                   <Typography
                     fontSize={"0.8rem"}
                     variant="caption"
                     color="text.secondary"
                   >
-                    Plazo:
+                    Plazo
                   </Typography>
                   <Typography variant="body2" fontWeight="bold">
                     {loan.term}
