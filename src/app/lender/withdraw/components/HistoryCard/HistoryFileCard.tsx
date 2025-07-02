@@ -92,6 +92,7 @@ export const HistoryFileCard = ({
                 [theme.breakpoints.down("md")]: {
                   fontSize: "0.7rem",
                 },
+                width: "fit-content",
               }}
             />
             <Typography

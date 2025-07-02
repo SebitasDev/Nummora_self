@@ -38,7 +38,7 @@ export default function WithdrawTemplate() {
         <WithdrawHistoryCard />
       </Box>
 
-      <Box gridArea="saldoResumen">
+      <Box gridArea="saldoResumen" sx={{ backgroundColor: "blue" }}>
         <SummaryCard />
       </Box>
 
