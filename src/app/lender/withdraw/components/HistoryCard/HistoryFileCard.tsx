@@ -13,6 +13,7 @@ import { CustomChip } from "@/components/atoms/CustomChip";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums/currency";
 import { useTheme } from "@mui/material/styles";
+import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 
 interface HistoryFileCardProps extends ChipProps {
   value: string;
@@ -61,8 +62,8 @@ export const HistoryFileCard = ({
         <Box display="flex" alignItems="center" gap={2}>
           <Avatar
             sx={{
-              bgcolor: "#E8F9F0",
-              color: "green",
+              bgcolor: "#eaf4fd",
+              color: "#eaf4fd",
               width: {
                 xs: 30,
                 md: 35,
@@ -73,15 +74,7 @@ export const HistoryFileCard = ({
               },
             }}
           >
-            <img
-              src="/arrow.svg"
-              alt="withdrawImage"
-              style={{
-                width: "40%",
-                height: "40%",
-                objectFit: "contain",
-              }}
-            />
+            <TrendingDownIcon sx={{ color: "#2563EB" }} />
           </Avatar>
           <Stack spacing={1}>
             <PriceLabel
@@ -105,7 +98,7 @@ export const HistoryFileCard = ({
           </Stack>
         </Box>
         <Box>
-          <Stack alignItems={"center"} spacing={1}>
+          <Stack spacing={1}>
             <CustomChip
               fontSizeXs="0.55rem"
               fontSizeMd="0.8rem"

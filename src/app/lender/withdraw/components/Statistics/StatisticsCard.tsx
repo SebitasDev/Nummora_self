@@ -69,7 +69,7 @@ export const StatisticsCard = () => {
         <Typography
           variant="h4"
           fontWeight={600}
-          color="#90caf9"
+          color="#2563EB"
           fontSize={numberFontSize}
         >
           1.2
