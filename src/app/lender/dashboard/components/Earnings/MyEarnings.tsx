@@ -44,8 +44,6 @@ export const MyEarnings = () => {
                     subtitle={
                         isMdUp ? `Evaluacion de ingresos en los ultimos ${period} meses` : ""
                     }
-                    titleSize={isMdUp ? 20 : 15}
-                    subtitleSize={15}
                 />
 
                 <Box sx={{marginLeft: "auto"}}>

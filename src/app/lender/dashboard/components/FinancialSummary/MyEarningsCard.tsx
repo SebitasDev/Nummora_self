@@ -44,6 +44,7 @@ export const MyEarningsCard = () => {
                     variant={"h6"}
                     sx={{
                         fontSize: "16px",
+                        fontWeight: "bold",
                         [themeMUI.breakpoints.down("md")]: {
                             fontSize: "15px",
                         }
@@ -62,6 +63,7 @@ export const MyEarningsCard = () => {
                 sx={{
                     color: "white",
                     letterSpacing: "-0.2px",
+                    fontSize: "22px",
                 }}
             />
 

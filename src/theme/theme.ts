@@ -105,6 +105,10 @@ export const theme = {
     amountLabel: {
         xs: "1.1rem",
         md: "1.3rem",
+    },
+    subtitle: {
+        xs: "1.1rem",
+        md: "1.4rem",
     }
   },
 };
