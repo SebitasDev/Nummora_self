@@ -25,6 +25,10 @@ export const CustomChip = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        fontSize: {
+          xs: fontSizeXs ?? theme.fontSize.chip.xs,
+          md: fontSizeMd ?? theme.fontSize.chip.md,
+        },
         "& .MuiTypography-root, & > p, & > span, & > div": {
           fontSize: {
             xs: fontSizeXs ?? theme.fontSize.chip.xs,
