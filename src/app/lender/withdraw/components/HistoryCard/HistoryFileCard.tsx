@@ -93,7 +93,7 @@ export const HistoryFileCard = ({
               color="text.secondary"
               sx={{ fontSize }}
             >
-              Lemon (Crypto) {shortenAddress(accountAddress)}
+              Lemon (Crypto) ● {shortenAddress(accountAddress)}
             </Typography>
           </Stack>
         </Box>
