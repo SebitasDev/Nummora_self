@@ -107,8 +107,9 @@ export const HistoryFileCard = ({
         <Box>
           <Stack alignItems={"center"} spacing={1}>
             <CustomChip
+              fontSizeXs={"0.6rem"}
+              fontSizeMd="0.8rem"
               sx={{
-                fontSize: isMdUp ? "0.8rem" : "0.6rem",
                 backgroundColor: "#E8F9F0",
                 color: "green",
                 px: isMdUp ? 2 : 1.5,
