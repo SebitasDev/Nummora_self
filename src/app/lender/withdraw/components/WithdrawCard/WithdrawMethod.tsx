@@ -175,6 +175,8 @@ export const WithdrawMethod = ({
             >
               <TimeText timeFrame={"5-15 minutos"} />
               <CustomChip
+                fontSizeXs="0.55rem"
+                fontSizeMd="0.8rem"
                 sx={{
                   backgroundColor: expanded ? "success.light" : "#E8F9F0",
                   color: expanded ? "white" : "green",
@@ -183,9 +185,7 @@ export const WithdrawMethod = ({
                   borderRadius: "20px",
                 }}
               >
-                <Typography fontSize={isMdUp ? "1rem" : "0.55rem"}>
-                  Seleccionar
-                </Typography>
+                Seleccionar
               </CustomChip>
             </Stack>
           </Box>

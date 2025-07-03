@@ -90,7 +90,7 @@ export const HistoryFileCard = ({
               sx={{
                 fontSize: "1rem",
                 [theme.breakpoints.down("md")]: {
-                  fontSize: "0.7rem",
+                  fontSize: "0.65rem",
                 },
                 width: "fit-content",
               }}
@@ -107,7 +107,7 @@ export const HistoryFileCard = ({
         <Box>
           <Stack alignItems={"center"} spacing={1}>
             <CustomChip
-              fontSizeXs={"0.6rem"}
+              fontSizeXs="0.55rem"
               fontSizeMd="0.8rem"
               sx={{
                 backgroundColor: "#E8F9F0",
