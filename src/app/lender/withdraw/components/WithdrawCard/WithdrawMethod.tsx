@@ -81,6 +81,7 @@ export const WithdrawMethod = ({
                   xs: 33,
                   md: 60,
                 },
+                mr: { xs: 2, md: 0 },
               }}
             />
           </Box>

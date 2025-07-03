@@ -1,4 +1,5 @@
 import { CustomCard } from "@/components/atoms/CustomCard";
+import SectionHeader from "@/components/atoms/SectionHeader";
 import { AmountRow } from "@/components/molecules/AmountRow";
 import { Box, Typography } from "@mui/material";
 
@@ -28,9 +29,7 @@ export const StatisticsCard = () => {
       }}
     >
       <Box sx={{ gridArea: "header" }}>
-        <Typography variant="h5" fontWeight={700}>
-          Estadisticas del Mes
-        </Typography>
+        <SectionHeader title="Estadisticas del Mes" />
       </Box>
       <CustomCard
         gridArea={"leftCol"}
