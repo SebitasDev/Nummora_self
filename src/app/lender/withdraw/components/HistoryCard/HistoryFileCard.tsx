@@ -32,7 +32,7 @@ export const HistoryFileCard = ({
   const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
   const shortenAddress = useShortenedAddress;
   const fontSize = {
-    xs: "0.7rem",
+    xs: "0.6rem",
     sm: "0.9rem",
     md: "1rem",
   };
@@ -108,6 +108,7 @@ export const HistoryFileCard = ({
           <Stack alignItems={"center"} spacing={1}>
             <CustomChip
               sx={{
+                fontSize: isMdUp ? "0.8rem" : "0.6rem",
                 backgroundColor: "#E8F9F0",
                 color: "green",
                 px: isMdUp ? 2 : 1.5,
@@ -116,9 +117,7 @@ export const HistoryFileCard = ({
                 ...sx,
               }}
             >
-              <Typography fontSize={isMdUp ? "0.8rem" : "0.6rem"}>
-                {label}
-              </Typography>
+              {label}
             </CustomChip>
             <Typography
               variant="body2"

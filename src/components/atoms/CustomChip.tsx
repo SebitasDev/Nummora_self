@@ -20,7 +20,7 @@ export const CustomChip = ({ children, sx, ...rest }: CustomChipProps) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-          "& .MuiTypography-root, & > p, & > span, & > div": {
+        "& .MuiTypography-root, & > p, & > span, & > div": {
           fontSize: {
             xs: theme.fontSize.chip.xs,
             md: theme.fontSize.chip.md,
