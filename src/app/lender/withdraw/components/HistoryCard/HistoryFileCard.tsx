@@ -13,6 +13,7 @@ import { CustomChip } from "@/components/atoms/CustomChip";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums/currency";
 import { useTheme } from "@mui/material/styles";
+import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 
 interface HistoryFileCardProps extends ChipProps {
   value: string;
@@ -32,7 +33,7 @@ export const HistoryFileCard = ({
   const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
   const shortenAddress = useShortenedAddress;
   const fontSize = {
-    xs: "0.7rem",
+    xs: "0.6rem",
     sm: "0.9rem",
     md: "1rem",
   };
@@ -61,8 +62,8 @@ export const HistoryFileCard = ({
         <Box display="flex" alignItems="center" gap={2}>
           <Avatar
             sx={{
-              bgcolor: "#E8F9F0",
-              color: "green",
+              bgcolor: "#eaf4fd",
+              color: "#eaf4fd",
               width: {
                 xs: 30,
                 md: 35,
@@ -73,15 +74,7 @@ export const HistoryFileCard = ({
               },
             }}
           >
-            <img
-              src="/arrow.svg"
-              alt="withdrawImage"
-              style={{
-                width: "40%",
-                height: "40%",
-                objectFit: "contain",
-              }}
-            />
+            <TrendingDownIcon sx={{ color: "#2563EB" }} />
           </Avatar>
           <Stack spacing={1}>
             <PriceLabel
@@ -90,8 +83,9 @@ export const HistoryFileCard = ({
               sx={{
                 fontSize: "1rem",
                 [theme.breakpoints.down("md")]: {
-                  fontSize: "0.7rem",
+                  fontSize: "0.65rem",
                 },
+                width: "fit-content",
               }}
             />
             <Typography
@@ -99,13 +93,15 @@ export const HistoryFileCard = ({
               color="text.secondary"
               sx={{ fontSize }}
             >
-              Lemon (Crypto) {shortenAddress(accountAddress)}
+              Lemon (Crypto) ● {shortenAddress(accountAddress)}
             </Typography>
           </Stack>
         </Box>
         <Box>
-          <Stack alignItems={"center"} spacing={1}>
+          <Stack spacing={1}>
             <CustomChip
+              fontSizeXs="0.55rem"
+              fontSizeMd="0.8rem"
               sx={{
                 backgroundColor: "#E8F9F0",
                 color: "green",
@@ -115,9 +111,7 @@ export const HistoryFileCard = ({
                 ...sx,
               }}
             >
-              <Typography fontSize={isMdUp ? "0.8rem" : "0.6rem"}>
-                {label}
-              </Typography>
+              {label}
             </CustomChip>
             <Typography
               variant="body2"

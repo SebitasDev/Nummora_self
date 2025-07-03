@@ -62,54 +62,42 @@ export const WithdrawMethod = ({
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              maxWidth: "100%",
-              mr: 1.5,
-              ml: -0.5,
+              maxWidth: {
+                xs: "100%",
+                md: "70%",
+              },
               cursor: "pointer",
             }}
           >
-            <Box
+            <Avatar
+              src="https://i.postimg.cc/QNQJd1PN/download.jpg"
+              alt="Lemon"
               sx={{
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 width: {
-                  xs: 30,
-                  md: 50,
+                  xs: 33,
+                  md: 60,
                 },
                 height: {
-                  xs: 35,
-                  md: 50,
+                  xs: 33,
+                  md: 60,
                 },
               }}
-            >
-              <Avatar
-                src="https://i.postimg.cc/QNQJd1PN/download.jpg"
-                alt="Lemon"
-                sx={{
-                  width: {
-                    xs: 33,
-                    md: 50,
-                  },
-                  height: {
-                    xs: 33,
-                    md: 50,
-                  },
-                }}
-              />
-            </Box>
+            />
           </Box>
           <Box
             sx={{
               gridArea: "lemon",
+              ml: {
+                xs: 0,
+                md: -1.5,
+              },
             }}
           >
             <Stack spacing={0.3}>
               <Typography
                 fontWeight="bold"
                 sx={{
-                  fontSize: { xs: "0.8rem", sm: "0.9rem", md: "0.8rem" },
+                  fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1.2rem" },
                 }}
               >
                 Lemon (Crypto)
@@ -141,8 +129,12 @@ export const WithdrawMethod = ({
               sx={{
                 fontSize: {
                   xs: "0.54rem",
-                  sm: "0.6rem",
-                  md: "0.7rem",
+                  sm: "0.7rem",
+                  md: "0.8rem",
+                },
+                ml: {
+                  xs: 0,
+                  md: -1.5,
                 },
                 color: "primary.main",
                 display: "flex",
@@ -158,9 +150,10 @@ export const WithdrawMethod = ({
           </Box>
           <Box
             sx={{
+              display: "flex",
               gridArea: "select",
               alignItems: "center",
-              display: "flex",
+              justifyContent: "flex-end",
               mt: {
                 xs: 1,
                 sm: 0,
@@ -178,10 +171,12 @@ export const WithdrawMethod = ({
                 xs: "space-between",
                 sm: "center",
               }}
-              sx={{ width: "100%", mx: -0.5, my: -0.5 }}
+              sx={{ width: { xs: "100%", sm: "70%" }, mx: -0.5, my: -0.5 }}
             >
               <TimeText timeFrame={"5-15 minutos"} />
               <CustomChip
+                fontSizeXs="0.55rem"
+                fontSizeMd="0.8rem"
                 sx={{
                   backgroundColor: expanded ? "success.light" : "#E8F9F0",
                   color: expanded ? "white" : "green",
@@ -190,9 +185,7 @@ export const WithdrawMethod = ({
                   borderRadius: "20px",
                 }}
               >
-                <Typography fontSize={isMdUp ? "1rem" : "0.55rem"}>
-                  Seleccionar
-                </Typography>
+                Seleccionar
               </CustomChip>
             </Stack>
           </Box>

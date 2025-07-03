@@ -2,6 +2,8 @@ import { Box, useTheme } from "@mui/material";
 import { SetWithdrawCard } from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import { WithdrawHistoryCard } from "@/app/lender/withdraw/components/HistoryCard/WithdrawHistoryCard";
 import { SummaryCard } from "@/app/lender/withdraw/components/ResumeCard/SummaryCard";
+import { StatisticsCard } from "@/app/lender/withdraw/components/Statistics/StatisticsCard";
+import ImportantInfo from "@/app/lender/withdraw/components/Important Info/ImportantInfo";
 
 export default function WithdrawTemplate() {
   const theme = useTheme();
@@ -16,42 +18,45 @@ export default function WithdrawTemplate() {
           display: "grid",
           gridTemplateColumns: "2fr 1fr",
           gridTemplateAreas: `
-                     "title           title"
-                     "formulario      saldoResumen"
-                     "historial       estadisticas"
-                     ".               infoImportante"
-                     `,
+            "header header"
+            "leftCol rightCol"
+          `,
           gap: 3,
         },
       }}
     >
-      <Box gridArea="title">
+      <Box sx={{ gridArea: "header" }}>
         <h2>Retirar Dinero</h2>
         <p>Retira tus ganancias de forma segura </p>
       </Box>
-
-      <Box gridArea="formulario">
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+          gridArea: "leftCol",
+        }}
+      >
         <SetWithdrawCard />
-      </Box>
-
-      <Box gridArea="historial">
         <WithdrawHistoryCard />
       </Box>
-
-      <Box gridArea="saldoResumen">
-        <SummaryCard />
-      </Box>
-
-      {/* Estadísticas del mes */}
-      <Box gridArea="estadisticas">
-        {/* StatsCard */}
-        <h2>Estadisticas</h2>
-      </Box>
-
-      {/* Información importante */}
-      <Box gridArea="infoImportante">
-        {/* ImportantInfoCard */}
-        <h2>Info Importante</h2>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+          gridArea: "rightCol",
+        }}
+      >
+        <Box>
+          <SummaryCard />
+        </Box>
+        <Box>
+          <StatisticsCard />
+        </Box>
+        <Box>
+          <ImportantInfo />
+        </Box>
       </Box>
     </Box>
   );

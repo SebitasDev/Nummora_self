@@ -8,12 +8,14 @@ interface AmountRowProps extends BoxProps {
   label: string;
   value: string;
   amountColor?: string;
+  currency?: Currency;
 }
 
 export const AmountRow: React.FC<AmountRowProps> = ({
   label,
   value,
   amountColor,
+  currency = Currency.COP,
   sx,
   ...rest
 }) => {
@@ -39,7 +41,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
 
       <PriceLabel
         number={value}
-        currency={Currency.COP}
+        currency={currency}
         color={amountColor}
         sx={{
           fontSize: "1rem",
