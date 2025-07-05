@@ -10,9 +10,9 @@ export const useAmountInput = () => {
 
   const handleSelectAmount = (value: number | "all") => {
     if (value === "all") {
-      setAmount("123456");
+      setAmount("123.456");
     } else {
-      setAmount(value.toString());
+      setAmount(value.toLocaleString("es-CO"));
     }
   };
 
