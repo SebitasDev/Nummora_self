@@ -9,6 +9,12 @@ import {
   BoxProps,
 } from "@mui/material";
 import { useAmountInput } from "@/app/lender/withdraw/hooks/useAmountInput";
+import { set } from "react-hook-form";
+
+interface AmountInputProps extends BoxProps {
+  amount?: string;
+  setAmount?: (amount: string) => void;
+}
 
 export const AmountInput = ({ sx, ...rest }: BoxProps) => {
   const { amount, handleChange, handleSelectAmount } = useAmountInput();

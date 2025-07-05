@@ -1,25 +1,25 @@
+import { useAmountInputStore } from "../store/useAmountInputStore";
 
-import { useState } from "react";
+export const useAmountInput = () => {
+  const amount = useAmountInputStore((state) => state.amount);
+  const setAmount = useAmountInputStore((state) => state.setAmount);
 
-export const useAmountInput = (defaultAmount = "") => {
-    const [amount, setAmount] = useState<string>(defaultAmount);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(e.target.value);
+  };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAmount(e.target.value);
-    };
+  const handleSelectAmount = (value: number | "all") => {
+    if (value === "all") {
+      setAmount("123456");
+    } else {
+      setAmount(value.toString());
+    }
+  };
 
-    const handleSelectAmount = (value: number | "all") => {
-        if (value === "all") {
-            setAmount("123456");
-        } else {
-            setAmount(value.toString());
-        }
-    };
-
-    return {
-        amount,
-        setAmount,
-        handleChange,
-        handleSelectAmount,
-    };
+  return {
+    amount,
+    setAmount,
+    handleChange,
+    handleSelectAmount,
+  };
 };
