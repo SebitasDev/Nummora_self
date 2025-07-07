@@ -10,7 +10,6 @@ import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWall
 import { CustomCard } from "@/components/atoms/CustomCard";
 import { WithdrawMethod } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawMethod";
 import React, { useState } from "react";
-import SectionTitle from "@/components/atoms/SectionTitle";
 import SectionHeader from "@/components/atoms/SectionHeader";
 
 export const SetWithdrawCard = () => {

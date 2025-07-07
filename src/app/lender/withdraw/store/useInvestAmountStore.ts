@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface AmountInputState {
+interface InvestAmountState {
   amount: string;
   setAmount: (amount: string) => void;
 }
 
-export const useAmountInputStore = create<AmountInputState>((set) => ({
+export const useInvestAmountStore = create<InvestAmountState>((set) => ({
   amount: "0.00",
   setAmount: (amount) => set({ amount }),
 }));

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { AmountRow } from "@/components/molecules/AmountRow";
-import { useAmountInput } from "@/app/lender/withdraw/hooks/useAmountInput";
+import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
 
 interface WithdrawSummaryProps {
   comision: string;
@@ -12,7 +12,7 @@ export const WithdrawSummary = ({
   comision,
   totalRecibir,
 }: WithdrawSummaryProps) => {
-  const { amount } = useAmountInput();
+  const { amount } = useInvestAmount();
   return (
     <Box
       mt={2}

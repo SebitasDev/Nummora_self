@@ -1,5 +1,5 @@
 import { CustomCard } from "@/components/atoms/CustomCard";
-import { CardContent, CardHeader, Typography } from "@mui/material";
+import { CardContent, CardHeader } from "@mui/material";
 import React from "react";
 import { HistoryFileCard } from "@/app/lender/withdraw/components/HistoryCard/HistoryFileCard";
 import { Stack } from "@mui/material";

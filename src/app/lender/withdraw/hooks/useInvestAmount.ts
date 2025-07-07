@@ -1,8 +1,8 @@
-import { useAmountInputStore } from "../store/useAmountInputStore";
+import { useInvestAmountStore } from "../store/useInvestAmountStore";
 
-export const useAmountInput = () => {
-  const amount = useAmountInputStore((state) => state.amount);
-  const setAmount = useAmountInputStore((state) => state.setAmount);
+export const useInvestAmount = () => {
+  const amount = useInvestAmountStore((state) => state.amount);
+  const setAmount = useInvestAmountStore((state) => state.setAmount);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(e.target.value);
