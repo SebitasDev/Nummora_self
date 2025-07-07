@@ -4,13 +4,13 @@ import { AmountRow } from "@/components/molecules/AmountRow";
 import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
 
 interface WithdrawSummaryProps {
-  comision: string;
-  totalRecibir: string;
+  commission: string;
+  totalIncome: string;
 }
 
 export const WithdrawSummary = ({
-  comision,
-  totalRecibir,
+  commission,
+  totalIncome,
 }: WithdrawSummaryProps) => {
   const { amount } = useInvestAmount();
   return (
@@ -26,10 +26,10 @@ export const WithdrawSummary = ({
       </Typography>
 
       <AmountRow label="Monto solicitado" value={amount} />
-      <AmountRow label="Comisión" value={comision} />
+      <AmountRow label="Comisión" value={commission} />
       <AmountRow
         label="Total a recibir"
-        value={totalRecibir}
+        value={totalIncome}
         amountColor="success.light"
       />
     </Box>

@@ -7,8 +7,8 @@ import ImportantInfo from "@/app/lender/withdraw/components/Important Info/Impor
 import SectionTitle from "@/components/atoms/SectionTitle";
 
 export default function WithdrawTemplate() {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const themeMUI = useTheme();
+  const isDesktop = useMediaQuery(themeMUI.breakpoints.up("md"));
 
   return (
     <Box
@@ -16,7 +16,7 @@ export default function WithdrawTemplate() {
         display: "flex",
         flexDirection: "column",
         gap: 3,
-        [theme.breakpoints.up("md")]: {
+        [themeMUI.breakpoints.up("md")]: {
           display: "grid",
           gridTemplateColumns: "2fr 1fr",
           gridTemplateAreas: `

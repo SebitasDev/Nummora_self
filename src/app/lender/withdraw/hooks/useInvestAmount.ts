@@ -1,8 +1,10 @@
 import { useInvestAmountStore } from "../store/useInvestAmountStore";
 
 export const useInvestAmount = () => {
-  const amount = useInvestAmountStore((state) => state.amount);
-  const setAmount = useInvestAmountStore((state) => state.setAmount);
+  const { amount, setAmount } = useInvestAmountStore((state) => ({
+    amount: state.amount,
+    setAmount: state.setAmount,
+  }));
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(e.target.value);
