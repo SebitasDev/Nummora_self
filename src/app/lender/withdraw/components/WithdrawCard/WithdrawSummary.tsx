@@ -1,18 +1,18 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { AmountRow } from "@/components/molecules/AmountRow";
+import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
 
 interface WithdrawSummaryProps {
-  montoSolicitado: string;
-  comision: string;
-  totalRecibir: string;
+  commission: string;
+  totalIncome: string;
 }
 
 export const WithdrawSummary = ({
-  montoSolicitado,
-  comision,
-  totalRecibir,
+  commission,
+  totalIncome,
 }: WithdrawSummaryProps) => {
+  const { amount } = useInvestAmount();
   return (
     <Box
       mt={2}
@@ -25,11 +25,11 @@ export const WithdrawSummary = ({
         Resumen del Retiro
       </Typography>
 
-      <AmountRow label="Monto solicitado" value={montoSolicitado} />
-      <AmountRow label="Comisión" value={comision} />
+      <AmountRow label="Monto solicitado" value={amount} />
+      <AmountRow label="Comisión" value={commission} />
       <AmountRow
         label="Total a recibir"
-        value={totalRecibir}
+        value={totalIncome}
         amountColor="success.light"
       />
     </Box>

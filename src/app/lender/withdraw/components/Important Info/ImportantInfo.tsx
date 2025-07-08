@@ -2,6 +2,7 @@ import { Typography, Stack, CardHeader, CardContent } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { CustomCard } from "@/components/atoms/CustomCard";
+import SectionHeader from "@/components/atoms/SectionHeader";
 
 const infoRows = [
   {
@@ -32,12 +33,10 @@ export default function ImportantInfo() {
     <CustomCard sx={{ p: 1.2 }}>
       <CardHeader
         title={
-          <Stack direction="row" alignItems="center" spacing={1}>
-            <ErrorOutlineIcon color="warning" />
-            <Typography variant="h5" fontWeight={700}>
-              Información Importante
-            </Typography>
-          </Stack>
+          <SectionHeader
+            title="Información Importante"
+            icon={<ErrorOutlineIcon color="warning" />}
+          />
         }
       />
       <CardContent>

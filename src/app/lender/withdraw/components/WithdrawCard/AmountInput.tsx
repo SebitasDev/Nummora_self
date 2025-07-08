@@ -8,10 +8,10 @@ import {
   Typography,
   BoxProps,
 } from "@mui/material";
-import { useAmountInput } from "@/app/lender/withdraw/hooks/useAmountInput";
+import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
 
 export const AmountInput = ({ sx, ...rest }: BoxProps) => {
-  const { amount, handleChange, handleSelectAmount } = useAmountInput();
+  const { amount, handleChange, handleSelectAmount } = useInvestAmount();
 
   return (
     <Box sx={{ ...sx }} {...rest}>

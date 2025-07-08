@@ -1,19 +1,20 @@
 import { CustomCard } from "@/components/atoms/CustomCard";
-import { CardContent, CardHeader, Typography } from "@mui/material";
+import { CardContent, CardHeader } from "@mui/material";
 import React from "react";
 import { HistoryFileCard } from "@/app/lender/withdraw/components/HistoryCard/HistoryFileCard";
 import { Stack } from "@mui/material";
+import SectionHeader from "@/components/atoms/SectionHeader";
 
 export const WithdrawHistoryCard = () => {
   return (
     <CustomCard>
       <CardHeader
         title={
-          <Typography variant="h5" fontWeight={700}>
-            Historial de Retiros
-          </Typography>
+          <SectionHeader
+            title="Historial de Retiros"
+            subtitle=">Tus ultimos movimientos en retiros"
+          />
         }
-        subheader={<p>Tus ultimos movimientos en retiros</p>}
       />
       <CardContent>
         <Stack spacing={1}>

@@ -1,12 +1,14 @@
-import { Box, useTheme } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { SetWithdrawCard } from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import { WithdrawHistoryCard } from "@/app/lender/withdraw/components/HistoryCard/WithdrawHistoryCard";
 import { SummaryCard } from "@/app/lender/withdraw/components/ResumeCard/SummaryCard";
 import { StatisticsCard } from "@/app/lender/withdraw/components/Statistics/StatisticsCard";
 import ImportantInfo from "@/app/lender/withdraw/components/Important Info/ImportantInfo";
+import SectionTitle from "@/components/atoms/SectionTitle";
 
 export default function WithdrawTemplate() {
-  const theme = useTheme();
+  const themeMUI = useTheme();
+  const isDesktop = useMediaQuery(themeMUI.breakpoints.up("md"));
 
   return (
     <Box
@@ -14,7 +16,7 @@ export default function WithdrawTemplate() {
         display: "flex",
         flexDirection: "column",
         gap: 3,
-        [theme.breakpoints.up("md")]: {
+        [themeMUI.breakpoints.up("md")]: {
           display: "grid",
           gridTemplateColumns: "2fr 1fr",
           gridTemplateAreas: `
@@ -25,10 +27,12 @@ export default function WithdrawTemplate() {
         },
       }}
     >
-      <Box sx={{ gridArea: "header" }}>
-        <h2>Retirar Dinero</h2>
-        <p>Retira tus ganancias de forma segura </p>
-      </Box>
+      {isDesktop && (
+        <Box sx={{ gridArea: "header" }}>
+          <SectionTitle>Retirar Dinero</SectionTitle>
+          <p>Retira tus ganancias de forma segura </p>
+        </Box>
+      )}
       <Box
         sx={{
           display: "flex",

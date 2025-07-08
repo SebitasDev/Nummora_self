@@ -10,6 +10,7 @@ import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWall
 import { CustomCard } from "@/components/atoms/CustomCard";
 import { WithdrawMethod } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawMethod";
 import React, { useState } from "react";
+import SectionHeader from "@/components/atoms/SectionHeader";
 
 export const SetWithdrawCard = () => {
   const [selectedAddress, setSelectedAddress] = useState("");
@@ -18,14 +19,14 @@ export const SetWithdrawCard = () => {
     <CustomCard sx={{ p: 1.7 }}>
       <CardHeader
         title={
-          <Stack direction="row" alignItems="center" spacing={1}>
-            <AccountBalanceWalletOutlined sx={{ color: "success.light" }} />
-            <Typography variant="h5" fontWeight={700}>
-              Configurar Retiro
-            </Typography>
-          </Stack>
+          <SectionHeader
+            title="Configurar Retiro"
+            subtitle="Selecciona el metodo y monto que deseas retirar"
+            icon={
+              <AccountBalanceWalletOutlined sx={{ color: "success.light" }} />
+            }
+          />
         }
-        subheader={<p>Selecciona el metodo y monto que deseas retirar</p>}
       />
       <CardContent>
         <AmountInput sx={{ mb: 4 }} />
