@@ -201,7 +201,7 @@ export const WithdrawMethod = ({
               setSelectedAddress(e.target.value)
             }
           />
-          <WithdrawSummary commission="1.500" totalIncome="98.500" />
+          <WithdrawSummary />
         </Box>
       </Collapse>
     </Box>
