@@ -9,7 +9,7 @@ import {
 import {CustomCard} from "@/components/atoms/CustomCard";
 
 export const EarningPrediction = () => {
-    const { isMdUp } = useEarningPredictions();
+    const { isMdDown } = useEarningPredictions();
     
     return (
         <CustomCard 
@@ -30,9 +30,9 @@ export const EarningPrediction = () => {
             <SectionHeader
                 title={"Predicción de ganancias a futuro"}
                 subtitle={
-                    isMdUp ? `Proyeccíon de los ingresos a los próximos 6 meses` : ""
+                    isMdDown ? "" : "Proyeccíon de los ingresos a los próximos 6 meses"
                 }
-                titleSize={isMdUp ? 20 : 15}
+                titleSize={isMdDown ? 15 : 20}
                 subtitleSize={15}
                 icon={<TrendingUpIcon sx={{ fontSize: "20px", fontWeight: "bold" }}/>}
             />

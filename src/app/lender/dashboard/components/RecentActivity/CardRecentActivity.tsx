@@ -2,9 +2,9 @@ import {Box, Typography} from "@mui/material"
 import SectionHeader from "@/components/atoms/SectionHeader";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import {Currency} from "@/enums";
-import {useRecentActivities} from "@/app/lender/dashboard/hooks";
 import React from "react";
 import {CustomChip} from "@/components/atoms/CustomChip";
+import {useStyles} from "@/hooks/useStyles";
 
 interface CardRecentActivityProps {
     title: string;
@@ -19,7 +19,7 @@ interface CardRecentActivityProps {
 export const CardRecentActivity = (
     { title, subtitle, amount, icon, color, backgroundColor, status } : CardRecentActivityProps
 ) => {
-    const { themeMUI, isMdUp, theme } = useRecentActivities();
+    const { themeMUI, isMdDown, theme } = useStyles();
     
     return (
         <Box
@@ -61,8 +61,8 @@ export const CardRecentActivity = (
                 </Box>
                 <SectionHeader
                     title={title}
-                    titleSize={isMdUp ? 16 : 12}
-                    subtitleSize={isMdUp ? 14 : 11}
+                    titleSize={isMdDown ? 14 : 16}
+                    subtitleSize={isMdDown ? theme.fontSize.labels.xs : theme.fontSize.labels.md}
                     subtitle={subtitle}
                 />
             </Box>

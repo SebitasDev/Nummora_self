@@ -5,6 +5,8 @@ import {Currency} from "@/enums";
 import CodeIcon from '@mui/icons-material/Code';
 import {CustomCard} from "@/components/atoms/CustomCard";
 import {CustomChip} from "@/components/atoms/CustomChip";
+import Theme from "@/theme/theme";
+import {useMediaQuery} from "@mui/system";
 
 interface FinancialSummaryCardProps {
     name: string;
@@ -20,6 +22,8 @@ export const FinancialSummaryCard = (
     { name, number, currency, totalLoans, color, backgroundColor, icon }: FinancialSummaryCardProps
 ) => {
     const themeMUI = useTheme();
+    const isMdDown = useMediaQuery(themeMUI.breakpoints.down("md"));
+    const theme = Theme;
     
     return (
         <CustomCard
@@ -99,7 +103,8 @@ export const FinancialSummaryCard = (
             >
                 <Typography
                     sx={{
-                        fontSize: "14px",
+                        fontSize: isMdDown ? theme.fontSize.labels.xs
+                            : theme.fontSize.labels.md,
                         color: "gray"
                     }}
                 >

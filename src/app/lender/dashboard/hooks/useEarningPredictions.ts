@@ -4,7 +4,7 @@ import Theme from "@/theme/theme";
 
 export const useEarningPredictions = () => {
     const themeMUI = useTheme();
-    const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
+    const isMdDown = useMediaQuery(themeMUI.breakpoints.down("md"));
     const theme = Theme;
     
     const data = [
@@ -18,7 +18,7 @@ export const useEarningPredictions = () => {
     
     return {
         themeMUI,
-        isMdUp,
+        isMdDown,
         data,
         theme
     }

@@ -1,15 +1,15 @@
 import {Box} from "@mui/material"
 import SectionHeader from "@/components/atoms/SectionHeader";
 import {CardRecentActivity} from "@/app/lender/dashboard/components/RecentActivity/CardRecentActivity";
-import {useRecentActivities} from "@/app/lender/dashboard/hooks";
 import WalletIcon from '@mui/icons-material/Wallet';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import SavingsIcon from '@mui/icons-material/Savings';
 import {CustomCard} from "@/components/atoms/CustomCard";
 import {CustomButton} from "@/components/atoms/CustomButton";
+import {useStyles} from "@/hooks/useStyles";
 
 export const RecentActivities = () => {
-    const { themeMUI, isMdUp, theme } = useRecentActivities();
+    const { themeMUI, isMdDown, theme } = useStyles();
     
     return (
         <CustomCard 
@@ -39,7 +39,7 @@ export const RecentActivities = () => {
             >
                 <SectionHeader
                     title={"Actividad reciente"}
-                    titleSize={isMdUp ? 20 : 15}
+                    titleSize={isMdDown ? 15 : 20}
                 />
 
                 <CustomButton>
