@@ -42,10 +42,7 @@ export const RecentActivities = () => {
           titleSize={isMdUp ? 20 : 15}
         />
 
-        <CustomButton
-          key="History"
-          href="/lender/dashboard/TransactionsHistory"
-        >
+        <CustomButton key="History" href="/lender/transactions">
           Ver todo
         </CustomButton>
       </Box>

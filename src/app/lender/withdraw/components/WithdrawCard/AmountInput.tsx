@@ -7,12 +7,17 @@ import {
   OutlinedInput,
   Typography,
   BoxProps,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
+import Theme from "@/theme/theme";
 
 export const AmountInput = ({ sx, ...rest }: BoxProps) => {
   const { amount, handleChange, handleSelectAmount } = useInvestAmount();
-
+  const themeMUI = useTheme();
+  const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
+  const theme = Theme;
   return (
     <Box sx={{ ...sx }} {...rest}>
       <Typography variant="subtitle1" fontWeight={"bold"} mb={1}>
@@ -21,10 +26,10 @@ export const AmountInput = ({ sx, ...rest }: BoxProps) => {
       <FormControl fullWidth>
         <OutlinedInput
           sx={{
-            fontSize: {
-              xs: "0.9rem",
-              sm: "1rem",
-              md: "1rem",
+            fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+            letterSpacing: "-0.5px",
+            [themeMUI.breakpoints.down("md")]: {
+              fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
             },
           }}
           id="standard-adornment-amount"
@@ -42,16 +47,16 @@ export const AmountInput = ({ sx, ...rest }: BoxProps) => {
             sx={{
               borderColor: "rgba(0, 0, 0, 0.3)",
               fontWeight: "bold",
-              width: "20%",
+              width: "30%",
               height: "10%",
               color: "black",
               marginRight: "0.5rem",
               mt: "0.6rem",
               textTransform: "none",
-              fontSize: {
-                xs: "0.6rem",
-                sm: "0.7rem",
-                md: "0.8rem",
+              fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+              letterSpacing: "-0.5px",
+              [themeMUI.breakpoints.down("md")]: {
+                fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
               },
             }}
             variant="outlined"
@@ -68,13 +73,13 @@ export const AmountInput = ({ sx, ...rest }: BoxProps) => {
             fontWeight: "bold",
             textTransform: "none",
             color: "black",
-            width: "20%",
+            width: "30%",
             height: "10%",
             mt: "0.6rem",
-            fontSize: {
-              xs: "0.6rem",
-              sm: "0.7rem",
-              md: "0.8rem",
+            fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+            letterSpacing: "-0.5px",
+            [themeMUI.breakpoints.down("md")]: {
+              fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
             },
           }}
         >

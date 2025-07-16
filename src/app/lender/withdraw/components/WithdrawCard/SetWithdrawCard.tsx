@@ -5,6 +5,7 @@ import {
   CardHeader,
   Typography,
   Stack,
+  Box,
 } from "@mui/material";
 import AccountBalanceWalletOutlined from "@mui/icons-material/AccountBalanceWalletOutlined";
 import { CustomCard } from "@/components/atoms/CustomCard";
@@ -28,7 +29,7 @@ export const SetWithdrawCard = () => {
           />
         }
       />
-      <CardContent>
+      <Box sx={{ p: 1 }}>
         <AmountInput sx={{ mb: 4 }} />
         <WithdrawMethod
           selectedAddress={selectedAddress}
@@ -45,7 +46,7 @@ export const SetWithdrawCard = () => {
         >
           Confirmar Retiro
         </Button>
-      </CardContent>
+      </Box>
     </CustomCard>
   );
 };
