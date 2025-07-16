@@ -1,8 +1,9 @@
-import { Box, Card, CardHeader } from "@mui/material";
+import { Box } from "@mui/material";
 import { CustomButton } from "@/components/atoms/CustomButton";
 import { Filters } from "../types/activity";
 import { CustomCard } from "@/components/atoms/CustomCard";
 import SectionHeader from "@/components/atoms/SectionHeader";
+import { useQuickFilterIcon } from "../hooks/useQuickFilterIcon";
 
 interface Props {
   filters: Filters;
@@ -28,26 +29,34 @@ export const QuickFilters = ({ filters, onFilterChange }: Props) => {
           mt: 3,
         }}
       >
-        {typeOptions.map((option) => (
-          <CustomButton
-            key={option.value}
-            variant={filters.type === option.value ? "contained" : "outlined"}
-            color={filters.type === option.value ? "primary" : "inherit"}
-            onClick={() => onFilterChange("type", option.value)}
-            sx={{
-              width: "100%",
-              justifyContent: "start",
-              bgcolor: filters.type === option.value ? "grey.900" : "white",
-              color: filters.type === option.value ? "white" : "black",
-              "&:hover": {
-                bgcolor:
-                  filters.type === option.value ? "grey.800" : "grey.100",
-              },
-            }}
-          >
-            {option.label}
-          </CustomButton>
-        ))}
+        {typeOptions.map((option) => {
+          const isActive = filters.type === option.value;
+          const icon = useQuickFilterIcon(
+            option.value as Filters["type"],
+            isActive
+          );
+
+          return (
+            <CustomButton
+              key={option.value}
+              startIcon={icon}
+              variant={isActive ? "contained" : "outlined"}
+              color={isActive ? "primary" : "inherit"}
+              onClick={() => onFilterChange("type", option.value)}
+              sx={{
+                width: "100%",
+                justifyContent: "start",
+                bgcolor: isActive ? "grey.900" : "white",
+                color: isActive ? "white" : "black",
+                "&:hover": {
+                  bgcolor: isActive ? "grey.800" : "grey.100",
+                },
+              }}
+            >
+              {option.label}
+            </CustomButton>
+          );
+        })}
 
         <CustomButton
           variant="outlined"
