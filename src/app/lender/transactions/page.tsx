@@ -1,4 +1,4 @@
-import TransactionsHistory from "@/app/lender/transactions/components/TransactionsHistory";
+import TransactionsHistory from "@/components/layouts/pageLayouts/TransactionsHistory";
 
 export default function TransactionsHistoryPage() {
   return <TransactionsHistory />;

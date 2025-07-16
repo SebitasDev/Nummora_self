@@ -59,11 +59,17 @@ export const QuickFilters = ({ filters, onFilterChange }: Props) => {
         })}
 
         <CustomButton
-          variant="outlined"
+          variant={filters.type === "Todos" ? "contained" : "outlined"}
+          color={filters.type === "Todos" ? "primary" : "inherit"}
+          onClick={() => onFilterChange("type", "Todos")}
           sx={{
             width: "100%",
             justifyContent: "start",
-            color: "text.secondary",
+            bgcolor: filters.type === "Todos" ? "grey.900" : "white",
+            color: filters.type === "Todos" ? "white" : "black",
+            "&:hover": {
+              bgcolor: filters.type === "Todos" ? "grey.800" : "grey.100",
+            },
           }}
         >
           Ver Todas

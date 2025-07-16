@@ -2,11 +2,11 @@
 
 import SectionHeader from "@/components/atoms/SectionHeader";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { ActivityFilters } from "./ActivityFilters";
-import { useFilteredActivities } from "../hooks/useFilteredActivities";
-import { ActivityList } from "./ActivityList";
-import { Summary } from "./Summary";
-import { QuickFilters } from "./QuickFilters";
+import { ActivityFilters } from "@/app/lender/transactions/components/ActivityFilters";
+import { useFilteredActivities } from "@/app/lender/transactions/hooks/useFilteredActivities";
+import { ActivityList } from "@/app/lender/transactions/components/ActivityList";
+import { Summary } from "@/app/lender/transactions/components/Summary";
+import { QuickFilters } from "@/app/lender/transactions/components/QuickFilters";
 
 export default function TransactionsHistory() {
   const themeMUI = useTheme();
@@ -29,6 +29,7 @@ export default function TransactionsHistory() {
           `,
           gap: 3,
         },
+        mb: 15,
       }}
     >
       {isDesktop && (

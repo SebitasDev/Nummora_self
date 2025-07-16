@@ -35,9 +35,9 @@ export const ActivityCard = ({ activity }: Props) => {
         <Avatar
           sx={{
             bgcolor: bgColor,
-            width: isMdUp ? 45 : "fit-content",
+            width: isMdUp ? 45 : 40,
             height: isMdUp ? 45 : 40,
-            borderRadius: isMdUp ? "40px" : "16px",
+            borderRadius: "40px",
           }}
         >
           {icon}
