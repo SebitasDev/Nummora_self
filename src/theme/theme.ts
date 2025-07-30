@@ -107,8 +107,12 @@ export const theme = {
         md: "1.3rem",
     },
     subtitle: {
-        xs: "1.1rem",
-        md: "1.4rem",
+        xs: "1rem",
+        md: "1.1rem",
+    },
+    labels: {
+        xs: "0.9rem",
+        md: "1rem",
     }
   },
 };
