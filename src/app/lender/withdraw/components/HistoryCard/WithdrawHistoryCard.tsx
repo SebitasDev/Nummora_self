@@ -1,5 +1,5 @@
 import { CustomCard } from "@/components/atoms/CustomCard";
-import { CardContent, CardHeader } from "@mui/material";
+import { Box, CardContent, CardHeader } from "@mui/material";
 import React from "react";
 import { HistoryFileCard } from "@/app/lender/withdraw/components/HistoryCard/HistoryFileCard";
 import { Stack } from "@mui/material";
@@ -12,11 +12,11 @@ export const WithdrawHistoryCard = () => {
         title={
           <SectionHeader
             title="Historial de Retiros"
-            subtitle=">Tus ultimos movimientos en retiros"
+            subtitle="Tus ultimos movimientos en retiros"
           />
         }
       />
-      <CardContent>
+      <Box sx={{ p: -1 }}>
         <Stack spacing={1}>
           <HistoryFileCard
             sx={{
@@ -59,7 +59,7 @@ export const WithdrawHistoryCard = () => {
             accountAddress={"asasdbaobsdahvsdpavhvaspva"}
           />
         </Stack>
-      </CardContent>
+      </Box>
     </CustomCard>
   );
 };

@@ -1,7 +1,7 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { SetWithdrawCard } from "@/app/lender/withdraw/components/WithdrawCard/SetWithdrawCard";
 import { WithdrawHistoryCard } from "@/app/lender/withdraw/components/HistoryCard/WithdrawHistoryCard";
-import { SummaryCard } from "@/app/lender/withdraw/components/ResumeCard/SummaryCard";
+import { SummaryCard } from "@/app/lender/withdraw/components/SummaryCard/SummaryCard";
 import { StatisticsCard } from "@/app/lender/withdraw/components/Statistics/StatisticsCard";
 import ImportantInfo from "@/app/lender/withdraw/components/Important Info/ImportantInfo";
 import SectionTitle from "@/components/atoms/SectionTitle";

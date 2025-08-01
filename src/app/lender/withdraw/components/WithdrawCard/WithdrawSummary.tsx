@@ -3,16 +3,8 @@ import { Box, Typography } from "@mui/material";
 import { AmountRow } from "@/components/molecules/AmountRow";
 import { useInvestAmount } from "@/app/lender/withdraw/hooks/useInvestAmount";
 
-interface WithdrawSummaryProps {
-  commission: string;
-  totalIncome: string;
-}
-
-export const WithdrawSummary = ({
-  commission,
-  totalIncome,
-}: WithdrawSummaryProps) => {
-  const { amount } = useInvestAmount();
+export const WithdrawSummary = () => {
+  const { amount, commission, totalIncome } = useInvestAmount();
   return (
     <Box
       mt={2}

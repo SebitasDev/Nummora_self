@@ -1,4 +1,4 @@
-import { Typography, Stack, CardHeader, CardContent } from "@mui/material";
+import { Typography, Stack, CardHeader, CardContent, Box } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { CustomCard } from "@/components/atoms/CustomCard";
@@ -24,11 +24,7 @@ const infoRows = [
 ];
 
 export default function ImportantInfo() {
-  const fontSize = {
-    xs: "0.7rem",
-    sm: "0.9rem",
-    md: "1rem",
-  };
+  const fontSize = "16px";
   return (
     <CustomCard sx={{ p: 1.2 }}>
       <CardHeader
@@ -39,7 +35,7 @@ export default function ImportantInfo() {
           />
         }
       />
-      <CardContent>
+      <Box sx={{ p: 2 }}>
         <Stack spacing={1.5}>
           {infoRows.map((row, idx) => (
             <Stack key={idx} direction="row" alignItems="center" spacing={1}>
@@ -50,7 +46,7 @@ export default function ImportantInfo() {
             </Stack>
           ))}
         </Stack>
-      </CardContent>
+      </Box>
     </CustomCard>
   );
 }

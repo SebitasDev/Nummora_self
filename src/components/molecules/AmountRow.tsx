@@ -2,7 +2,8 @@ import React from "react";
 import { Box, BoxProps, Typography } from "@mui/material";
 import PriceLabel from "../atoms/PriceLabel";
 import { Currency } from "@/enums/currency";
-import { useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material";
+import Theme from "@/theme/theme";
 
 interface AmountRowProps extends BoxProps {
   label: string;
@@ -19,13 +20,8 @@ export const AmountRow: React.FC<AmountRowProps> = ({
   sx,
   ...rest
 }) => {
-  const fontSize = {
-    xs: "0.7rem",
-    sm: "0.9rem",
-    md: "1rem",
-  };
-  const theme = useTheme();
-
+  const themeMUI = useTheme();
+  const theme = Theme;
   return (
     <Box
       display="flex"
@@ -35,7 +31,7 @@ export const AmountRow: React.FC<AmountRowProps> = ({
       sx={sx}
       {...rest}
     >
-      <Typography variant="body2" color="text.secondary" sx={{ fontSize }}>
+      <Typography variant="body2" color="text.secondary" fontSize={"16px"}>
         {label}
       </Typography>
 
@@ -44,9 +40,10 @@ export const AmountRow: React.FC<AmountRowProps> = ({
         currency={currency}
         color={amountColor}
         sx={{
-          fontSize: "1rem",
-          [theme.breakpoints.down("md")]: {
-            fontSize: "0.7rem",
+          fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+          letterSpacing: "-0.5px",
+          [themeMUI.breakpoints.down("md")]: {
+            fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
           },
         }}
       />

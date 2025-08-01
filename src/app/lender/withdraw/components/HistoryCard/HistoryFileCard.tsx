@@ -14,6 +14,7 @@ import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums/currency";
 import { useTheme } from "@mui/material/styles";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
+import Theme from "@/theme/theme";
 
 interface HistoryFileCardProps extends ChipProps {
   value: string;
@@ -31,14 +32,9 @@ export const HistoryFileCard = ({
 }: HistoryFileCardProps) => {
   const themeMUI = useTheme();
   const isMdUp = useMediaQuery(themeMUI.breakpoints.up("md"));
+  const theme = Theme;
   const shortenAddress = useShortenedAddress;
-  const fontSize = {
-    xs: "0.6rem",
-    sm: "0.9rem",
-    md: "1rem",
-  };
 
-  const theme = useTheme();
   return (
     <CustomCard
       sx={{
@@ -47,7 +43,7 @@ export const HistoryFileCard = ({
         borderWidth: 2,
         borderStyle: "solid",
         px: 2,
-        py: 4,
+        py: 4.6,
       }}
     >
       <Box
@@ -81,9 +77,10 @@ export const HistoryFileCard = ({
               number={value}
               currency={Currency.COP}
               sx={{
-                fontSize: "1rem",
-                [theme.breakpoints.down("md")]: {
-                  fontSize: "0.65rem",
+                fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+                letterSpacing: "-0.5px",
+                [themeMUI.breakpoints.down("md")]: {
+                  fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
                 },
                 width: "fit-content",
               }}
@@ -91,17 +88,17 @@ export const HistoryFileCard = ({
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ fontSize }}
+              sx={{ fontSize: isMdUp ? 14 : 11 }}
             >
               Lemon (Crypto) ● {shortenAddress(accountAddress)}
             </Typography>
           </Stack>
         </Box>
         <Box>
-          <Stack spacing={1}>
+          <Stack spacing={1} alignItems="center">
             <CustomChip
-              fontSizeXs="0.55rem"
-              fontSizeMd="0.8rem"
+              fontSizeXs={"11px"}
+              fontSizeMd={"14px"}
               sx={{
                 backgroundColor: "#E8F9F0",
                 color: "green",
@@ -116,7 +113,7 @@ export const HistoryFileCard = ({
             <Typography
               variant="body2"
               color="text.secondary"
-              fontSize={isMdUp ? "0.8rem" : "0.6rem"}
+              fontSize={isMdUp ? 14 : 11}
             >
               {date}
             </Typography>
