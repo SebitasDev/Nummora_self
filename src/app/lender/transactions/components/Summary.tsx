@@ -3,18 +3,11 @@ import SectionHeader from "@/components/atoms/SectionHeader";
 import { AmountRow } from "@/components/molecules/AmountRow";
 import { Box, Typography } from "@mui/material";
 import Theme from "@/theme/theme";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import PriceLabel from "@/components/atoms/PriceLabel";
+import { Currency } from "@/enums";
 
-export const StatisticsCard = () => {
-  const fontSize = {
-    xs: "0.54rem",
-    sm: "0.7rem",
-    md: "1rem",
-  };
-  const numberFontSize = {
-    xs: "1.2rem",
-    sm: "1.5rem",
-    md: "2rem",
-  };
+export const Summary = () => {
   const theme = Theme;
   return (
     <CustomCard
@@ -25,13 +18,17 @@ export const StatisticsCard = () => {
         gridTemplateColumns: "1fr 1fr",
         gridTemplateAreas: `
             "header header"
+             "Total Total"
             "leftCol rightCol"
-            "InfoRow InfoRow"
+           
           `,
       }}
     >
       <Box sx={{ gridArea: "header" }}>
-        <SectionHeader title="Estadisticas del Mes" />
+        <SectionHeader
+          icon={<AttachMoneyIcon sx={{ color: theme.palette.primary.dark }} />}
+          title="Resumen"
+        />
       </Box>
       <CustomCard
         gridArea={"leftCol"}
@@ -46,22 +43,25 @@ export const StatisticsCard = () => {
           height: "80px",
           backgroundColor: "#edfdf4",
           borderColor: "#edfdf4",
+          gridArea: "Total",
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
         }}
       >
-        <Typography
-          variant="h4"
-          color={theme.palette.primary.dark}
-          fontWeight={"bold"}
-          fontSize={"25px"}
-        >
-          4
-        </Typography>
+        <PriceLabel
+          number={"65.000"}
+          currency={Currency.COP}
+          sx={{
+            color: theme.palette.primary.dark,
+          }}
+        />
         <Typography variant="h6" fontSize={"14px"} color={"gray"}>
-          Retiros Exitosos
+          Total en Actividades
         </Typography>
       </CustomCard>
       <CustomCard
-        gridArea={"rightCol"}
+        gridArea={"leftCol"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
@@ -81,40 +81,39 @@ export const StatisticsCard = () => {
           fontWeight={"bold"}
           fontSize={"25px"}
         >
-          1.2
+          1
         </Typography>
         <Typography variant="h6" fontSize={"14px"} color={"gray"}>
-          Dias Promedio
+          Completadas
         </Typography>
       </CustomCard>
-      <Box
+      <CustomCard
+        gridArea={"rightCol"}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        flexDirection={"column"}
         sx={{
-          gridArea: "InfoRow",
-          display: "flex",
-          flexDirection: "column",
-          gap: 1,
+          px: 1,
+          py: 1.5,
+          borderRadius: "8px",
+          height: "80px",
+          backgroundColor: "#FFFDBD",
+          borderColor: "#FFFDBD",
         }}
       >
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          my={1}
+        <Typography
+          variant="h4"
+          color={"#7B491F"}
+          fontWeight={"bold"}
+          fontSize={"25px"}
         >
-          <Typography variant="body2" color="text.secondary" fontSize={"16px"}>
-            Metodo mas Usado
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.primary"
-            fontSize={"16px"}
-            fontWeight={"bold"}
-          >
-            Transferencia
-          </Typography>
-        </Box>
-        <AmountRow label={"Comisiones Pagadas"} value={"1.200"} />
-      </Box>
+          0
+        </Typography>
+        <Typography variant="h6" fontSize={"14px"} color={"gray"}>
+          Activas
+        </Typography>
+      </CustomCard>
     </CustomCard>
   );
 };

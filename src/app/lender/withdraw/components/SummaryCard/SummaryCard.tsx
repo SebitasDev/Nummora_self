@@ -70,14 +70,8 @@ export const SummaryCard = () => {
           <Typography
             variant="caption"
             color="text.secondary"
-            sx={{
-              textAlign: "center",
-              fontSize: {
-                xs: "0.7rem",
-                sm: "0.7rem",
-                md: "0.8rem",
-              },
-            }}
+            fontSize={"14px"}
+            sx={{ textAlign: "center" }}
           >
             75% de tus ganancias disponibles
           </Typography>

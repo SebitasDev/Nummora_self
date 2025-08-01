@@ -5,6 +5,7 @@ import {
   Stack,
   Typography,
   SelectChangeEvent,
+  useTheme,
 } from "@mui/material";
 import React from "react";
 import { CustomCard } from "@/components/atoms/CustomCard";
@@ -14,6 +15,7 @@ import { TimeText } from "@/components/atoms/TimeText";
 import { DropdownAddressSelect } from "@/app/lender/withdraw/components/WithdrawCard/DropdownAddressSelect";
 import { WithdrawSummary } from "@/app/lender/withdraw/components/WithdrawCard/WithdrawSummary";
 import { useWithdrawCard } from "../../hooks/useWithdrawCard";
+import Theme from "@/theme/theme";
 
 interface WithdrawMethodProps {
   selectedAddress: string;
@@ -25,6 +27,9 @@ export const WithdrawMethod = ({
   setSelectedAddress,
 }: WithdrawMethodProps) => {
   const { expanded, handleToggle, isMdUp, addressOptions } = useWithdrawCard();
+  const theme = Theme;
+  const themeMUI = useTheme();
+
   return (
     <Box>
       <Typography variant="subtitle1" fontWeight="bold" mb={1}>
@@ -39,6 +44,8 @@ export const WithdrawMethod = ({
           borderWidth: 2,
           borderStyle: "solid",
           backgroundColor: expanded ? "#edfdf4" : "background.paper",
+          px: 2,
+          py: 1.5,
         }}
       >
         <Box
@@ -94,18 +101,22 @@ export const WithdrawMethod = ({
               },
             }}
           >
-            <Stack spacing={0.3}>
+            <Stack spacing={0.5}>
               <Typography
                 fontWeight="bold"
                 sx={{
-                  fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1.2rem" },
+                  fontSize: `calc(${theme.fontSize.amountLabel.md} - 0.15rem)`,
+                  letterSpacing: "-0.5px",
+                  [themeMUI.breakpoints.down("md")]: {
+                    fontSize: `calc(${theme.fontSize.amountLabel.xs} - 0.15rem)`,
+                  },
                 }}
               >
                 Lemon (Crypto)
               </Typography>
               <Typography
                 variant="body2"
-                sx={{ fontSize: { xs: "0.7rem", sm: "0.9rem", md: "1rem" } }}
+                sx={{ fontSize: isMdUp ? 14 : 11 }}
                 color="text.secondary"
               >
                 Comisión:{""}
@@ -123,16 +134,12 @@ export const WithdrawMethod = ({
           <Box
             sx={{
               gridArea: "learn",
-              mt: 0.3,
+              mt: 0.5,
             }}
           >
             <Link
               sx={{
-                fontSize: {
-                  xs: "0.54rem",
-                  sm: "0.7rem",
-                  md: "0.8rem",
-                },
+                fontSize: isMdUp ? 14 : 11,
                 ml: {
                   xs: 0,
                   md: -1.5,
@@ -172,12 +179,12 @@ export const WithdrawMethod = ({
                 xs: "space-between",
                 sm: "center",
               }}
-              sx={{ width: { xs: "100%", sm: "70%" }, mx: -0.5, my: -0.5 }}
+              sx={{ width: { xs: "100%", sm: "70%" }, mx: -0.5 }}
             >
               <TimeText timeFrame={"5-15 minutos"} />
               <CustomChip
-                fontSizeXs="0.55rem"
-                fontSizeMd="0.8rem"
+                fontSizeXs={"11px"}
+                fontSizeMd={"14px"}
                 sx={{
                   backgroundColor: expanded ? "success.light" : "#E8F9F0",
                   color: expanded ? "white" : "green",
@@ -201,7 +208,7 @@ export const WithdrawMethod = ({
               setSelectedAddress(e.target.value)
             }
           />
-          <WithdrawSummary commission="1.500" totalIncome="98.500" />
+          <WithdrawSummary />
         </Box>
       </Collapse>
     </Box>
