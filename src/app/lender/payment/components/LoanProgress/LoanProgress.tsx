@@ -1,13 +1,14 @@
 import { CustomCard } from "@/components/atoms/CustomCard";
 import SectionHeader from "@/components/atoms/SectionHeader";
 import { ColouredCard } from "@/components/molecules/ColouredCard";
-import { Box, LinearProgress, Stack, Typography } from "@mui/material";
+import { Box, LinearProgress, Typography, useTheme } from "@mui/material";
 import Theme from "@/theme/theme";
 import PriceLabel from "@/components/atoms/PriceLabel";
 import { Currency } from "@/enums";
 
 export const LoanProgress = () => {
   const theme = Theme;
+  const themeMUI = useTheme();
   return (
     <CustomCard
       sx={{
@@ -44,7 +45,19 @@ export const LoanProgress = () => {
           }}
         />
       </Box>
-      <Box display="grid" gridTemplateColumns="1fr 1fr 1fr" gap={2}>
+      <Box
+        display="grid"
+        gridTemplateColumns="1fr 1fr 1fr"
+        gap={3}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          [themeMUI.breakpoints.up("md")]: {
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+          },
+        }}
+      >
         <ColouredCard backgroundColor="#eaf4fd" subtitle="Monto Original">
           <PriceLabel
             number={"100.000"}
