@@ -9,6 +9,28 @@ import { Currency } from "@/enums";
 export const LoanProgress = () => {
   const theme = Theme;
   const themeMUI = useTheme();
+
+  const cardData = [
+    {
+      backgroundColor: "#eaf4fd",
+      subtitle: "Monto Original",
+      number: "100.000",
+      color: theme.palette.secondary.dark,
+    },
+    {
+      backgroundColor: "#edfdf4",
+      subtitle: "Pagado",
+      number: "55.000",
+      color: theme.palette.primary.dark,
+    },
+    {
+      backgroundColor: "#FFFDBD",
+      subtitle: "Saldo Pendiente",
+      number: "45.000",
+      color: "#7B491F",
+    },
+  ];
+
   return (
     <CustomCard
       sx={{
@@ -22,6 +44,8 @@ export const LoanProgress = () => {
         title="Progreso del Prestamo"
         subtitle="Estado actual del prestamo asociado"
       />
+
+      {/* Progreso */}
       <Box>
         <Box justifyContent="space-between" display="flex" flexDirection="row">
           <Typography variant="body2" sx={{ fontWeight: "600" }}>
@@ -45,49 +69,35 @@ export const LoanProgress = () => {
           }}
         />
       </Box>
+
+      {/* Cards */}
       <Box
-        display="grid"
-        gridTemplateColumns="1fr 1fr 1fr"
-        gap={3}
         sx={{
           display: "flex",
           flexDirection: "column",
+          gap: 3,
           [themeMUI.breakpoints.up("md")]: {
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
           },
         }}
       >
-        <ColouredCard backgroundColor="#eaf4fd" subtitle="Monto Original">
-          <PriceLabel
-            number={"100.000"}
-            currency={Currency.COP}
-            sx={{
-              mb: 0.5,
-              color: theme.palette.secondary.dark,
-            }}
-          />
-        </ColouredCard>
-        <ColouredCard backgroundColor="#edfdf4" subtitle="Pagado">
-          <PriceLabel
-            number={"55.000"}
-            currency={Currency.COP}
-            sx={{
-              mb: 0.5,
-              color: theme.palette.primary.dark,
-            }}
-          />
-        </ColouredCard>
-        <ColouredCard backgroundColor="#FFFDBD" subtitle="Saldo Pendiente">
-          <PriceLabel
-            number={"45.000"}
-            currency={Currency.COP}
-            sx={{
-              mb: 0.5,
-              color: "#7B491F",
-            }}
-          />
-        </ColouredCard>
+        {cardData.map((card, index) => (
+          <ColouredCard
+            key={index}
+            backgroundColor={card.backgroundColor}
+            subtitle={card.subtitle}
+          >
+            <PriceLabel
+              number={card.number}
+              currency={Currency.COP}
+              sx={{
+                mb: 0.5,
+                color: card.color,
+              }}
+            />
+          </ColouredCard>
+        ))}
       </Box>
     </CustomCard>
   );
