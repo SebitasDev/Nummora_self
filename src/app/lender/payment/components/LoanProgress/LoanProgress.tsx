@@ -57,7 +57,7 @@ export const LoanProgress = () => {
         </ColouredCard>
         <ColouredCard backgroundColor="#edfdf4" subtitle="Pagado">
           <PriceLabel
-            number={"100.000"}
+            number={"55.000"}
             currency={Currency.COP}
             sx={{
               mb: 0.5,
@@ -67,7 +67,7 @@ export const LoanProgress = () => {
         </ColouredCard>
         <ColouredCard backgroundColor="#FFFDBD" subtitle="Saldo Pendiente">
           <PriceLabel
-            number={"65.000"}
+            number={"45.000"}
             currency={Currency.COP}
             sx={{
               mb: 0.5,

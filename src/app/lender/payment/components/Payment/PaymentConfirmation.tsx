@@ -31,6 +31,7 @@ export const PaymentConfirmation = () => {
           subtitle="Informacion del pago recibido"
           icon={
             <CheckCircleOutlineIcon
+              fontSize="large"
               sx={{ color: theme.palette.primary.dark }}
             />
           }

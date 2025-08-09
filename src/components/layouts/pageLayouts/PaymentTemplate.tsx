@@ -1,8 +1,12 @@
 "use client";
 
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { PaymentConfirmation } from "@/app/lender/payment/components/PaymentConfirmation";
-import { LoanProgress } from "@/app/lender/payment/components/LoanProgress";
+import { PaymentConfirmation } from "@/app/lender/payment/components/Payment/PaymentConfirmation";
+import { LoanProgress } from "@/app/lender/payment/components/LoanProgress/LoanProgress";
+import { PaymentSchedule } from "@/app/lender/payment/components/PaymentSchedule/PaymentSchedule";
+import { BorrowerInfoCard } from "@/app/lender/payment/components/BorrowerInfo/BorrowerInfoCard";
+import { LoanDetailsCard } from "@/app/lender/payment/components/LoanDetails/LoanDetailsCard";
+import { QuickActionsCard } from "@/app/lender/payment/components/QuickActions/QuickActionsCard";
 
 export default function TransactionsHistory() {
   const themeMUI = useTheme();
@@ -28,6 +32,12 @@ export default function TransactionsHistory() {
       <Box gridArea="leftCol" display="flex" flexDirection="column" gap={3}>
         <PaymentConfirmation />
         <LoanProgress />
+        <PaymentSchedule />
+      </Box>
+      <Box gridArea="rightCol" display="flex" flexDirection="column" gap={3}>
+        <BorrowerInfoCard />
+        <LoanDetailsCard />
+        <QuickActionsCard />
       </Box>
     </Box>
   );
