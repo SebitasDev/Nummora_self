@@ -1,5 +1,6 @@
 import { Box, BoxProps, Typography } from "@mui/material";
 import { CustomCard } from "../atoms/CustomCard";
+import { useStyles } from "@/hooks/useStyles";
 
 interface ColouredCardProps extends BoxProps {
   backgroundColor: string;
@@ -13,8 +14,9 @@ export const ColouredCard = ({
   sx,
   ...rest
 }: ColouredCardProps) => {
+  const { theme, isMdDown } = useStyles();
   return (
-    <Box sx={{ ...sx }} {...rest}>
+    <Box width="100%" sx={{ ...sx }} {...rest}>
       <CustomCard
         display={"flex"}
         alignItems={"center"}
@@ -23,14 +25,19 @@ export const ColouredCard = ({
         sx={{
           p: 2,
           borderRadius: "8px",
-
           height: "80px",
           backgroundColor: backgroundColor,
           borderColor: backgroundColor,
         }}
       >
         {children}
-        <Typography variant="h6" fontSize={"14px"} color={"gray"}>
+        <Typography
+          variant="h6"
+          fontSize={
+            isMdDown ? theme.fontSize.labels.xs : theme.fontSize.labels.md
+          }
+          color={"gray"}
+        >
           {subtitle}
         </Typography>
       </CustomCard>

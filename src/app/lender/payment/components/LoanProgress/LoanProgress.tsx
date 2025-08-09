@@ -44,8 +44,6 @@ export const LoanProgress = () => {
         title="Progreso del Prestamo"
         subtitle="Estado actual del prestamo asociado"
       />
-
-      {/* Progreso */}
       <Box>
         <Box justifyContent="space-between" display="flex" flexDirection="row">
           <Typography variant="body2" sx={{ fontWeight: "600" }}>
@@ -69,8 +67,6 @@ export const LoanProgress = () => {
           }}
         />
       </Box>
-
-      {/* Cards */}
       <Box
         sx={{
           display: "flex",
