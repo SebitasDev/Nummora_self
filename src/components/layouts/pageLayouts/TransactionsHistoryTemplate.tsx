@@ -8,7 +8,7 @@ import { ActivityList } from "@/app/lender/transactions/components/ActivityList"
 import { Summary } from "@/app/lender/transactions/components/Summary";
 import { QuickFilters } from "@/app/lender/transactions/components/QuickFilters";
 
-export default function TransactionsHistory() {
+export default function TransactionsHistoryTemplate() {
   const themeMUI = useTheme();
   const isDesktop = useMediaQuery(themeMUI.breakpoints.up("md"));
   const { filters, handleFilterChange, filteredActivities, activities } =
