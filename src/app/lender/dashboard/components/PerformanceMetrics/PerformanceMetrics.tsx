@@ -7,6 +7,7 @@ import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import { PerformanceMetricProgress } from "@/app/lender/dashboard/components/PerformanceMetrics/PerformanceMetricProgress";
 import { CustomCard } from "@/components/atoms/CustomCard";
 import { useStyles } from "@/hooks/useStyles";
+import { ColouredCard } from "@/components/molecules/ColouredCard";
 
 export const PerformanceMetrics = () => {
   const { theme, isMdDown } = useStyles();
@@ -44,17 +45,9 @@ export const PerformanceMetrics = () => {
           gap: 2,
         }}
       >
-        <Box
-          sx={{
-            flex: 1,
-            backgroundColor: theme.palette.secondary.background,
-            padding: 1,
-            borderRadius: "8px",
-            height: "80px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+        <ColouredCard
+          backgroundColor={theme.palette.secondary.background}
+          subtitle="Tasa de cobro"
         >
           <Typography
             color={theme.palette.secondary.dark}
@@ -63,27 +56,11 @@ export const PerformanceMetrics = () => {
           >
             98.5%
           </Typography>
-          <Typography
-            fontSize={
-              isMdDown ? theme.fontSize.labels.xs : theme.fontSize.labels.md
-            }
-            color={"gray"}
-          >
-            Tasa de cobro
-          </Typography>
-        </Box>
+        </ColouredCard>
 
-        <Box
-          sx={{
-            flex: 1,
-            backgroundColor: theme.palette.primary.background,
-            padding: 1,
-            borderRadius: "8px",
-            height: "80px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+        <ColouredCard
+          backgroundColor={theme.palette.primary.background}
+          subtitle="días promedio"
         >
           <Typography
             color={theme.palette.primary.dark}
@@ -92,14 +69,7 @@ export const PerformanceMetrics = () => {
           >
             24
           </Typography>
-          <Typography
-              fontSize={
-                  isMdDown ? theme.fontSize.labels.xs : theme.fontSize.labels.md
-              }
-              color={"gray"}>
-            días promedio
-          </Typography>
-        </Box>
+        </ColouredCard>
       </Box>
 
       <Box

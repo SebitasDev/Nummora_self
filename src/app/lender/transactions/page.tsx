@@ -1,5 +1,5 @@
-import TransactionsHistory from "@/components/layouts/pageLayouts/TransactionsHistory";
+import TransactionsHistoryTemplate from "@/components/layouts/pageLayouts/TransactionsHistoryTemplate";
 
 export default function TransactionsHistoryPage() {
-  return <TransactionsHistory />;
+  return <TransactionsHistoryTemplate />;
 }
