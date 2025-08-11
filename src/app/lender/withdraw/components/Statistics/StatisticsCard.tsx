@@ -3,6 +3,7 @@ import SectionHeader from "@/components/atoms/SectionHeader";
 import { AmountRow } from "@/components/molecules/AmountRow";
 import { Box, Typography } from "@mui/material";
 import Theme from "@/theme/theme";
+import { ColouredCard } from "@/components/molecules/ColouredCard";
 
 export const StatisticsCard = () => {
   const fontSize = {
@@ -33,20 +34,10 @@ export const StatisticsCard = () => {
       <Box sx={{ gridArea: "header" }}>
         <SectionHeader title="Estadisticas del Mes" />
       </Box>
-      <CustomCard
+      <ColouredCard
+        backgroundColor="#edfdf4"
+        subtitle="Retiros Exitosos"
         gridArea={"leftCol"}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        flexDirection={"column"}
-        sx={{
-          px: 1,
-          py: 1.5,
-          borderRadius: "8px",
-          height: "80px",
-          backgroundColor: "#edfdf4",
-          borderColor: "#edfdf4",
-        }}
       >
         <Typography
           variant="h4"
@@ -56,24 +47,11 @@ export const StatisticsCard = () => {
         >
           4
         </Typography>
-        <Typography variant="h6" fontSize={"14px"} color={"gray"}>
-          Retiros Exitosos
-        </Typography>
-      </CustomCard>
-      <CustomCard
+      </ColouredCard>
+      <ColouredCard
+        backgroundColor="#eaf4fd"
+        subtitle="Dias Promedio"
         gridArea={"rightCol"}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        flexDirection={"column"}
-        sx={{
-          p: 1,
-          borderRadius: "8px",
-
-          height: "80px",
-          backgroundColor: "#eaf4fd",
-          borderColor: "#eaf4fd",
-        }}
       >
         <Typography
           variant="h4"
@@ -83,10 +61,7 @@ export const StatisticsCard = () => {
         >
           1.2
         </Typography>
-        <Typography variant="h6" fontSize={"14px"} color={"gray"}>
-          Dias Promedio
-        </Typography>
-      </CustomCard>
+      </ColouredCard>
       <Box
         sx={{
           gridArea: "InfoRow",

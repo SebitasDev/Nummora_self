@@ -1,4 +1,4 @@
-import { Box, CardHeader } from "@mui/material";
+import { Box } from "@mui/material";
 import { Activity } from "../types/activity";
 import { ActivityCard } from "../components/ActivityCard";
 import { CustomCard } from "@/components/atoms/CustomCard";
