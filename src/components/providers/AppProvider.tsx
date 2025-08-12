@@ -3,14 +3,26 @@
 import {CssBaseline, Container, Box} from '@mui/material';
 import ReactQueryProvider from '@/lib/react-query/provaider';
 import LenderLayout from '@/components/layouts/LenderLayout';
+import {QueryClientProvider} from "@tanstack/react-query";
+import {WagmiProvider} from "wagmi";
+import React from "react";
+import {WalletConnection} from "@/lib/reown/WalletConnection";
 
 export default function AppProvider({ children }: { children: React.ReactNode }) {
+    const { wagmiAdapter, queryClient } = WalletConnection();
+    
     return (
         <Box>
             <CssBaseline/>
             <LenderLayout>
                 <Container maxWidth="xl">
-                    <ReactQueryProvider>{children}</ReactQueryProvider>
+                    <ReactQueryProvider>
+                        <WagmiProvider config={wagmiAdapter.wagmiConfig}>
+                            <QueryClientProvider client={queryClient}>
+                                {children}
+                            </QueryClientProvider>
+                        </WagmiProvider>
+                    </ReactQueryProvider>
                 </Container>
             </LenderLayout>
         </Box>
