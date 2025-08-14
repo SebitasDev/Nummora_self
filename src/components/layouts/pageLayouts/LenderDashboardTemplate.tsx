@@ -11,7 +11,6 @@ import { PerformanceMetrics } from "@/app/lender/dashboard/components/Performanc
 import { RecentActivities } from "@/app/lender/dashboard/components/RecentActivity";
 import { MonthSummary } from "@/app/lender/dashboard/components/MonthSummary";
 import { UserProfileDashboard } from "@/app/lender/dashboard/components/UserProfileDashboard";
-import {WalletConnectButton} from "@/lib/reown/WalletConnectButton";
 
 export const LenderDashboardTemplate = () => {
     const themeMUI = useTheme();
@@ -31,9 +30,7 @@ export const LenderDashboardTemplate = () => {
             }}
         >
             {isMobile && <UserProfileDashboard />}
-
-            <WalletConnectButton/>
-
+            
             {/* Titulo */}
             <Box
                 sx={{
