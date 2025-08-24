@@ -9,7 +9,7 @@ import React from "react";
 import {WalletConnection} from "@/lib/reown/WalletConnection";
 
 export default function AppProvider({ children }: { children: React.ReactNode }) {
-    const { wagmiAdapter, queryClient } = WalletConnection();
+    const { wagmiAdapter } = WalletConnection();
     
     return (
         <Box>
@@ -18,9 +18,7 @@ export default function AppProvider({ children }: { children: React.ReactNode })
                 <Container maxWidth="xl">
                     <ReactQueryProvider>
                         <WagmiProvider config={wagmiAdapter.wagmiConfig}>
-                            <QueryClientProvider client={queryClient}>
-                                {children}
-                            </QueryClientProvider>
+                            {children}
                         </WagmiProvider>
                     </ReactQueryProvider>
                 </Container>

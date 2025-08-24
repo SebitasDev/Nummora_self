@@ -2,14 +2,18 @@
 
 import {TextInput} from "@/components/atoms/TextInput";
 import PillButton from "@/components/atoms/PillButton";
-import {Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
+import {Box} from "@mui/material";
 import {useLogin} from "@/app/auth/login/hooks";
-import {Controller} from "react-hook-form";
 import {RoleGroup} from "@/app/auth/login/components/RoleGroup";
+import {useBalance} from "wagmi";
 
 export const LoginForm = () => {
     
-    const {register, handleSubmit, errors, onSubmit, control} = useLogin();
+    const {register, handleSubmit, errors, onSubmit, control, isConnected, account} = useLogin();
+    
+    const { data: nativeBalance } = useBalance({
+        address: account,
+    });
     
     return (
         <Box component={"form"} onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -32,6 +36,15 @@ export const LoginForm = () => {
                 helperText={errors.password?.message}
             />
             
+            <appkit-button label={"Conectar billetera"}/>
+            
+            {isConnected && (
+                <Box sx={{mt: 2, color: "green"}}>
+                    <p>Conectado a la billetera: {account}</p>
+                    <p>Saldo nativo: {nativeBalance ? nativeBalance.formatted : "Cargando..."}</p>
+                </Box>
+            )}
+            
             <RoleGroup control={control} errors={errors}/>
             
             <PillButton
@@ -43,6 +56,7 @@ export const LoginForm = () => {
                     color: "white",
                     fontWeight: 700
                 }}
+                disabled={!isConnected}
             >
                 Iniciar sesión
             </PillButton>
