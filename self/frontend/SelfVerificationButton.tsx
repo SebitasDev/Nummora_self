@@ -24,7 +24,7 @@ export default function SelfVerificationButton({ onSessionId }: SelfVerification
   // Base local SOLO para polling (/api/status/:sid)
   const apiBase = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080").replace(/\/+$/, "");
   // Dominio público HTTPS (ngrok) para el callback de Self
-  const publicBase = (process.env.NEXT_PUBLIC_SELF_CALLBACK || "https://4bfc01bb466c.ngrok-free.app").replace(/\/+$/, "");
+  const publicBase = (process.env.NEXT_PUBLIC_SELF_CALLBACK || "https://673db36e43c3.ngrok-free.app").replace(/\/+$/, "");
 
   useEffect(() => {
     return () => {
