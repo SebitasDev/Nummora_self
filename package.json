@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@selfxyz/core": "^1.0.8",
     "cors": "^2.8.5",
