@@ -28,10 +28,10 @@ const configStore = new DefaultConfigStore(verificationConfig);
 const verifier = new SelfBackendVerifier(
   SCOPE,
   ENDPOINT,
-  MOCK,
+  false,
   AllIds,
   configStore,
-  USER_ID_TYPE
+  'hex'
 );
 
 // Memoria en caliente para correlacionar sesión front <-> callback de Self App
